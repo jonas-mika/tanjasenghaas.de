@@ -8,17 +8,18 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+
+    .subheader {
+        padding-top: 2px;
+    }
 }
 
 // logo
 @media only screen and (max-width: 600px) {
     .header {
         width: 250px;
-        border: 1px solid magenta;
     }
-
     .subheader {
-        border: 1px solid magenta;
     }
 }
 
@@ -75,7 +76,7 @@
     left: 0;
     background-color: grey;
     transition: 1s ease-in-out;
-    z-index: 1;
+    z-index: 100;
 }
 
 .menu {
@@ -90,4 +91,90 @@
     color: white;
     font-size: 35px;
     padding: 10px;
+}
+
+/* --------------- LANDING COMPONENT ------------ */
+
+.Landing {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 111px);
+    width: 100vw;
+
+    .text {
+        position: absolute;
+        max-width: 1400px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 10%;
+
+        h1 {
+            font-size: 100px;
+        }
+
+        .paragraph {
+            margin-top: 5%;
+            text-align: left;
+            float: right;
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .Slider {
+        position: absolute;
+        width: 100%;
+        // max-width: 1400px;
+        height: 100%;
+        opacity: 50%;
+        z-index: -5;
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition-duration: 2s ease;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transition-duration: 2s;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Landing {
+        .text {
+            h1 {
+                font-size: 100px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Landing {
+        .text {
+            h1 {
+                font-size: 60px;
+            }
+            .paragraph p {
+                font-size: 18px;
+            }
+        }
+    }
 }

@@ -1,0 +1,68 @@
+// globals.scss
+
+// defines global styling behavior
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+    width: 80%;
+    margin: 5px auto;
+    padding: 20px 0px;
+    max-width: 1400px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .main-container {
+    }
+}
+
+// HEADLINES
+h1 {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h2 {
+    color: cornflowerblue;
+    font-size: 25px;
+}
+
+h3 {
+    color: rgb(25, 25, 25);
+    font-size: 15px;
+}
+
+h4 {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+// BUTTONS
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+// LINKS
+a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -36,12 +36,12 @@
 }
 
 .Header a {
-    color: grey;
+    color: $lightgrey;
     transition: 0.1s ease-in;
 }
 
 .Header a:hover {
-    color: black;
+    color: $pastelblue;
 }
 
 // burger
@@ -53,18 +53,18 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 102;
 }
 
 .burger-line {
     width: 100%;
     height: 3px;
-    background-color: black;
+    background-color: $darkgrey;
 }
 
 .burger-icon:hover {
     .burger-line {
-        background-color: grey;
+        background-color: $pastelblue;
     }
 }
 
@@ -74,7 +74,7 @@
     width: 100vw;
     top: 0;
     left: 0;
-    background-color: grey;
+    background-color: $lightgrey;
     transition: 1s ease-in-out;
     z-index: 100;
 }
@@ -93,13 +93,32 @@
     padding: 10px;
 }
 
+/* --------------- SCROLLUP ------------ */
+.ScrollUp {
+    position: fixed;
+    background-color: transparent;
+    bottom: 2rem;
+    right: 2rem;
+
+    .icon {
+        width: 3rem;
+        height: 3rem;
+        color: $lightgrey;
+        cursor: pointer;
+    }
+
+    .icon:hover {
+        color: $pastelblue;
+    }
+}
+
 /* --------------- LANDING COMPONENT ------------ */
 
 .Landing {
     position: relative;
     display: flex;
     justify-content: center;
-    height: calc(100vh - 111px);
+    height: calc(100vh - 120px);
     width: 100vw;
 
     .text {
@@ -112,16 +131,18 @@
         margin: 0 10%;
 
         h1 {
-            font-size: 100px;
+            font-size: 7rem;
+            letter-spacing: 3px;
         }
 
         .paragraph {
-            margin-top: 5%;
-            text-align: left;
+            margin-top: 10%;
+            text-align: right;
             float: right;
 
             p {
-                font-size: 20px;
+                font-size: 2rem;
+                font-weight: 600;
             }
         }
     }
@@ -154,6 +175,21 @@
             height: 100%;
         }
     }
+
+    .icon {
+        height: 3rem;
+        width: 3rem;
+        color: $lightgrey;
+        position: absolute;
+        bottom: 2rem;
+        z-index: 90;
+        transition: 0.1s ease-in;
+        cursor: pointer;
+    }
+
+    .icon:hover {
+        color: $pastelblue;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -174,6 +210,90 @@
             }
             .paragraph p {
                 font-size: 18px;
+            }
+        }
+    }
+}
+
+/*---------------- PHILOSOPHY ---------------*/
+.Philosophy {
+    border: 1px solid green;
+    margin-bottom: 500px;
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            padding: 20px 0;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-top: 50px;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 5px solid black;
+            text-align: center;
+            width: 30%;
+            padding: 20px;
+            min-height: 350px;
+            max-height: 400px;
+            transition: 1s ease-out;
+
+            .main {
+                .icon {
+                    height: 25px;
+                    width: 25px;
+                }
+                h3 {
+                    font-size: 25px;
+                    padding-top: 20px;
+                }
+                p {
+                    margin-top: 20px;
+                }
+            }
+
+            a {
+                font-style: italic;
+            }
+
+            a:hover {
+                color: blue;
+            }
+        }
+
+        .column:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Philosophy {
+        .container {
+            flex-direction: column;
+
+            .column {
+                width: 100%;
+                margin-top: 5%;
+                min-height: 300px;
             }
         }
     }

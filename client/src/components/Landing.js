@@ -1,6 +1,24 @@
+import { useState, useEffect } from 'react';
 import Slider from './slider/Slider';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Landing = () => {
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const getWindowHeight = () => {
+            setWindowHeight(window.innerHeight);
+        };
+        window.addEventListener('resize', getWindowHeight);
+        return () => {
+            window.removeEventListener('resize', getWindowHeight);
+        };
+    });
+
+    const scrollDown = () => {
+        window.scrollTo({ top: windowHeight, behavior: 'smooth' });
+    };
+
     return (
         <div className="Landing">
             <div className="text">
@@ -22,6 +40,7 @@ const Landing = () => {
                 </div>
             </div>
             <Slider showArrows={false} />
+            <IoIosArrowDown className="icon" onClick={scrollDown} />
         </div>
     );
 };

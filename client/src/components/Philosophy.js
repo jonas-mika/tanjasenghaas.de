@@ -1,6 +1,5 @@
 import { ImQuotesLeft } from 'react-icons/im';
 import { SiAdobeindesign } from 'react-icons/si';
-import TextSlider from './generics/TextSlider';
 import ArrowNavigation from './generics/ArrowNavigation';
 
 const Philosophy = () => {
@@ -20,18 +19,15 @@ const Philosophy = () => {
                     </p>
                 </div>
                 <div className="component-content">
-                    <div className="container">
+                    <div className="wrapper">
                         <div className="column">
-                            <div className="main">
+                            <div>
                                 <SiAdobeindesign className="icon" />
                                 <h3>Editorial Design</h3>
-                                <TextSlider
-                                    texts={[
-                                        'Rhythmus',
-                                        'Charakter',
-                                        'Komplexität greifbar machen',
-                                    ]}
-                                />
+                                <h4>
+                                    Rhythmus<br></br>Charakter<br></br>
+                                    Komplexität greifbar machen
+                                </h4>
                                 <p>
                                     Durch den Blick auf das große Ganze
                                     unterstützt und bestimmt das Visuelle den
@@ -46,7 +42,7 @@ const Philosophy = () => {
                                 <SiAdobeindesign className="icon" />
                                 <h3>Artdirektion</h3>
                                 <h4>
-                                    Stilbewusstsein <br></br> Komplexität{' '}
+                                    Stilbewusstsein <br></br> Komplexität
                                     <br></br> hohe Qualität und deren Kontrolle
                                 </h4>
                                 <p>

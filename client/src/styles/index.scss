@@ -104,14 +104,12 @@
     display: flex;
     justify-content: center;
     height: calc(100vh - 150px);
+    min-height: 800px;
     width: 100vw;
     overflow: hidden;
 
     .text {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 80%;
 
         h1 {
@@ -208,7 +206,7 @@
 
 /*---------------- PHILOSOPHY ---------------*/
 .Philosophy {
-    .container {
+    .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: stretch;

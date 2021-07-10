@@ -5,7 +5,7 @@ import ArrowNavigation from './generics/ArrowNavigation';
 
 const Philosophy = () => {
     return (
-        <div className="Philosophy main-container component">
+        <div id="philosophie" className="Philosophy main-container component">
             <ArrowNavigation id={3} direction={'up'} />
             <div>
                 <div className="component-header">

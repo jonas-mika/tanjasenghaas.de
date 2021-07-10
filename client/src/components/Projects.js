@@ -4,7 +4,7 @@ import { GoProject } from 'react-icons/go';
 
 const Projects = ({ images }) => {
     return (
-        <div className="Projects main-container component">
+        <div id="projekte" className="Projects main-container component">
             <ArrowNavigation id={2} direction={'up'} />
             <div>
                 <div className="component-header">

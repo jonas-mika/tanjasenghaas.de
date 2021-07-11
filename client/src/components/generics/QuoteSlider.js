@@ -16,8 +16,14 @@ const quotes = [
     },
 ];
 
-const QuoteSlider = ({ delay }) => {
+const QuoteSlider = () => {
     const [current, setCurrent] = useState(0);
+    const delay = 3000;
+
+    useEffect(() => {
+        setTimeout(nextSlide, delay);
+        return () => {};
+    });
 
     const computeTransform = () => {
         return -100 * current;

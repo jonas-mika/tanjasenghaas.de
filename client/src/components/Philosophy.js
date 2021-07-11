@@ -1,6 +1,28 @@
 import { ImQuotesLeft } from 'react-icons/im';
 import { SiAdobeindesign } from 'react-icons/si';
 import ArrowNavigation from './generics/ArrowNavigation';
+import InfoContainers from './generics/InfoContainers';
+
+const philosophy_data = [
+    {
+        icon: 'SiAdobeindesign',
+        title: 'Editorial Design',
+        text: 'Durch den Blick auf das große Ganze unterstützt und bestimmt das Visuelle den Inhalt und prägt wie nebenbei das gesamte Erscheinungsbild.',
+        link_text: 'Read More',
+    },
+    {
+        icon: 'SiAdobephotoshop',
+        title: 'Artdirektion',
+        text: 'Die kreative Umsetzung und Begleitung aller Produktionsvorgänge fußt auf einer künstlerischen Verantwortung.',
+        link_text: 'Read More',
+    },
+    {
+        icon: 'SiAdobelightroomcc',
+        title: 'Grafikdesign',
+        text: 'Deren Komposition lässt gedankliche Zusammenhänge in visuell erfahrbarem Kontext entstehen und erlebbar machen.',
+        link_text: 'Read More',
+    },
+];
 
 const Philosophy = () => {
     return (
@@ -19,55 +41,7 @@ const Philosophy = () => {
                     </p>
                 </div>
                 <div className="component-content">
-                    <div className="wrapper">
-                        <div className="column">
-                            <div>
-                                <SiAdobeindesign className="icon" />
-                                <h3>Editorial Design</h3>
-                                <h4>
-                                    Rhythmus<br></br>Charakter<br></br>
-                                    Komplexität greifbar machen
-                                </h4>
-                                <p>
-                                    Durch den Blick auf das große Ganze
-                                    unterstützt und bestimmt das Visuelle den
-                                    Inhalt und prägt wie nebenbei das gesamte
-                                    Erscheinungsbild.
-                                </p>
-                            </div>
-                            <a href="/">Read More.</a>
-                        </div>
-                        <div className="column">
-                            <div className="main">
-                                <SiAdobeindesign className="icon" />
-                                <h3>Artdirektion</h3>
-                                <h4>
-                                    Stilbewusstsein <br></br> Komplexität
-                                    <br></br> hohe Qualität und deren Kontrolle
-                                </h4>
-                                <p>
-                                    Die kreative Umsetzung und Begleitung aller
-                                    Produktionsvorgänge fußt auf einer
-                                    künstlerischen Verantwortung.
-                                </p>
-                            </div>
-                            <a href="/">Read More.</a>
-                        </div>
-                        <div className="column">
-                            <div className="main">
-                                <SiAdobeindesign className="icon" />
-                                <h3>Grafikdesign</h3>
-                                <p>
-                                    Typographie – Bildsprache – Farbenvielfalt –
-                                    Materialität.<br></br> Deren Komposition
-                                    lässt gedankliche Zusammenhänge in visuell
-                                    erfahrbarem Kontext entstehen und erlebbar
-                                    machen.
-                                </p>
-                            </div>
-                            <a href="/">Read More.</a>
-                        </div>
-                    </div>
+                    <InfoContainers data={philosophy_data} />
                 </div>
             </div>
             <ArrowNavigation id={3} direction={'down'} />

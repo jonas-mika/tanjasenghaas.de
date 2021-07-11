@@ -2,7 +2,7 @@ import Navbar from './Navbar';
 
 const Header = () => {
     return (
-        <div className="Header main-container">
+        <div id="header" className="Header main-container">
             <div className="logo">
                 <div className="header">
                     <h2>Tanja Senghaas Designs</h2>

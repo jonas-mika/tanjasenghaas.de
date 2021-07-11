@@ -21,7 +21,7 @@ const Landing = () => {
                 </p>
                 <ArrowNavigation
                     style={arrowStyles}
-                    id={1}
+                    component={'projekte'}
                     direction={'down'}
                 />
                 <p className="scroll-down-text">Scroll Down</p>

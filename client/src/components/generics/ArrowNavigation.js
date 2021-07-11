@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoIosArrowUp } from 'react-icons/io';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-const ArrowNavigation = ({ id, direction, style }) => {
+const ArrowNavigation = ({ component, direction, style }) => {
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
+    /*
     useEffect(() => {
         const getWindowHeight = () => {
             setWindowHeight(window.innerHeight);
@@ -29,20 +31,22 @@ const ArrowNavigation = ({ id, direction, style }) => {
     const scrollTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+	*/
 
     if (direction === 'up') {
         return (
             <div className="ScrollUp" style={style}>
-                <IoIosArrowUp className="icon scroll-up" onClick={scrollUp} />
+                <AnchorLink href={`#${component}`}>
+                    <IoIosArrowUp className="icon scroll-up" />
+                </AnchorLink>
             </div>
         );
     } else if (direction === 'down') {
         return (
             <div className="ScrollDown" style={style}>
-                <IoIosArrowDown
-                    className="icon scroll-down"
-                    onClick={scrollDown}
-                />
+                <AnchorLink href={`#${component}`}>
+                    <IoIosArrowDown className="icon scroll-down" />
+                </AnchorLink>
             </div>
         );
     } else {

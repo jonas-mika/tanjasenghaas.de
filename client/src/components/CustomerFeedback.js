@@ -38,7 +38,7 @@ const quotes = [
 const CustomerFeedback = () => {
     return (
         <div id="kunden" className="CustomerFeedback main-container component">
-            <ArrowNavigation id={4} direction={'up'} />
+            <ArrowNavigation component={'philosophie'} direction={'up'} />
             <div>
                 <div className="component-header">
                     <ImBubble className="component-icon" />
@@ -48,7 +48,7 @@ const CustomerFeedback = () => {
                     <QuoteSlider quotes={quotes} showNavigation={false} />
                 </div>
             </div>
-            <ArrowNavigation id={4} direction={'down'} />
+            <ArrowNavigation component={''} direction={'down'} />
         </div>
     );
 };

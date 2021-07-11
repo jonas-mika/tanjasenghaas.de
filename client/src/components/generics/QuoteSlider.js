@@ -1,5 +1,5 @@
 import { RiArrowDropLeftFill, RiArrowDropRightFill } from 'react-icons/ri';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const quotes = [
     {
@@ -31,6 +31,10 @@ const QuoteSlider = ({ delay }) => {
         setCurrent(current === 0 ? quotes.length - 1 : current - 1);
     };
 
+    const goToSlide = (id) => {
+        setCurrent(id);
+    };
+
     return (
         <div className="QuoteSlider">
             <div className="wrapper">
@@ -55,6 +59,23 @@ const QuoteSlider = ({ delay }) => {
                     </div>
                 </div>
                 <RiArrowDropRightFill className="icon" onClick={nextSlide} />
+            </div>
+            <div className="dots">
+                {quotes.map((_, index) => {
+                    return (
+                        <div
+                            key={index}
+                            className={
+                                current === index
+                                    ? 'dot icon active'
+                                    : 'dot icon'
+                            }
+                            onClick={() => {
+                                goToSlide(index);
+                            }}
+                        ></div>
+                    );
+                })}
             </div>
         </div>
     );

@@ -48,6 +48,11 @@
 
 /* --------------- QUOTE SLIDER --------------------*/
 .QuoteSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     .wrapper {
         height: 400px;
         display: flex;
@@ -96,6 +101,32 @@
         .icon {
             width: 50px;
             height: 50px;
+        }
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 50px;
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: 0px 10px;
+            background-color: $lightgrey;
+            transition: 0.1s ease-in;
+        }
+
+        .dot.active {
+            background-color: $pastelblue;
+            transform: scale(1.2);
+        }
+
+        .dot:hover {
+            background-color: $pastelblue;
+            transform: scale(1.2);
         }
     }
 }

@@ -126,6 +126,12 @@ a {
             padding-top: 30px;
         }
 
+        @media screen and (max-width: 600px) {
+            .component-title {
+                font-size: 1.8rem;
+            }
+        }
+
         .component-title:before {
             content: '';
             position: absolute;

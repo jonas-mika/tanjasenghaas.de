@@ -54,13 +54,13 @@
     align-items: center;
 
     .wrapper {
-        height: 400px;
+        min-height: 400px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .slides {
-            height: 400px;
+            min-height: 400px;
             width: 85%;
             overflow: hidden;
 
@@ -85,6 +85,14 @@
                         font-size: 1.4rem;
                         text-align: center;
                         width: 80%;
+                        word-wrap: break-word;
+                    }
+
+                    @media screen and(max-width: 600px) {
+                        p {
+                            width: 90%;
+                            font-size: 1.2rem;
+                        }
                     }
 
                     h4 {
@@ -109,7 +117,7 @@
         justify-content: center;
         align-items: center;
         min-width: 50px;
-        margin-top: 10px;
+        margin-top: 40px;
 
         .dot {
             height: 8px;
@@ -130,4 +138,13 @@
             transform: scale(1.2);
         }
     }
+}
+
+@media screen and (max-width: 1000px) {
+    .QuoteSlider p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
 }

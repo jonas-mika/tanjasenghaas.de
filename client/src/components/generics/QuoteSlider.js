@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 import { RiArrowDropLeftFill, RiArrowDropRightFill } from 'react-icons/ri';
 
-const QuoteSlider = ({ delay, quotes, showDots, showNavigation }) => {
+const QuoteSlider = ({
+    delay,
+    quotes,
+    showDots,
+    showNavigation,
+    autoScroll,
+}) => {
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
-        setTimeout(nextSlide, delay);
+        if (autoScroll) {
+            setTimeout(nextSlide, delay);
+        }
     });
 
     const computeTransform = () => {
@@ -83,6 +91,7 @@ QuoteSlider.defaultProps = {
     delay: 5000,
     showDots: true,
     showNavigation: true,
+    autoScroll: false,
 };
 
 export default QuoteSlider;

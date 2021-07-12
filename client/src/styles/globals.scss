@@ -101,11 +101,12 @@ a {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 50px 0;
 
     .component-header {
+        margin-top: 10%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -150,6 +151,7 @@ a {
     .component-content {
         width: 100vw;
         margin-top: 50px;
+        margin-bottom: 10%;
     }
 }
 

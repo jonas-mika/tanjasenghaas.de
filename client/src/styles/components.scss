@@ -45,16 +45,53 @@
         object-fit: cover;
     }
 }
+/* --------------- SCROLL CAROUSEL --------------------*/
+.ScrollCarousel {
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sticky-box {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+    }
+
+    .transform-box {
+        display: flex;
+        will-change: transform;
+    }
+
+    .box {
+        flex-shrink: 0;
+        /* need to hardcode box sizes, else images loading throws off calculations */
+        /* could be a job for imagesLoaded */
+        height: 100vh;
+        width: auto;
+    }
+
+    .box--narrower {
+        width: 20rem;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
 /* --------------- INFO CONTAINERS --------------------*/
 .InfoContainers {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
     grid-gap: 1rem;
 
     .column {
         position: relative;
-        min-height: 300px;
+        min-height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -222,5 +259,122 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+/* ---------------------- CONTACT FORM ------------------ */
+.ContactForm {
+    .wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        min-height: 400px;
+        max-height: 800px;
+
+        .contact-form {
+            padding: 30px;
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            text-align: center;
+
+            .contact-links {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+
+                a {
+                    color: $darkgrey;
+                    padding: 2px 0;
+                    font-size: 0.8rem;
+                }
+
+                a:hover {
+                    color: $pastelblue;
+                }
+            }
+
+            .contact-inputs {
+                width: 80%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .row {
+                    position: relative;
+                    width: 80%;
+                    padding: 10px 0;
+                    overflow: hidden;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    font-family: sans-serif;
+                    padding: 10px 0px 10px 0px;
+                    border: none;
+                }
+
+                input {
+                    border-bottom: 0.5px solid $lightgrey;
+                }
+
+                .line {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 9px;
+                    left: 0;
+                    border-bottom: 3px solid $pastelblue;
+                    transition: 1s ease;
+                    transform: translateX(-101%);
+                }
+
+                textarea {
+                    min-height: 200px;
+                    resize: none;
+                }
+
+                input:hover,
+                textarea:hover,
+                input:focus,
+                textarea:focus {
+                    outline: none;
+                }
+
+                input:hover + .line,
+                input:active + .line {
+                    transform: translateX(0%);
+                }
+
+                #submit {
+                    border: 0;
+                    width: 100px;
+                    border-radius: 40px;
+                    cursor: pointer;
+                    transition: 0.5s ease;
+                }
+
+                #submit:hover {
+                    color: white;
+                    background-color: $pastelblue;
+                }
+            }
+        }
+
+        .contact-image {
+            width: 30%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }

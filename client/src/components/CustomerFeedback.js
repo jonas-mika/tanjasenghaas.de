@@ -48,7 +48,7 @@ const CustomerFeedback = () => {
                     <QuoteSlider quotes={quotes} showNavigation={false} />
                 </div>
             </div>
-            <ArrowNavigation component={''} direction={'down'} />
+            <ArrowNavigation component={'services'} direction={'down'} />
         </div>
     );
 };

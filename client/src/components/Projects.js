@@ -1,6 +1,7 @@
 import ImageSlider from './image-slider/ImageSlider';
 import ArrowNavigation from './generics/ArrowNavigation';
 import { GoProject } from 'react-icons/go';
+import ScrollCarousel from './generics/ScrollCarousel';
 
 const Projects = ({ images }) => {
     return (
@@ -15,7 +16,37 @@ const Projects = ({ images }) => {
                     </p>
                 </div>
                 <div className="component-content">
-                    <ImageSlider images={images} />
+                    <ScrollCarousel>
+                        <div className="wrapper">
+                            <div className="box">
+                                <img
+                                    src="https://picsum.photos/720/540/?image=88"
+                                    alt=""
+                                    className="img"
+                                />
+                            </div>
+                            <div className="box box--narrower">
+                                <img
+                                    src="https://picsum.photos/720/540/?image=512"
+                                    alt=""
+                                    className="img"
+                                />
+                            </div>
+                            {/* <div className="box">
+          <img src="https://picsum.photos/720/540/?image=435" alt="" className="img" />
+        </div> */}
+                            {/* <div className="box box--narrower">
+          <img src="https://picsum.photos/720/540/?image=840" alt="" className="img" />
+        </div> */}
+                            <div className="box">
+                                <img
+                                    src="https://picsum.photos/720/540/?image=472"
+                                    alt=""
+                                    className="img"
+                                />
+                            </div>
+                        </div>
+                    </ScrollCarousel>
                 </div>
             </div>
             <ArrowNavigation component={'philosophie'} direction={'down'} />

@@ -5,7 +5,9 @@ const arrowStyles = {
     marginTop: '100px',
 };
 
-const Landing = () => {
+const Landing = ({ projects }) => {
+    const all_images = projects.map((project) => project.images).flat();
+
     return (
         <div className="Landing">
             <div className="text main-container">
@@ -26,7 +28,7 @@ const Landing = () => {
                 />
                 <p className="scroll-down-text">Scroll Down</p>
             </div>
-            <Slider showArrows={false} />
+            <Slider images={all_images} showArrows={false} />
         </div>
     );
 };

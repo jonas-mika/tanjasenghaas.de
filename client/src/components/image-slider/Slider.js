@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import { SliderData } from './SliderData';
 
-const Slider = ({ showArrows }) => {
+const Slider = ({ images, showArrows }) => {
     const [current, setCurrent] = useState(0);
     const [delay, setDelay] = useState(5000);
     const length = SliderData.length;
@@ -32,14 +32,25 @@ const Slider = ({ showArrows }) => {
                     onClick={prevSlide}
                 />
             )}
-            {SliderData.map((slide, index) => {
+            {images.map((image, index) => {
                 return (
                     <div
                         className={index === current ? 'slide active' : 'slide'}
                         key={index}
                     >
                         {index === current && (
-                            <img src={slide.url} alt={slide.alt} />
+                            <img
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '5px',
+                                    objectFit: 'scale-down',
+                                }}
+                                src={`/assets/images/${image.name.slice(
+                                    0,
+                                    -5
+                                )}/${image.name}`}
+                                alt={image.name}
+                            />
                         )}
                     </div>
                 );

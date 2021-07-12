@@ -33,7 +33,6 @@ const data = [
 const Services = () => {
     return (
         <div id="services" className="Services main-container component">
-            <ArrowNavigation component={'kunden'} direction={'up'} />
             <div>
                 <div className="component-header">
                     <GiMeshNetwork className="component-icon" />
@@ -43,7 +42,6 @@ const Services = () => {
                     <InfoContainers data={data} />
                 </div>
             </div>
-            <ArrowNavigation component={'kontakt'} direction={'down'} />
         </div>
     );
 };

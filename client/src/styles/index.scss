@@ -282,4 +282,43 @@
     transform: scale(1.2);
 }
 
+// FOOTER
+.Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    margin: 20px auto;
 
+    h4 {
+        color: black;
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+
+        a {
+            padding: 0 20px;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            p {
+                font-family: 'Open Sans', sans-serif;
+                color: $lightgrey;
+                font-size: 0.8rem;
+                transition: 0.1s ease;
+            }
+        }
+
+        a:hover p {
+            color: black;
+        }
+    }
+}

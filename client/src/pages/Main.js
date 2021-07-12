@@ -5,19 +5,19 @@ import Philosophy from '../components/Philosophy';
 import CustomerFeedback from '../components/CustomerFeedback';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
-import { SliderData } from '../components/image-slider/SliderData';
-
-const Main = () => {
+const Main = ({ projects }) => {
     return (
         <div classname="MainPage">
             <Header />
-            <Landing />
-            <Projects images={SliderData} />
+            <Landing projects={projects} />
+            <Projects projects={projects} />
             <Philosophy />
             <CustomerFeedback />
             <Services />
             <Contact />
+            <Footer />
         </div>
     );
 };

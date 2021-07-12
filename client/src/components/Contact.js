@@ -2,19 +2,17 @@ import ContactForm from './generics/ContactForm';
 import ArrowNavigation from './generics/ArrowNavigation';
 
 import { AiOutlineMail } from 'react-icons/ai';
-import tanja from '../assets/tanja2.jpg';
 
 const Contact = () => {
     return (
         <div id="kontakt" className="Contact main-container component">
-            <ArrowNavigation component={'services'} direction="up" />
             <div className="component-header">
                 <AiOutlineMail className="component-icon" />
                 <h1 className="component-title">Contact</h1>
             </div>
             <div className="component-content">
                 <ContactForm
-                    img={tanja}
+                    img={'/assets/images/portrait/tanja2.jpg'}
                     alt={'tanja_portrait'}
                     email={'tanja.senghaas@web.de'}
                     phone={'+49 151 22543476'}

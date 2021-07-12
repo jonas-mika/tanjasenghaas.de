@@ -27,7 +27,6 @@ const philosophy_data = [
 const Philosophy = () => {
     return (
         <div id="philosophie" className="Philosophy main-container component">
-            <ArrowNavigation component={'projekte'} direction={'up'} />
             <div>
                 <div className="component-header">
                     <ImQuotesLeft className="component-icon" />
@@ -44,7 +43,6 @@ const Philosophy = () => {
                     <InfoContainers data={philosophy_data} />
                 </div>
             </div>
-            <ArrowNavigation component={'kunden'} direction={'down'} />
         </div>
     );
 };

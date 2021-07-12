@@ -1,0 +1,78 @@
+{
+	"title": "Tanja Senghaas Designs",
+	"favicon_url": "./assets/favicon/tanja_favicon.png",
+	"projects": [
+		{
+			"id": 1,
+			"name": "Test",
+			"date": "November 2019",
+			"description": "I worked on this project and had a lot of fun",
+			"images": [
+				{
+					"name": "hygge1.jpg",
+					"description": "xxx"
+				},
+				{
+					"name": "hygge2.jpg",
+					"description": "xxx"
+				},
+				{
+					"name": "hygge3.jpg",
+					"description": "xxx"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "Holly",
+			"date": "April 2020",
+			"description": "I worked on this project and had a lot of fun",
+			"images": [
+				{
+					"name": "holly1.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "holly2.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "holly3.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "holly4.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "holly5.jpg",
+					"description": "S. 12-13"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Wohllebens Welt",
+			"date": "August 2020",
+			"description": "I worked on this project and had a lot of fun",
+			"images": [
+				{
+					"name": "wl1.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "wl2.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "wl3.jpg",
+					"description": "S. 12-13"
+				},
+				{
+					"name": "wl4.jpg",
+					"description": "S. 12-13"
+				}
+			]
+		}
+	]
+}

@@ -25,6 +25,9 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
     return (
         <div className="ContactForm">
             <div className="wrapper">
+                <div className="contact-image">
+                    <img src={img} alt={img_alt} />
+                </div>
                 <div className="contact-form">
                     <h3>Schreiben Sie mir eine Nachricht!</h3>
                     <div className="contact-links">
@@ -77,9 +80,6 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
                         </div>
                         <input id="submit" type="submit" />
                     </form>
-                </div>
-                <div className="contact-image">
-                    <img src={img} alt={img_alt} />
                 </div>
             </div>
         </div>

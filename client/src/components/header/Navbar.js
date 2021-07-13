@@ -13,15 +13,41 @@ export const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    if (menuActive) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'unset';
+    }
+
     if (windowWidth > 1200) {
         return (
             <div className="Navbar">
                 <div className="navbar-regular">
-                    <AnchorLink href="#projekte">Projekte</AnchorLink>
-                    <AnchorLink href="#philosophie">Philosophie</AnchorLink>
-                    <AnchorLink href="#kunden">Kunden</AnchorLink>
-                    <AnchorLink href="#services">Services</AnchorLink>
-                    <AnchorLink href="#kontakt">Kontakt</AnchorLink>
+                    <div className="link">
+                        <AnchorLink className="a" href="#projekte">
+                            Projekte
+                        </AnchorLink>
+                    </div>
+                    <div className="link">
+                        <AnchorLink className="a" href="#philosophie">
+                            Philosophie
+                        </AnchorLink>
+                    </div>
+                    <div className="link">
+                        <AnchorLink className="a" href="#kunden">
+                            Kunden
+                        </AnchorLink>
+                    </div>
+                    <div className="link">
+                        <AnchorLink className="a" href="#services">
+                            Services
+                        </AnchorLink>
+                    </div>
+                    <div className="link">
+                        <AnchorLink className="a" href="#kontakt">
+                            Kontakt
+                        </AnchorLink>
+                    </div>
                 </div>
             </div>
         );
@@ -36,7 +62,6 @@ export const Navbar = () => {
                     <div className="burger-line"></div>
                     <div className="burger-line"></div>
                 </div>
-                {console.log(menuActive)}
                 <div
                     className="menu-overlay"
                     style={
@@ -47,11 +72,31 @@ export const Navbar = () => {
                     onClick={() => setMenuActive(!menuActive)}
                 >
                     <div className="menu">
-                        <AnchorLink href="#projekte">Projekte</AnchorLink>
-                        <AnchorLink href="#philosophie">Philosophie</AnchorLink>
-                        <AnchorLink href="#kunden">Kunden</AnchorLink>
-                        <AnchorLink href="#services">Services</AnchorLink>
-                        <AnchorLink href="#kontakt">Kontakt</AnchorLink>
+                        <div className="link">
+                            <AnchorLink className="a" href="#projekte">
+                                Projekte
+                            </AnchorLink>
+                        </div>
+                        <div className="link">
+                            <AnchorLink className="a" href="#philosophie">
+                                Philosophie
+                            </AnchorLink>
+                        </div>
+                        <div className="link">
+                            <AnchorLink className="a" href="#kunden">
+                                Kunden
+                            </AnchorLink>
+                        </div>
+                        <div className="link">
+                            <AnchorLink className="a" href="#services">
+                                Services
+                            </AnchorLink>
+                        </div>
+                        <div className="link">
+                            <AnchorLink className="a" href="#kontakt">
+                                Kontakt
+                            </AnchorLink>
+                        </div>
                     </div>
                 </div>
             </div>

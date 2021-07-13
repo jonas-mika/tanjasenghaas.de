@@ -8,13 +8,22 @@ const Footer = () => {
     return (
         <div className="Footer main-container">
             <div className="links">
-                <a href="https://www.facebook.com/tanja.senghaas">
+                <a
+                    href="https://www.facebook.com/tanja.senghaas"
+                    target="_blank"
+                >
                     <TiSocialFacebookCircular className="icon" />
                 </a>
-                <a href="https://www.linkedin.com/in/tanja-senghaas-thomsen-1b224371/">
+                <a
+                    href="https://www.linkedin.com/in/tanja-senghaas-thomsen-1b224371/"
+                    target="_blank"
+                >
                     <TiSocialLinkedinCircular className="icon" />
                 </a>
-                <a href="https://github.com/jonas-mika/tanjasenghaas.de">
+                <a
+                    href="https://github.com/jonas-mika/tanjasenghaas.de"
+                    target="_blank"
+                >
                     <TiSocialGithubCircular className="icon" />
                 </a>
             </div>

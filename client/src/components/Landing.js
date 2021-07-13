@@ -1,10 +1,6 @@
 import Slider from './image-slider/Slider';
 import ArrowNavigation from './generics/ArrowNavigation';
 
-const arrowStyles = {
-    marginTop: '100px',
-};
-
 const Landing = ({ projects }) => {
     const all_images = projects.map((project) => project.images).flat();
 
@@ -21,14 +17,14 @@ const Landing = ({ projects }) => {
                     der Gestaltung und Konzeption in den Bereichen Editorial
                     Design, Corporate Design, Print und Webdesign.
                 </p>
-                <ArrowNavigation
-                    style={arrowStyles}
-                    component={'projekte'}
-                    direction={'down'}
-                />
-                <p className="scroll-down-text">Scroll Down</p>
+                <div className="scroll-down">
+                    <ArrowNavigation
+                        component={'projekte'}
+                        direction={'down'}
+                    />
+                    <p>Scroll Down</p>
+                </div>
             </div>
-            <Slider images={all_images} showArrows={false} />
         </div>
     );
 };

@@ -96,6 +96,7 @@
     .column {
         position: relative;
         min-height: 350px;
+        max-width: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

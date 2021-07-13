@@ -22,7 +22,6 @@ const Landing = ({ projects }) => {
                         component={'projekte'}
                         direction={'down'}
                     />
-                    <p>Scroll Down</p>
                 </div>
             </div>
         </div>

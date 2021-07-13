@@ -11,7 +11,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
-    overflow-x: hidden;
 }
 
 .snap-container {
@@ -94,22 +93,52 @@ p {
     background-color: $pastelblue;
 }
 
-// LINKS
 a {
-    color: black;
+    color: $lightgrey;
     text-decoration: none;
+}
+// FANCY LINKS
+.link {
     cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+    overflow: hidden;
+
+    .a {
+        text-decoration: none;
+        color: $lightgrey;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0px;
+        border-bottom: 3px solid $pastelblue;
+        transform: translateY(3px);
+    }
+    &:hover {
+        transform: translateY(-3px);
+    }
+    &:hover .a {
+        color: $pastelblue;
+    }
+    &:hover::after {
+        transform: translateY(0);
+    }
 }
 
 // icons
 .icon {
     color: $lightgrey;
     cursor: pointer;
-    transition: 0.1s ease;
+    transition: 0.5s ease;
 }
 
 .icon:hover {
     color: $pastelblue;
+    transform: scale(1.05);
 }
 
 /* --------------- COMPONENT ------------ */

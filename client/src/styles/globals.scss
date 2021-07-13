@@ -78,10 +78,20 @@ p {
 }
 
 // BUTTONS
-button {
+.button {
     border: none;
     outline: none;
     cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: $lightgrey;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background-color: $pastelblue;
 }
 
 // LINKS

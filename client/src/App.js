@@ -1,7 +1,9 @@
 // react imports
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import Main from './pages/Main';
+import ProjectPage from './components/ProjectPage';
 
 // scss styling
 import './styles/index.scss';
@@ -23,10 +25,31 @@ function App() {
     }, []);
 
     return (
-        <div className="App">
-            <Favicon url={favicon} />
-            <Main projects={projects} />
-        </div>
+        <Router>
+            <div className="App">
+                <Favicon url={favicon} />
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        component={() => <Main projects={projects} />}
+                    />
+                    {projects.map((project) => {
+                        console.log(project.name.toLowerCase());
+                        return (
+                            <Route
+                                path={`/projects/${project.name
+                                    .toLowerCase()
+                                    .replace(' ', '-')}`}
+                                component={() => (
+                                    <ProjectPage project={project} />
+                                )}
+                            />
+                        );
+                    })}
+                </Switch>
+            </div>
+        </Router>
     );
 }
 

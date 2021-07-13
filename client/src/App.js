@@ -16,8 +16,6 @@ const title = data.title;
 const favicon = data.favicon_url;
 const projects = data.projects;
 
-console.log(projects.length);
-
 function App() {
     // set document title on every reload
     useEffect(() => {
@@ -32,7 +30,7 @@ function App() {
                     <Route
                         exact
                         path="/"
-                        component={() => <Main projects={projects} />}
+                        component={() => <Main data={data} />}
                     />
                     {projects.map((project) => {
                         console.log(project.name.toLowerCase());

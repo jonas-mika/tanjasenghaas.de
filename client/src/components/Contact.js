@@ -1,5 +1,4 @@
 import ContactForm from './generics/ContactForm';
-import ArrowNavigation from './generics/ArrowNavigation';
 
 import { AiOutlineMail } from 'react-icons/ai';
 

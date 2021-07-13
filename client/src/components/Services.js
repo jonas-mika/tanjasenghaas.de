@@ -1,5 +1,4 @@
 import InfoContainers from './generics/InfoContainers';
-import ArrowNavigation from './generics/ArrowNavigation';
 
 import { GiMeshNetwork } from 'react-icons/gi';
 

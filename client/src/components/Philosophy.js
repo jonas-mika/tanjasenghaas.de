@@ -1,6 +1,4 @@
 import { ImQuotesLeft } from 'react-icons/im';
-import { SiAdobeindesign } from 'react-icons/si';
-import ArrowNavigation from './generics/ArrowNavigation';
 import InfoContainers from './generics/InfoContainers';
 
 const philosophy_data = [

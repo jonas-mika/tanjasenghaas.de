@@ -7,14 +7,14 @@ import Services from '../components/Services';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-const Main = ({ projects }) => {
+const Main = ({ data }) => {
     return (
         <div classname="MainPage">
             <Header />
-            <Landing projects={projects} />
-            <ProjectGallery projects={projects} />
+            <Landing projects={data.projects} />
+            <ProjectGallery projects={data.projects} />
             <Philosophy />
-            <CustomerFeedback />
+            <CustomerFeedback quotes={data.quotes} />
             <Services />
             <Contact />
             <Footer />

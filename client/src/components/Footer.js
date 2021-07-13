@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="Footer main-container">
             <div className="links">
                 <a href="https://www.facebook.com/tanja.senghaas">
-                    <TiSocialLinkedinCircular className="icon" />
+                    <TiSocialFacebookCircular className="icon" />
                 </a>
                 <a href="https://www.linkedin.com/in/tanja-senghaas-thomsen-1b224371/">
                     <TiSocialLinkedinCircular className="icon" />
@@ -23,10 +23,10 @@ const Footer = () => {
                 <a href="/">
                     <p>Impressum</p>
                 </a>
-                <a href="">
+                <a href="/">
                     <p>AGBs</p>
                 </a>
-                <a href="">
+                <a href="/">
                     <p>Rechtliches</p>
                 </a>
             </div>

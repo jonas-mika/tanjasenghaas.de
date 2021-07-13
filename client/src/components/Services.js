@@ -1,6 +1,6 @@
 import InfoContainers from './generics/InfoContainers';
 
-import { GiMeshNetwork } from 'react-icons/gi';
+import { RiComputerFill } from 'react-icons/ri';
 
 const data = [
     {
@@ -12,12 +12,12 @@ const data = [
     {
         icon: 'SiAdobeindesign',
         title: 'Workshops',
-        text: 'Vorträge und workshops rund um das Thema Gestaltung und Magazinentwicklung. Online und Offline.',
+        text: 'Vorträge und Workshops rund um das Thema Gestaltung und Magazinentwicklung. Online und Offline.',
         link_text: 'Read More',
     },
     {
         icon: 'SiAdobeindesign',
-        title: 'Branding',
+        title: 'Magazindesign',
         text: 'Neuentwicklung und Überarbeitung von Magazinen, Broschüren und White Papers.',
         link_text: 'Read More',
     },
@@ -34,8 +34,8 @@ const Services = () => {
         <div id="services" className="Services main-container component">
             <div>
                 <div className="component-header">
-                    <GiMeshNetwork className="component-icon" />
-                    <h1 className="component-title">Dienstleistungen</h1>
+                    <RiComputerFill className="component-icon" />
+                    <h1 className="component-title">Leistungen</h1>
                 </div>
                 <div className="component-content">
                     <InfoContainers data={data} />

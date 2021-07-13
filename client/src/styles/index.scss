@@ -10,8 +10,9 @@
     margin: 0px auto;
     height: 150px;
 
-    .subheader {
+    .subheader h4 {
         padding-top: 2px;
+        color: $darkgrey;
     }
 }
 
@@ -123,7 +124,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 80%;
 
         h1 {
             font-size: 6rem;
@@ -131,9 +131,9 @@
             padding: 50px 0;
         }
 
-        p {
-            font-size: 2rem;
-            font-weight: 600;
+        h3 {
+            font-size: 2.2rem;
+            font-weight: 400;
             text-align: center;
         }
 
@@ -145,15 +145,30 @@
             margin-top: 30%;
             width: 200px;
             color: $lightgrey;
+            transition: 0.5s ease;
 
-            p {
-                font-family: 'Open Sans';
-                font-size: 1rem;
-                font-weight: 400;
+            &:hover {
+                color: $pastelblue;
+                transform: scale(1.05);
             }
         }
-        .scroll-down:hover {
-            color: $pastelblue;
+
+        @media screen and (max-width: 1200px), (max-height: 1000px) {
+            h1 {
+                font-size: 4rem;
+            }
+            h3 {
+                font-size: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -185,49 +200,6 @@
             height: 100%;
         }
     }
-}
-
-@media screen and (max-width: 1200px) {
-    .Landing {
-        .text {
-            h1 {
-                font-size: 4rem;
-            }
-            p {
-                font-size: 1.5rem;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .Landing {
-        .text {
-            h1 {
-                font-size: 2rem;
-            }
-            p {
-                font-size: 1.2rem;
-            }
-        }
-    }
-}
-
-@media only screen and (max-height: 800px) {
-    .Landing {
-        .text {
-            h1 {
-                font-size: 60px;
-            }
-            .paragraph p {
-                font-size: 18px;
-            }
-        }
-    }
-}
-
-/*---------------- PROJECTS ---------------*/
-.Projects {
 }
 
 /*---------------- PHILOSOPHY ---------------*/

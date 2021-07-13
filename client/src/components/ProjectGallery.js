@@ -1,4 +1,4 @@
-import { GoProject } from 'react-icons/go';
+import { IoMdPhotos } from 'react-icons/io';
 import ScrollCarousel from './generics/ScrollCarousel';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
         <div id="projekte" className="Projects main-container component">
             <div>
                 <div className="component-header">
-                    <GoProject className="component-icon" />
+                    <IoMdPhotos className="component-icon" />
                     <h1 className="component-title">Projekte</h1>
                     <p className="component-subtitle"></p>
                 </div>
@@ -17,12 +17,7 @@ const Projects = ({ projects }) => {
                         {projects.map((project) =>
                             project.images.map((img) => {
                                 return (
-                                    <Link
-                                        className="box"
-                                        to={`/projects/${img.name
-                                            .slice(0, -5)
-                                            .toLowerCase()}`}
-                                    >
+                                    <div className="box">
                                         <img
                                             src={`/assets/images/${img.name.slice(
                                                 0,
@@ -36,8 +31,15 @@ const Projects = ({ projects }) => {
                                                 .slice(0, -5)
                                                 .toUpperCase()}
                                         </h4>
-                                        <h5>{img.description}</h5>
-                                    </Link>
+                                        <Link
+                                            to={`/projects/${img.name
+                                                .slice(0, -5)
+                                                .toLowerCase()}`}
+                                            className="carousel-link"
+                                        >
+                                            Read More.
+                                        </Link>
+                                    </div>
                                 );
                             })
                         )}

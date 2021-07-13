@@ -32,6 +32,15 @@ body {
     max-width: 1400px;
 }
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 // HEADLINES
 h1 {
     color: black;
@@ -64,14 +73,12 @@ h4 {
 
 h5 {
     color: $lightgrey;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 p {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
@@ -94,8 +101,14 @@ p {
 }
 
 a {
-    color: $lightgrey;
+    color: $darkgrey;
     text-decoration: none;
+    transition: 0.5s ease;
+}
+
+a:hover {
+    color: $pastelblue;
+    transform: scale(1.05);
 }
 // FANCY LINKS
 .link {
@@ -106,7 +119,7 @@ a {
 
     .a {
         text-decoration: none;
-        color: $lightgrey;
+        color: $darkgrey;
     }
 
     &:after {
@@ -149,7 +162,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    order: 1px solid green;
 
     .component-header {
         margin-top: 10%;
@@ -177,7 +190,7 @@ a {
                 font-size: 1.8rem;
             }
         }
-
+        /*
         .component-title:before {
             content: '';
             position: absolute;
@@ -187,9 +200,12 @@ a {
             width: 50px;
             border-bottom: 1px solid $darkgrey;
         }
+		*/
 
         .component-subtitle {
-            max-width: 80%;
+            width: 80%;
+            max-width: 1000px;
+            color: $darkgrey;
             margin-top: 15px;
         }
     }

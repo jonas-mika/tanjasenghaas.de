@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import Landing from '../components/Landing';
 import ProjectGallery from '../components/ProjectGallery';
@@ -6,6 +7,7 @@ import CustomerFeedback from '../components/CustomerFeedback';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import GoUp from '../components/generics/GoUp';
 
 const Main = ({ data }) => {
     return (
@@ -18,6 +20,7 @@ const Main = ({ data }) => {
             <Services />
             <Contact />
             <Footer />
+            <GoUp />
         </div>
     );
 };

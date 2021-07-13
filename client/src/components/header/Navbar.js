@@ -24,27 +24,30 @@ export const Navbar = () => {
             <div className="Navbar">
                 <div className="navbar-regular">
                     <div className="link">
-                        <AnchorLink className="a" href="#projekte">
+                        <AnchorLink className="a unselectable" href="#projekte">
                             Projekte
                         </AnchorLink>
                     </div>
                     <div className="link">
-                        <AnchorLink className="a" href="#philosophie">
+                        <AnchorLink
+                            className="a unselectable"
+                            href="#philosophie"
+                        >
                             Philosophie
                         </AnchorLink>
                     </div>
                     <div className="link">
-                        <AnchorLink className="a" href="#kunden">
+                        <AnchorLink className="a unselectable" href="#kunden">
                             Kunden
                         </AnchorLink>
                     </div>
                     <div className="link">
-                        <AnchorLink className="a" href="#services">
+                        <AnchorLink className="a unselectable" href="#services">
                             Services
                         </AnchorLink>
                     </div>
                     <div className="link">
-                        <AnchorLink className="a" href="#kontakt">
+                        <AnchorLink className="a unselectable" href="#kontakt">
                             Kontakt
                         </AnchorLink>
                     </div>
@@ -73,27 +76,42 @@ export const Navbar = () => {
                 >
                     <div className="menu">
                         <div className="link">
-                            <AnchorLink className="a" href="#projekte">
+                            <AnchorLink
+                                className="a unselectable"
+                                href="#projekte"
+                            >
                                 Projekte
                             </AnchorLink>
                         </div>
                         <div className="link">
-                            <AnchorLink className="a" href="#philosophie">
+                            <AnchorLink
+                                className="a unselectable"
+                                href="#philosophie"
+                            >
                                 Philosophie
                             </AnchorLink>
                         </div>
                         <div className="link">
-                            <AnchorLink className="a" href="#kunden">
+                            <AnchorLink
+                                className="a unselectable"
+                                href="#kunden"
+                            >
                                 Kunden
                             </AnchorLink>
                         </div>
                         <div className="link">
-                            <AnchorLink className="a" href="#services">
+                            <AnchorLink
+                                className="a unselectable"
+                                href="#services"
+                            >
                                 Services
                             </AnchorLink>
                         </div>
                         <div className="link">
-                            <AnchorLink className="a" href="#kontakt">
+                            <AnchorLink
+                                className="a unselectable"
+                                href="#kontakt"
+                            >
                                 Kontakt
                             </AnchorLink>
                         </div>

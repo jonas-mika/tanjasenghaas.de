@@ -7,7 +7,7 @@ const CustomerFeedback = ({ quotes }) => {
             <div>
                 <div className="component-header">
                     <ImBubble className="component-icon" />
-                    <h1 className="component-title">Kundenfeedback</h1>
+                    <h1 className="component-title">Kunden</h1>
                 </div>
                 <div className="component-content">
                     <QuoteSlider

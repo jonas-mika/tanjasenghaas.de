@@ -78,6 +78,23 @@
         height: 60vh;
         margin: 20vh 0;
         width: auto;
+
+        h4 {
+            color: black;
+            font-size: 1.4rem;
+        }
+
+        .carousel-link {
+            margin-top: 10px;
+            color: $darkgrey;
+            font-size: 0.8rem;
+            font-weight: 300;
+            transition: 0.5s ease;
+        }
+        .carousel-link:hover {
+            color: $pastelblue;
+            transform: scale(1.05);
+        }
     }
 
     .img {
@@ -90,7 +107,7 @@
 /* --------------- INFO CONTAINERS --------------------*/
 .InfoContainers {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 3fr));
     grid-gap: 1rem;
 
     .column {
@@ -104,13 +121,7 @@
         border-radius: 35px;
         padding: 80px 20px;
         overflow: hidden;
-
-        .blob {
-            position: absolute;
-            z-index: -1;
-            width: 100px;
-            transition: all 1s ease-out;
-        }
+        cursor: pointer;
 
         .column-content {
             display: flex;
@@ -120,21 +131,53 @@
 
             text-align: center;
 
-            .content-icon {
+            .icon-container {
+                position: relative;
                 margin: 20px 0;
-                width: 40px;
                 height: 50px;
-                color: white;
+                width: 50px;
+
+                .blob {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    transform: scale(1.3);
+                    transition: 1s ease;
+                    border-radius: 8px;
+                    background-color: $lightgrey;
+                    opacity: 0.5;
+                }
+
+                .content-icon {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    color: white;
+                }
             }
 
             h3,
             h4 {
                 transition: 0.5s ease-out;
-                color: $darkgrey;
             }
 
             h3 {
                 margin: 20px 0;
+                color: black;
+                font-weight: 700;
+                font-size: 1.4rem;
+            }
+
+            h4 {
+                text-transform: none;
+                color: $darkgrey;
+                letter-spacing: normal;
+                font-size: 1.1rem;
             }
         }
         .read-more {
@@ -149,14 +192,16 @@
         }
     }
 
-    .column:hover .blob {
-        transform: scale(10);
+    .column:hover .icon-container > .blob {
+        transform: scale(15);
     }
 
+    /*
     .column:hover .column-content > h3,
     .column:hover .column-content > h4 {
         color: white;
     }
+	*/
 
     @media only screen and (max-width: 600px) {
         flex-direction: column;
@@ -462,5 +507,25 @@
         @media screen and (max-width: 1000px) {
             flex-direction: column-reverse;
         }
+    }
+}
+
+.GoUp {
+    cursor: pointer;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: $lightgrey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #icon {
+        color: white;
+        width: 30px;
+        height: 30px;
     }
 }

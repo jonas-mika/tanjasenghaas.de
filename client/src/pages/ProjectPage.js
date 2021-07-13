@@ -6,9 +6,9 @@ const ProjectPage = ({ project }) => {
             <div className="container">
                 <div className="image">
                     <img
-                        src={`/assets/images/${project.name.toLowerCase()}/${
-                            project.images[0].name
-                        }`}
+                        src={`/assets/images/${project.images[0].name
+                            .slice(0, -5)
+                            .toLowerCase()}/${project.images[0].name}`}
                         alt={project.name}
                     />
                 </div>

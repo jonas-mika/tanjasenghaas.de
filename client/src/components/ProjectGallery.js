@@ -1,6 +1,6 @@
-import ArrowNavigation from './generics/ArrowNavigation';
 import { GoProject } from 'react-icons/go';
 import ScrollCarousel from './generics/ScrollCarousel';
+import { Link } from 'react-router-dom';
 
 const Projects = ({ projects }) => {
     console.log('received', projects);
@@ -17,7 +17,12 @@ const Projects = ({ projects }) => {
                         {projects.map((project) =>
                             project.images.map((img) => {
                                 return (
-                                    <div className="box">
+                                    <Link
+                                        className="box"
+                                        to={`/projects/${img.name
+                                            .slice(0, -5)
+                                            .toLowerCase()}`}
+                                    >
                                         <img
                                             src={`/assets/images/${img.name.slice(
                                                 0,
@@ -32,7 +37,7 @@ const Projects = ({ projects }) => {
                                                 .toUpperCase()}
                                         </h4>
                                         <h5>{img.description}</h5>
-                                    </div>
+                                    </Link>
                                 );
                             })
                         )}

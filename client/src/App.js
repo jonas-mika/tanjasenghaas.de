@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import Main from './pages/Main';
-import ProjectPage from './components/ProjectPage';
+import ProjectPage from './pages/ProjectPage';
 
 // scss styling
 import './styles/index.scss';

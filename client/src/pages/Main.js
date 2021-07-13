@@ -1,6 +1,6 @@
 import Header from '../components/header/Header';
 import Landing from '../components/Landing';
-import Projects from '../components/Projects';
+import ProjectGallery from '../components/ProjectGallery';
 import Philosophy from '../components/Philosophy';
 import CustomerFeedback from '../components/CustomerFeedback';
 import Services from '../components/Services';
@@ -12,7 +12,7 @@ const Main = ({ projects }) => {
         <div classname="MainPage">
             <Header />
             <Landing projects={projects} />
-            <Projects projects={projects} />
+            <ProjectGallery projects={projects} />
             <Philosophy />
             <CustomerFeedback />
             <Services />

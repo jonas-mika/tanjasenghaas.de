@@ -150,6 +150,9 @@
             &:after {
                 color: $accent;
                 content: 'Explore';
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
                 position: absolute;
                 text-align: center;
                 left: 0;

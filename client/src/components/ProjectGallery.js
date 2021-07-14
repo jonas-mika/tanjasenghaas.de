@@ -3,7 +3,6 @@ import ScrollCarousel from './generics/ScrollCarousel';
 import { Link } from 'react-router-dom';
 
 const Projects = ({ projects }) => {
-    console.log('received', projects);
     return (
         <div id="projekte" className="Projects main-container component">
             <div>

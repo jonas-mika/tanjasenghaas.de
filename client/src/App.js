@@ -33,9 +33,9 @@ function App() {
                         component={() => <Main data={data} />}
                     />
                     {projects.map((project) => {
-                        console.log(project.name.toLowerCase());
                         return (
                             <Route
+                                key={project.name.toLowerCase()}
                                 path={`/projects/${project.name
                                     .toLowerCase()
                                     .replace(' ', '-')}`}

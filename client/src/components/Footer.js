@@ -11,18 +11,21 @@ const Footer = () => {
                 <a
                     href="https://www.facebook.com/tanja.senghaas"
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <TiSocialFacebookCircular className="icon" />
                 </a>
                 <a
                     href="https://www.linkedin.com/in/tanja-senghaas-thomsen-1b224371/"
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <TiSocialLinkedinCircular className="icon" />
                 </a>
                 <a
                     href="https://github.com/jonas-mika/tanjasenghaas.de"
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <TiSocialGithubCircular className="icon" />
                 </a>

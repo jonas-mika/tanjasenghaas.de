@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import Landing from '../components/Landing';
 import ProjectGallery from '../components/ProjectGallery';

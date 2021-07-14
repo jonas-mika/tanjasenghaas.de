@@ -11,8 +11,14 @@ const QuoteSlider = ({
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
-        const timer = setInterval(nextSlide, delay);
-        return () => clearInterval(timer);
+        const nextSlide = () => {
+            setCurrent(current === quotes.length - 1 ? 0 : current + 1);
+        };
+
+        if (autoScroll) {
+            const timer = setInterval(nextSlide, delay);
+            return () => clearInterval(timer);
+        }
     }, [current]);
 
     const computeTransform = () => {

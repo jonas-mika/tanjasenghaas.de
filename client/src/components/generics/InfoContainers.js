@@ -1,8 +1,4 @@
-import blob_blue from '../../assets/icons/blob_blue.svg';
-import blob_orange from '../../assets/icons/blob_orange.svg';
 import * as Icons from 'react-icons/si';
-
-const blobs = [blob_blue, blob_orange];
 
 const InfoContainers = ({ data, showLinks }) => {
     return (

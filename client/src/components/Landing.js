@@ -3,8 +3,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { IoIosArrowDown } from 'react-icons/io';
 
 const Landing = ({ projects }) => {
-    const all_images = projects.map((project) => project.images).flat();
-
     return (
         <div className="Landing">
             <div className="text main-container">

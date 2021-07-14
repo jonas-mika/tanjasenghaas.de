@@ -1,5 +1,6 @@
-import Slider from './image-slider/Slider';
-import ArrowNavigation from './generics/ArrowNavigation';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Landing = ({ projects }) => {
     const all_images = projects.map((project) => project.images).flat();
@@ -17,11 +18,10 @@ const Landing = ({ projects }) => {
                     der Gestaltung und Konzeption in den Bereichen Editorial
                     Design, Corporate Design, Print und Webdesign.
                 </h3>
-                <div className="scroll-down">
-                    <ArrowNavigation
-                        component={'projekte'}
-                        direction={'down'}
-                    />
+                <div className="scroll-down-container">
+                    <AnchorLink href={`#projekte`} className="icon">
+                        <IoIosArrowDown className="icon" />
+                    </AnchorLink>
                 </div>
             </div>
         </div>

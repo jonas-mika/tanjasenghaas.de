@@ -332,12 +332,10 @@
 /* ---------------------- CONTACT FORM ------------------ */
 .ContactForm {
     .wrapper {
-        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: stretch;
         min-height: 400px;
-        max-height: 800px;
 
         @media screen and (max-width: 600px) {
             flex-direction: column;
@@ -347,7 +345,6 @@
         .contact-form {
             padding: 30px;
             width: 70%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -359,6 +356,10 @@
                 width: 100%;
             }
 
+            h3 {
+                font-size: 1.1rem;
+            }
+
             .contact-links {
                 display: flex;
                 flex-direction: column;
@@ -367,13 +368,8 @@
                 margin: 20px 0;
 
                 a {
-                    color: $darkgrey;
                     padding: 2px 0;
                     font-size: 0.9rem;
-                }
-
-                a:hover {
-                    color: $accent;
                 }
             }
 
@@ -382,7 +378,7 @@
 
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
 
                 .row {
@@ -396,7 +392,7 @@
                 textarea {
                     width: 100%;
                     font-family: sans-serif;
-                    padding: 10px 0px 10px 0px;
+                    padding: 10px 0px;
                     border: none;
                 }
 
@@ -407,9 +403,9 @@
                 .line {
                     position: absolute;
                     width: 100%;
-                    bottom: 9px;
+                    bottom: 10px;
                     left: 0;
-                    border-bottom: 3px solid $accent;
+                    border-bottom: 1px solid $accent;
                     transition: 1s ease;
                     transform: translateX(-101%);
                 }
@@ -417,6 +413,7 @@
                 textarea {
                     min-height: 200px;
                     resize: none;
+                    transition: 1s ease;
                 }
 
                 input:hover,
@@ -427,8 +424,20 @@
                 }
 
                 input:hover + .line,
+                input:focus + .line,
                 input:active + .line {
+                    border-bottom: 2px solid $accent;
                     transform: translateX(0%);
+                }
+
+                textarea:hover + .line,
+                textarea:focus + .line,
+                textarea:active + .line {
+                    transform: translateX(0%);
+                }
+
+                input:not(:placeholder-shown) + .line {
+                    transform: translateX(0);
                 }
 
                 #submit {
@@ -443,6 +452,17 @@
                     color: white;
                     background-color: $accent;
                 }
+
+                .user-message {
+                    margin-top: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 300;
+                    color: $accent;
+                }
+
+                @media screen and (max-width: 600px) {
+                    width: 80vw;
+                }
             }
         }
 
@@ -456,7 +476,7 @@
             }
 
             @media screen and (max-width: 600px) {
-                width: 80%;
+                width: 80vw;
             }
         }
     }

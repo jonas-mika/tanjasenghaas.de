@@ -1,26 +1,63 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import twilio from '../../twilio.json';
+import axios from 'axios';
+import qs from 'qs';
+
+// require('axios');
+// require('qs');
 
 const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
-    /*const [name, setName] = useState('Name');
-    const [mail, setMail] = useState('Mail');
-    const [message, setMessage] = useState('Schreiben Sie hier...');
+    const [sentMessage, setSentMessage] = useState(false);
 
-    const handleChange = (type, e) => {
-        if (type === 'name') {
-            setName(e.target.value);
-        } else if (type === 'mail') {
-            setMail(e.target.value);
-        } else {
-            setMessage(e.target.value);
-        }
-    }; */
+    const { accountSid, authToken, outNumber, inNumber } = twilio;
+
+    const sendMessage = async (sid, token, message, from, to) => {
+        await axios.post(
+            'https://api.twilio.com/2010-04-01/Accounts/' +
+                sid +
+                '/Messages.json',
+            qs.stringify({
+                Body: message,
+                From: from,
+                To: to,
+            }),
+            {
+                auth: {
+                    username: sid,
+                    password: token,
+                },
+            }
+        );
+    };
+
+    // const client = require('twilio')(accountSid, authToken);
 
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = (data) => {
+        // send message
+        const message = `\n\nNEUE NACHRICHT\n--------------\nName: ${data.name}\nMail: ${data.mail}\n\n${data.message}
+		`;
+        sendMessage(accountSid, authToken, message, outNumber, inNumber);
+        console.log('sent message');
+
+        // reset input values
+        reset({ name: '', mail: '', message: '' });
+        // show confirmation
+        setSentMessage(true);
+        const timeId = setTimeout(() => {
+            setSentMessage(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timeId);
+        };
+    };
 
     return (
         <div className="ContactForm">
@@ -66,6 +103,12 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
                             <div className="line"></div>
                         </div>
                         <input id="submit" type="submit" />
+                        {sentMessage && (
+                            <p className="user-message">
+                                Danke für ihre Nachricht. Ich melde mich so
+                                schnell wie möglich!
+                            </p>
+                        )}
                     </form>
                 </div>
             </div>

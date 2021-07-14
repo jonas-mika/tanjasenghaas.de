@@ -97,7 +97,7 @@ p {
 }
 
 .button:hover {
-    background-color: $pastelblue;
+    background-color: $accent;
 }
 
 a {
@@ -107,7 +107,7 @@ a {
 }
 
 a:hover {
-    color: $pastelblue;
+    color: $accent;
     transform: scale(1.05);
 }
 // FANCY LINKS
@@ -128,14 +128,14 @@ a:hover {
         width: 100%;
         left: 0;
         bottom: 0px;
-        border-bottom: 3px solid $pastelblue;
+        border-bottom: 3px solid $accent;
         transform: translateY(3px);
     }
     &:hover {
         transform: translateY(-3px);
     }
     &:hover .a {
-        color: $pastelblue;
+        color: $accent;
     }
     &:hover::after {
         transform: translateY(0);
@@ -150,7 +150,7 @@ a:hover {
 }
 
 .icon:hover {
-    color: $pastelblue;
+    color: $accent;
     transform: scale(1.05);
 }
 
@@ -203,10 +203,14 @@ a:hover {
 		*/
 
         .component-subtitle {
-            width: 80%;
             max-width: 1000px;
-            color: $darkgrey;
             margin-top: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+            color: $darkgrey;
+            width: 80%;
+            word-wrap: break-word;
+            letter-spacing: 1.5px;
         }
     }
 

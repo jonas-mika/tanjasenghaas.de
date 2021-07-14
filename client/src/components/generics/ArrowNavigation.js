@@ -7,7 +7,7 @@ const ArrowNavigation = ({ component, direction, style }) => {
         return (
             <div className="ScrollUp" style={style}>
                 <AnchorLink href={`#${component}`}>
-                    <IoIosArrowUp className="icon scroll-up" />
+                    <IoIosArrowUp className="icon" />
                 </AnchorLink>
             </div>
         );
@@ -15,7 +15,7 @@ const ArrowNavigation = ({ component, direction, style }) => {
         return (
             <div className="ScrollDown" style={style}>
                 <AnchorLink href={`#${component}`}>
-                    <IoIosArrowDown className="icon scroll-down" />
+                    <IoIosArrowDown className="icon" />
                 </AnchorLink>
             </div>
         );

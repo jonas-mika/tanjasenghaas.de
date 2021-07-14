@@ -60,7 +60,7 @@
 
 .burger-icon:hover {
     .burger-line {
-        background-color: $pastelblue;
+        background-color: $accent;
     }
 }
 
@@ -91,7 +91,7 @@
             margin: 5% 0;
 
             &:after {
-                border-bottom: 10px solid $pastelblue;
+                border-bottom: 10px solid $accent;
                 transform: translateY(10px);
             }
             &:hover {
@@ -128,7 +128,8 @@
         h1 {
             font-size: 6rem;
             text-align: center;
-            padding: 50px 0;
+            margin-bottom: 50px;
+            border-bottom: 20px solid $accent;
         }
 
         h3 {
@@ -137,19 +138,40 @@
             text-align: center;
         }
 
-        .scroll-down {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30%;
-            width: 200px;
-            color: $lightgrey;
+        .scroll-down-container {
+            position: relative;
+            text-align: center;
+            margin-top: 50px;
+            width: 100px;
+            height: 50px;
             transition: 0.5s ease;
+            cursor: pointer;
 
-            &:hover {
-                color: $pastelblue;
+            &:after {
+                color: $accent;
+                content: 'Explore';
+                position: absolute;
+                text-align: center;
+                left: 0;
+                bottom: -10px;
+                width: 100%;
+                transition: 0.5s ease;
+                opacity: 0;
+            }
+
+            &:hover::after {
+                opacity: 1;
                 transform: scale(1.05);
+            }
+
+            &:hover .icon {
+                color: $accent;
+                transform: scale(1.05);
+            }
+
+            .icon {
+                height: 100%;
+                width: 100%;
             }
         }
 
@@ -249,7 +271,7 @@
             }
 
             a:hover {
-                color: $pastelblue;
+                color: $accent;
             }
         }
 
@@ -313,7 +335,7 @@
         }
 
         a:hover p {
-            color: black;
+            color: $accent;
         }
     }
 }

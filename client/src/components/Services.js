@@ -23,7 +23,7 @@ const data = [
     },
     {
         icon: 'SiAdobeindesign',
-        title: 'Branding',
+        title: 'Consulting',
         text: 'Beratung zu grafischen und den damit relevanten organisatorischen Fragen in ihrem Unternehmen',
         link_text: 'Read More',
     },

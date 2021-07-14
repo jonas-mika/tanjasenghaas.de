@@ -29,26 +29,13 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
                     <img src={img} alt={img_alt} />
                 </div>
                 <div className="contact-form">
-                    <h3>Schreiben Sie mir eine Nachricht!</h3>
+                    <h3>Ich freue mich über ihre Nachricht!</h3>
                     <div className="contact-links">
-                        <a
-                            href={`mailto:${email}`}
-                            onClick={() => console.log(email)}
-                        >
-                            tanja.senghaas@web.de
-                        </a>
-                        <a
-                            href={maps_link}
-                            target="_blank"
-                            onClick={() => console.log('link to google')}
-                        >
+                        <a href={`mailto:${email}`}>tanja.senghaas@web.de</a>
+                        <a href={maps_link} target="_blank">
                             Horandstieg 30, 22559 HH
                         </a>
-                        <a
-                            href={`tel:${phone}`}
-                            target="_blank"
-                            onClick={() => console.log('+49 151 22543476')}
-                        >
+                        <a href={`tel:${phone}`} target="_blank">
                             +49 151 22543476
                         </a>
                     </div>

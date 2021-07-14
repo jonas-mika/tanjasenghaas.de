@@ -7,7 +7,7 @@ const Contact = () => {
         <div id="kontakt" className="Contact main-container component">
             <div className="component-header">
                 <AiOutlineMail className="component-icon" />
-                <h1 className="component-title">Contact</h1>
+                <h1 className="component-title">Kontakt</h1>
             </div>
             <div className="component-content">
                 <ContactForm

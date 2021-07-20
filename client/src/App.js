@@ -22,6 +22,25 @@ function App() {
         document.title = title;
     }, []);
 
+    useEffect(() => {
+        const classes = document.body.classList;
+        let timer = 0;
+
+        const stopTransition = () => {
+            if (timer) {
+                clearTimeout(timer);
+                timer = null;
+            } else classes.add('stop-transitions');
+
+            timer = setTimeout(() => {
+                classes.remove('stop-transitions');
+                timer = null;
+            }, 100);
+        };
+        window.addEventListener('resize', stopTransition);
+        return () => window.removeEventListener('resize', stopTransition);
+    }, []);
+
     return (
         <Router>
             <div className="App">

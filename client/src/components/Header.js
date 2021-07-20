@@ -14,13 +14,15 @@ const Navbar = ({ links }) => {
     }, []);
 
     if (menuActive) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
+    } else {
+        document.body.style.overflowY = 'unset';
     }
 
     if (windowWidth > 1200) {
         return (
             <div className="Navbar">
-                <div className="navbar-regular">
+                <div className="menu">
                     {links.map((link) => {
                         return (
                             <div className="link">
@@ -56,46 +58,18 @@ const Navbar = ({ links }) => {
                     }
                 >
                     <div className="menu">
-                        <div className="link">
-                            <AnchorLink
-                                className="a unselectable"
-                                href="#projekte"
-                            >
-                                Projekte
-                            </AnchorLink>
-                        </div>
-                        <div className="link">
-                            <AnchorLink
-                                className="a unselectable"
-                                href="#philosophie"
-                            >
-                                Philosophie
-                            </AnchorLink>
-                        </div>
-                        <div className="link">
-                            <AnchorLink
-                                className="a unselectable"
-                                href="#kunden"
-                            >
-                                Kunden
-                            </AnchorLink>
-                        </div>
-                        <div className="link">
-                            <AnchorLink
-                                className="a unselectable"
-                                href="#services"
-                            >
-                                Services
-                            </AnchorLink>
-                        </div>
-                        <div className="link">
-                            <AnchorLink
-                                className="a unselectable"
-                                href="#kontakt"
-                            >
-                                Kontakt
-                            </AnchorLink>
-                        </div>
+                        {links.map((link) => {
+                            return (
+                                <div className="link">
+                                    <AnchorLink
+                                        className="a unselectable"
+                                        href={`#${link.toLowerCase()}`}
+                                    >
+                                        {link}
+                                    </AnchorLink>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

@@ -1,11 +1,15 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Header from './Header';
 
 import { IoIosArrowDown } from 'react-icons/io';
 
-const Landing = ({ projects }) => {
+const Landing = ({ header_data }) => {
+    const { title, subtitle, links } = header_data;
+
     return (
         <div className="Landing">
-            <div className="text main-container">
+            <Header title={title} subtitle={subtitle} links={links} />
+            <div className="hero main-container">
                 <h1>GUTES DESIGN LEBT</h1>
                 <h3>
                     immer von einer Haltung. Es macht sich unsichtbar, es lässt

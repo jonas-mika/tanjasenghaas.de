@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 twilio.json
+
+# Local Netlify folder
+.netlify

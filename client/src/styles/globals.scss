@@ -20,7 +20,7 @@ body {
     max-width: 1400px;
 }
 
-.wrapper {
+.wrapper 
     width: 80%;
     margin: 0 auto;
     max-width: 1400px;
@@ -46,6 +46,9 @@ body {
     user-select: none;
 }
 
+.stop-transitions {
+    transition: none !important;
+}
 // HEADLINES
 h1 {
     color: black;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-export const Navbar = () => {
+const Navbar = ({ links }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [menuActive, setMenuActive] = useState(false);
 
@@ -15,42 +15,24 @@ export const Navbar = () => {
 
     if (menuActive) {
         document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'unset';
     }
 
     if (windowWidth > 1200) {
         return (
             <div className="Navbar">
                 <div className="navbar-regular">
-                    <div className="link">
-                        <AnchorLink className="a unselectable" href="#projekte">
-                            Projekte
-                        </AnchorLink>
-                    </div>
-                    <div className="link">
-                        <AnchorLink
-                            className="a unselectable"
-                            href="#philosophie"
-                        >
-                            Philosophie
-                        </AnchorLink>
-                    </div>
-                    <div className="link">
-                        <AnchorLink className="a unselectable" href="#kunden">
-                            Kunden
-                        </AnchorLink>
-                    </div>
-                    <div className="link">
-                        <AnchorLink className="a unselectable" href="#services">
-                            Services
-                        </AnchorLink>
-                    </div>
-                    <div className="link">
-                        <AnchorLink className="a unselectable" href="#kontakt">
-                            Kontakt
-                        </AnchorLink>
-                    </div>
+                    {links.map((link) => {
+                        return (
+                            <div className="link">
+                                <AnchorLink
+                                    className="a unselectable"
+                                    href={`#${link.toLowerCase()}`}
+                                >
+                                    {link}
+                                </AnchorLink>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );
@@ -58,7 +40,7 @@ export const Navbar = () => {
         return (
             <div className="Navbar">
                 <div
-                    className="burger-icon"
+                    className={menuActive ? 'burger-icon open' : 'burger-icon'}
                     onClick={() => setMenuActive(!menuActive)}
                 >
                     <div className="burger-line"></div>
@@ -72,7 +54,6 @@ export const Navbar = () => {
                             ? { transform: 'translate(0%)' }
                             : { transform: 'translate(100%)' }
                     }
-                    onClick={() => setMenuActive(!menuActive)}
                 >
                     <div className="menu">
                         <div className="link">
@@ -122,4 +103,30 @@ export const Navbar = () => {
     }
 };
 
-export default Navbar;
+const Header = ({ title, subtitle, links }) => {
+    return (
+        <div id="Header" className="Header main-container">
+            <div className="logo">
+                <div className="row unselectable">
+                    {title.split('').map((letter) => {
+                        if (letter === ' ') {
+                            return <h2 style={{ padding: '0 3px' }}> </h2>;
+                        }
+                        return <h2>{letter}</h2>;
+                    })}
+                </div>
+                <div className="row unselectable">
+                    {subtitle.split('').map((letter) => {
+                        if (letter === ' ') {
+                            return <h4 style={{ padding: '0 3px' }}> </h4>;
+                        }
+                        return <h4>{letter}</h4>;
+                    })}
+                </div>
+            </div>
+            <Navbar links={links} />
+        </div>
+    );
+};
+
+export default Header;

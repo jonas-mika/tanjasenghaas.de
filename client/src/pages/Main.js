@@ -1,23 +1,33 @@
-import Header from '../components/header/Header';
+import Header from '../components/Header';
 import Landing from '../components/Landing';
-import ProjectGallery from '../components/ProjectGallery';
-import Philosophy from '../components/Philosophy';
-import CustomerFeedback from '../components/CustomerFeedback';
+import Projekte from '../components/Projekte';
+import Philosophie from '../components/Philosophie';
+import Kunden from '../components/Kunden';
 import Services from '../components/Services';
-import Contact from '../components/Contact';
+import Kontakt from '../components/Kontakt';
 import Footer from '../components/Footer';
 import GoUp from '../components/generics/GoUp';
 
 const Main = ({ data }) => {
     return (
-        <div classname="MainPage">
-            <Header />
+        <div className="Main">
+            <Header
+                title={'Tanja Senghaas Designs'}
+                subtitle={'Creative Direction | Magazinentwicklung'}
+                links={[
+                    'Projekte',
+                    'Philosophie',
+                    'Kunden',
+                    'Services',
+                    'Kontakt',
+                ]}
+            />
             <Landing projects={data.projects} />
-            <ProjectGallery projects={data.projects} />
-            <Philosophy />
-            <CustomerFeedback quotes={data.quotes} />
+            <Projekte projects={data.projects} />
+            <Philosophie />
+            <Kunden quotes={data.quotes} />
             <Services />
-            <Contact />
+            <Kontakt />
             <Footer />
             <GoUp />
         </div>

@@ -11,18 +11,19 @@ import GoUp from '../components/generics/GoUp';
 const Main = ({ data }) => {
     return (
         <div className="Main">
-            <Header
-                title={'Tanja Senghaas Designs'}
-                subtitle={'Creative Direction | Magazinentwicklung'}
-                links={[
-                    'Projekte',
-                    'Philosophie',
-                    'Kunden',
-                    'Services',
-                    'Kontakt',
-                ]}
+            <Landing
+                header_data={{
+                    title: 'Tanja Senghaas Designs',
+                    subtitle: 'Creative Direction | Magazinentwicklung',
+                    links: [
+                        'Projekte',
+                        'Philosophie',
+                        'Kunden',
+                        'Services',
+                        'Kontakt',
+                    ],
+                }}
             />
-            <Landing projects={data.projects} />
             <Projekte projects={data.projects} />
             <Philosophie />
             <Kunden quotes={data.quotes} />

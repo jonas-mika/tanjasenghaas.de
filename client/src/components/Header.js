@@ -29,6 +29,7 @@ const Navbar = ({ links }) => {
                                 <AnchorLink
                                     className="a unselectable"
                                     href={`#${link.toLowerCase()}`}
+                                    onClick={() => setMenuActive(false)}
                                 >
                                     {link}
                                 </AnchorLink>
@@ -64,6 +65,7 @@ const Navbar = ({ links }) => {
                                     <AnchorLink
                                         className="a unselectable"
                                         href={`#${link.toLowerCase()}`}
+                                        onClick={() => setMenuActive(false)}
                                     >
                                         {link}
                                     </AnchorLink>

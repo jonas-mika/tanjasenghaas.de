@@ -332,10 +332,7 @@
 }
 /* --------------- SCROLL CAROUSEL --------------------*/
 .ScrollCarousel {
-    border: 1px solid magenta;
-
     .sticky-box {
-        border: 1px solid purple;
         position: -webkit-sticky;
         position: -moz-sticky;
         position: -ms-sticky;
@@ -344,11 +341,9 @@
         top: 0;
 
         .transform-box {
-            border: 1px solid green;
             display: inline-flex;
 
             .box {
-                border: 1px solid blue;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -391,14 +386,18 @@
             }
         }
         .skip {
+            color: $lightgrey;
             position: absolute;
-            bottom: 50px;
+            bottom: 35px;
             margin: 0 auto;
             padding: 5px;
             left: 45%;
             right: 45%;
             text-align: center;
             letter-spacing: 1px;
+        }
+        .skip:hover {
+            color: $accent;
         }
     }
 }

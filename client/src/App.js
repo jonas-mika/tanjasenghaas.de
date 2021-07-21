@@ -1,6 +1,6 @@
 // react imports
 import { useEffect } from 'react';
-import { isMobile } from 'react-device-detect';
+// import { isMobile } from 'react-device-detect';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import Main from './pages/Main';
@@ -23,12 +23,6 @@ function App() {
         document.title = title;
     }, []);
 
-    //
-    let stopOverflowOnMobile = {};
-    if (isMobile) {
-        stopOverflowOnMobile = { overflowX: 'hidden' };
-    }
-
     useEffect(() => {
         const classes = document.body.classList;
         let timer = 0;
@@ -50,7 +44,7 @@ function App() {
 
     return (
         <Router>
-            <div className="App" style={stopOverflowOnMobile}>
+            <div className="App">
                 <Favicon url={favicon} />
                 <Switch>
                     <Route

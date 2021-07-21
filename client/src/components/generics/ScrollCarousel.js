@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useRef } from 'react';
-import { useSpring, animated, interpolate } from 'react-spring';
+import { useEffect, useRef } from 'react';
+import { useSpring, animated, to } from 'react-spring';
 import useWindowScroll from '@react-hook/window-scroll';
 import useScrollWidth from './useScrollWidth';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const ScrollCarousel = ({ children }) => {
     const refHeight = useRef(null);
@@ -9,58 +10,65 @@ const ScrollCarousel = ({ children }) => {
 
     const { scrollWidth } = useScrollWidth(refTransform);
 
-    // the argument is the fps that the hook uses,
-    // since react spring interpolates values we can safely reduce this below 60
-    const scrollY = useWindowScroll(45);
-    const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
-
+    // logging values to, DEBUG
     useEffect(() => {
-        set({ st: scrollY });
-    }, [scrollY, set]);
+        console.log('ScrollY: ', scrollY);
+        console.log('Top: ', top);
+        console.log('Width: ', width);
+        console.log('elHeight: ', elHeight);
+    });
 
-    const onMouseMove = useCallback(
-        ({ clientX: x, clientY: y }) =>
-            set({
-                xy: [x - window.innerWidth / 2, y - window.innerHeight / 2],
-            }),
-        []
-    );
+    // current y scroll position (updates at 60fps using external hook)
+    const scrollY = useWindowScroll(60);
 
+    // get top and height of carousel object
     const top = refHeight.current ? refHeight.current.offsetTop : 0;
     const width = refHeight.current ? refHeight.current.offsetWidth : 0;
 
-    // we want to set the scrolling element *height* to the value of the *width* of the horizontal content
-    // plus some other calculations to convert it from a width to a height value
-    const elHeight =
-        scrollWidth - (window.innerWidth - window.innerHeight) + width * 0.05; // scroll away when final viewport width is 0.05 done
+    // get width of
+    const elHeight = scrollWidth; // scroll away when final viewport width is 0.05 done
 
-    const interpTransform = interpolate([st, xy], (o, xy) => {
-        const mouseMoveDepth = 50; // not necessary, but nice to have
-        const x = width - (top - o) - width;
-        /*console.log(top, width);
-        console.log('elHeight', elHeight);
-        console.log('x', x);*/
+    // define useSpring hook with object st, xy, initially set to 0, and [0, 0], can be modified using set() handler
+    const [{ scrollX, xy }, setScrollX] = useSpring(() => ({
+        scrollX: 0,
+        xy: [0, 0],
+    }));
 
-        // (width * 0.5) so that it starts moving just slightly before it comes into view
-        if (x < -window.innerHeight - width) {
-            // element is not yet in view, we're currently above it. so don't animate the translate value
-            return `translate3d(0, 0, 0)`;
+    // on every change of y (on scroll) set st to scroll Y
+    useEffect(() => {
+        setScrollX({ scrollX: scrollY });
+    }, [scrollY, setScrollX]);
+
+    const interpTransform = to([scrollX], (o) => {
+        // curr scroll x on container (negative if above top, above elHeight if scrolled past)
+        const x = -(top - o);
+
+        // start animation when current scroll position is top of scroll container
+        if (x < 0) {
+            return `translate3d(0, 0, 0)`; // default transform x val
         }
 
-        if (Math.abs(x) > elHeight) {
+        // stop animation when at end of scroll carousel
+        if (x > elHeight) {
             // element is not in view, currently below it.
             return `translate3d(${elHeight}, 0, 0)`;
         }
 
         // else animate as usual
-        return `translate3d(${-x + -xy[0] / mouseMoveDepth}px, ${
-            -xy[1] / mouseMoveDepth
-        }px, 0)`;
+        return `translate3d(${-x}px, 0, 0)`;
     });
+
+    /*const onMouseMove = useCallback(
+        ({ clientX: x, clientY: y }) =>
+            set({
+                xy: [x - window.innerWidth / 2, y - window.innerHeight / 2],
+            }),
+        []
+    );*/
 
     return (
         <div
-            onMouseMove={onMouseMove}
+            //onMouseMove={onMouseMove}
             className="ScrollCarousel"
             ref={refHeight}
             style={{ height: elHeight }}
@@ -73,6 +81,9 @@ const ScrollCarousel = ({ children }) => {
                 >
                     {children}
                 </animated.div>
+                <AnchorLink className="skip a" href={`#philosophie`}>
+                    SKIP
+                </AnchorLink>
             </div>
         </div>
     );

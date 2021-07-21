@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import Landing from '../components/Landing';
 import Projekte from '../components/Projekte';
 import Philosophie from '../components/Philosophie';

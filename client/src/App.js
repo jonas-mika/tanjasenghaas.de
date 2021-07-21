@@ -24,6 +24,15 @@ function App() {
     }, []);
 
     useEffect(() => {
+        const handleScrollY = () => {
+            window.scroll(0, window.pageYOffset);
+        };
+        window.addEventListener('scroll', handleScrollY, false);
+
+        return () => window.removeEventListener('scroll', handleScrollY, false);
+    });
+
+    useEffect(() => {
         const classes = document.body.classList;
         let timer = 0;
 

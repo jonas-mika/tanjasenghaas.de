@@ -81,7 +81,7 @@ const ScrollCarousel = ({ children }) => {
                 >
                     {children}
                 </animated.div>
-                <AnchorLink className="skip a" href={`#philosophie`}>
+                <AnchorLink className="skip" href={`#philosophie`}>
                     SKIP
                 </AnchorLink>
             </div>

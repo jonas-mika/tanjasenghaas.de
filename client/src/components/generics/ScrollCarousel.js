@@ -19,7 +19,7 @@ const ScrollCarousel = ({ children }) => {
     });
 
     // current y scroll position (updates at 60fps using external hook)
-    const scrollY = useWindowScroll(60);
+    const scrollY = useWindowScroll(500);
 
     // get top and height of carousel object
     const top = refHeight.current ? refHeight.current.offsetTop : 0;

@@ -360,6 +360,12 @@
                 margin: 20vh 0;
                 overflow: hidden;
 
+                @media screen and (min-width: 1000px) {
+                    width: 80vw;
+                    height: 70vh;
+                    margin: 15vh 0;
+                }
+
                 .img {
                     width: 80%;
                     height: 80%;

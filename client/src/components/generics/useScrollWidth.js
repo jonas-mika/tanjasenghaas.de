@@ -12,7 +12,6 @@ export default (ref) => {
     }, [ref]);
 
     useLayoutEffect(() => {
-        console.log(rect);
         const element = ref.current;
         if (!element) return;
 

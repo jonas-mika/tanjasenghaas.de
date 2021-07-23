@@ -346,17 +346,14 @@
     }
 }
 /* --------------- SCROLL CAROUSEL --------------------*/
-.ScrollCarousel {
-    position: relative;
-    overflow: visible;
+.sticky {
+    position: fixed !important;
+}
 
+.ScrollCarousel {
     .sticky-box {
-        position: -webkit-sticky;
-        position: -moz-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: sticky;
-        top: 0;
+        // position: sticky;
+        //top: 0;
 
         .transform-box {
             display: inline-flex;
@@ -402,6 +399,10 @@
                 }
             }
         }
+
+        .sticky-wrapper.sticky {
+        }
+
         .skip {
             color: $lightgrey;
             position: absolute;

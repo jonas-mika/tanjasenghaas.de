@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
+import ImageSlider from '../components/generics/ImageSlider';
 
 const ProjectPage = ({ project }) => {
+    const project_imgs = project.images.map(
+        (image) => `/assets/images/${image.name.slice(0, -5)}/${image.name}`
+    );
+
     return (
         <div className="ProjectPage">
             <div className="container">
-                <div className="image">
-                    <img
-                        src={`/assets/images/${project.images[0].name
-                            .slice(0, -5)
-                            .toLowerCase()}/${project.images[0].name}`}
-                        alt={project.name}
-                    />
+                <div className="image-slider">
+                    <ImageSlider images={project_imgs} />
                 </div>
                 <div className="content">
                     <div className="header">

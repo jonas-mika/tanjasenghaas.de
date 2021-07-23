@@ -1,6 +1,5 @@
 // react imports
 import { useEffect } from 'react';
-// import { isMobile } from 'react-device-detect';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import Main from './pages/Main';
@@ -22,17 +21,6 @@ function App() {
     useEffect(() => {
         document.title = title;
     }, []);
-
-    /*
-    useEffect(() => {
-        const handleScrollY = () => {
-            window.scroll(0, window.pageYOffset);
-        };
-        window.addEventListener('scroll', handleScrollY, false);
-
-        return () => window.removeEventListener('scroll', handleScrollY, false);
-    });
-	*/
 
     useEffect(() => {
         const classes = document.body.classList;

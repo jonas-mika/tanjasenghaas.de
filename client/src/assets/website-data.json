@@ -6,7 +6,7 @@
 			"id": 1,
 			"name": "Hygge",
 			"date": "November 2019",
-			"description": "I worked on this project and had a lot of fun",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mauris pretium venenatis tincidunt, ex justo maximus eros, eu efficitur libero nulla quis velit. Nullam ultricies sapien non quam egestas porttitor eu vel justo. Mauris sit amet elit erat. Vestibulum porta elementum massa ac tincidunt. Pellentesque aliquam leo a enim venenatis, a efficitur leo ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris sagittis eget ex in tempus. Nunc a ipsum consequat, efficitur nisl eget, aliquam arcu. Sed pulvinar tellus semper sollicitudin pellentesque. Curabitur faucibus libero vitae gravida euismod. Quisque euismod urna eget interdum.",
 			"images": [
 				{
 					"name": "hygge1.jpg",
@@ -26,7 +26,7 @@
 			"id": 2,
 			"name": "Holly",
 			"date": "April 2020",
-			"description": "I worked on this project and had a lot of fun",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mauris pretium venenatis tincidunt, ex justo maximus eros, eu efficitur libero nulla quis velit. Nullam ultricies sapien non quam egestas porttitor eu vel justo. Mauris sit amet elit erat. Vestibulum porta elementum massa ac tincidunt. Pellentesque aliquam leo a enim venenatis, a efficitur leo ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris sagittis eget ex in tempus. Nunc a ipsum consequat, efficitur nisl eget, aliquam arcu. Sed pulvinar tellus semper sollicitudin pellentesque. Curabitur faucibus libero vitae gravida euismod. Quisque euismod urna eget interdum.",
 			"images": [
 				{
 					"name": "holly1.jpg",
@@ -54,7 +54,7 @@
 			"id": 3,
 			"name": "Wohllebens Welt",
 			"date": "August 2020",
-			"description": "I worked on this project and had a lot of fun",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mauris pretium venenatis tincidunt, ex justo maximus eros, eu efficitur libero nulla quis velit. Nullam ultricies sapien non quam egestas porttitor eu vel justo. Mauris sit amet elit erat. Vestibulum porta elementum massa ac tincidunt. Pellentesque aliquam leo a enim venenatis, a efficitur leo ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris sagittis eget ex in tempus. Nunc a ipsum consequat, efficitur nisl eget, aliquam arcu. Sed pulvinar tellus semper sollicitudin pellentesque. Curabitur faucibus libero vitae gravida euismod. Quisque euismod urna eget interdum.",
 			"images": [
 				{
 					"name": "wohllebens-welt1.jpg",
@@ -105,6 +105,52 @@
         "author": "York Pijahn",
         "position": "Gründer und Partner",
         "company": "Narrative Impact"
+    }
+	],
+	"philosophie" : [
+    {
+        "icon": "IoMdBook",
+        "title": "Editorial Design",
+        "text": "Durch den Blick auf das große Ganze unterstützt und bestimmt das Visuelle den Inhalt und prägt wie nebenbei das gesamte Erscheinungsbild.",
+        "link_text": "Read More"
+    },
+    {
+		"icon": "RiTeamFill",
+        "title": "Artdirektion",
+        "text": "Die kreative Umsetzung und Begleitung aller Produktionsvorgänge fußt auf einer künstlerischen Verantwortung.",
+        "link_text": "Read More"
+    },
+    {
+        "icon": "IoIosColorPalette",
+        "title": "Grafikdesign",
+        "text": "Deren Komposition lässt gedankliche Zusammenhänge in visuell erfahrbarem Kontext entstehen und erlebbar machen.",
+        "link_text": "Read More"
+    }
+	],
+	"leistungen" : [
+    {
+        "icon": "FaLightbulb",
+        "title": "Branding",
+        "text": "Entwicklung von Logos. Corporate Design. Webauftritt",
+        "link_text": "Read More"
+    },
+    {
+        "icon": "IoPeople",
+        "title": "Workshops",
+        "text": "Vorträge und Workshops rund um das Thema Gestaltung und Magazinentwicklung. Online und Offline.",
+        "link_text": "Read More"
+    },
+    {
+        "icon": "IoMdBook",
+        "title": "Magazindesign",
+        "text": "Neuentwicklung und Überarbeitung von Magazinen, Broschüren und White Papers.",
+        "link_text": "Read More"
+    },
+    {
+        "icon": "IoChatbubblesSharp",
+        "title": "Consulting",
+        "text": "Beratung zu grafischen und den damit relevanten organisatorischen Fragen in ihrem Unternehmen",
+        "link_text": "Read More"
     }
 	]
 }

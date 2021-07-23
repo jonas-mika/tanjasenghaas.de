@@ -36,7 +36,7 @@ const ScrollCarousel = ({ children }) => {
         }
 
         // stop animation when at end of scroll carousel
-        else if (x > elHeight + window.innerHeight) {
+        else if (x > elHeight) {
             // element is not in view, currently below it.
             return `translate3d(${elHeight}, 0, 0)`;
         } else {

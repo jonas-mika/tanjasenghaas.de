@@ -9,7 +9,16 @@ const ProjectPage = ({ project }) => {
     return (
         <div className="ProjectPage">
             <div className="container">
-                <div className="image-slider">
+                <div
+                    className="image-slider"
+                    intial={{ y: '-200px' }}
+                    animate={{ y: 0 }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 150,
+                        duration: '5s',
+                    }}
+                >
                     <ImageSlider images={project_imgs} />
                 </div>
                 <div className="content">

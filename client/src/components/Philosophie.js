@@ -1,28 +1,7 @@
 import { ImQuotesLeft } from 'react-icons/im';
 import InfoContainers from './generics/InfoContainers';
 
-const philosophy_data = [
-    {
-        icon: 'SiAdobeindesign',
-        title: 'Editorial Design',
-        text: 'Durch den Blick auf das große Ganze unterstützt und bestimmt das Visuelle den Inhalt und prägt wie nebenbei das gesamte Erscheinungsbild.',
-        link_text: 'Read More',
-    },
-    {
-        icon: 'SiAdobephotoshop',
-        title: 'Artdirektion',
-        text: 'Die kreative Umsetzung und Begleitung aller Produktionsvorgänge fußt auf einer künstlerischen Verantwortung.',
-        link_text: 'Read More',
-    },
-    {
-        icon: 'SiAdobelightroomcc',
-        title: 'Grafikdesign',
-        text: 'Deren Komposition lässt gedankliche Zusammenhänge in visuell erfahrbarem Kontext entstehen und erlebbar machen.',
-        link_text: 'Read More',
-    },
-];
-
-const Philosophy = () => {
+const Philosophy = ({ philosophy_data }) => {
     return (
         <div id="philosophie" className="Philosophy main-container component">
             <div>

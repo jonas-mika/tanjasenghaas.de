@@ -24,9 +24,9 @@ const Main = ({ data }) => {
                 }}
             />
             <Projekte projects={data.projects} />
-            <Philosophie />
+            <Philosophie philosophy_data={data.philosophie} />
             <Kunden quotes={data.quotes} />
-            <Services />
+            <Services services={data.leistungen} />
             <Kontakt />
             <Footer />
             <GoUp />

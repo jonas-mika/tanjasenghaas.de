@@ -4,9 +4,6 @@ import twilio from '../../twilio.json';
 import axios from 'axios';
 import qs from 'qs';
 
-// require('axios');
-// require('qs');
-
 const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
     const [sentMessage, setSentMessage] = useState(false);
 
@@ -31,14 +28,7 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
         );
     };
 
-    // const client = require('twilio')(accountSid, authToken);
-
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
         // send message
@@ -69,10 +59,10 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
                     <h3>Ich freue mich über ihre Nachricht!</h3>
                     <div className="contact-links">
                         <a href={`mailto:${email}`}>tanja.senghaas@web.de</a>
-                        <a href={maps_link} target="_blank">
+                        <a href={maps_link} target="noopener">
                             Horandstieg 30, 22559 HH
                         </a>
-                        <a href={`tel:${phone}`} target="_blank">
+                        <a href={`tel:${phone}`} target="noopener">
                             +49 151 22543476
                         </a>
                     </div>
@@ -102,7 +92,11 @@ const ContactForm = ({ img, img_alt, email, phone, maps_link }) => {
                             />
                             <div className="line"></div>
                         </div>
-                        <input id="submit" type="submit" />
+                        <input
+                            id="submit"
+                            type="submit"
+                            style={{ zIndex: 1 }}
+                        />
                         {sentMessage && (
                             <p className="user-message">
                                 Danke für ihre Nachricht. Ich melde mich so

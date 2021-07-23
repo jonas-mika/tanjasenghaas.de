@@ -23,9 +23,9 @@ const Navbar = ({ links }) => {
         return (
             <div className="Navbar">
                 <div className="menu">
-                    {links.map((link) => {
+                    {links.map((link, index) => {
                         return (
-                            <div className="link">
+                            <div key={index} className="link">
                                 <AnchorLink
                                     className="a unselectable"
                                     href={`#${link.toLowerCase()}`}
@@ -59,9 +59,9 @@ const Navbar = ({ links }) => {
                     }
                 >
                     <div className="menu">
-                        {links.map((link) => {
+                        {links.map((link, index) => {
                             return (
-                                <div className="link">
+                                <div key={index} className="link">
                                     <AnchorLink
                                         className="a unselectable"
                                         href={`#${link.toLowerCase()}`}
@@ -84,19 +84,27 @@ const Header = ({ title, subtitle, links }) => {
         <div id="Header" className="Header main-container">
             <div className="logo">
                 <div className="row unselectable">
-                    {title.split('').map((letter) => {
+                    {title.split('').map((letter, index) => {
                         if (letter === ' ') {
-                            return <h2 style={{ padding: '0 3px' }}> </h2>;
+                            return (
+                                <h2 key={index} style={{ padding: '0 3px' }}>
+                                    {' '}
+                                </h2>
+                            );
                         }
-                        return <h2>{letter}</h2>;
+                        return <h2 key={index}>{letter}</h2>;
                     })}
                 </div>
                 <div className="row unselectable">
-                    {subtitle.split('').map((letter) => {
+                    {subtitle.split('').map((letter, index) => {
                         if (letter === ' ') {
-                            return <h4 style={{ padding: '0 3px' }}> </h4>;
+                            return (
+                                <h4 key={index} style={{ padding: '0 3px' }}>
+                                    {' '}
+                                </h4>
+                            );
                         }
-                        return <h4>{letter}</h4>;
+                        return <h4 key={index}>{letter}</h4>;
                     })}
                 </div>
             </div>

@@ -57,6 +57,10 @@ const ScrollCarousel = ({ children }) => {
     };
 
     useEffect(() => {
+        console.log(withinContainer);
+    });
+
+    useEffect(() => {
         window.addEventListener('scroll', listenToScroll);
         return () => {
             window.removeEventListener('scroll', listenToScroll);
@@ -70,15 +74,16 @@ const ScrollCarousel = ({ children }) => {
             ref={refHeight}
             style={{
                 height: elHeight,
-                opacity: withinContainer ? 1 : 0,
-                transition: '.2s ease',
+                zIndex: -2,
             }}
         >
-            <Sticky style={{ position: !withinContainer && 'relative' }}>
-                <div
-                    className="sticky-box"
-                    style={{ position: !withinContainer && 'relative' }}
-                >
+            <Sticky
+                stickyStyle={{
+                    opacity: !withinContainer ? 0 : 1,
+                    zIndex: 0,
+                }}
+            >
+                <div className="sticky-box">
                     <animated.div
                         style={{ transform: interpTransform }}
                         className="transform-box"

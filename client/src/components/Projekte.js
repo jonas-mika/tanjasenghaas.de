@@ -16,7 +16,10 @@ const Projects = ({ projects }) => {
                         {projects.map((project) =>
                             project.images.map((img) => {
                                 return (
-                                    <div className="box">
+                                    <div
+                                        key={img.name.slice(0, -4)}
+                                        className="box"
+                                    >
                                         <img
                                             src={`/assets/images/${img.name.slice(
                                                 0,

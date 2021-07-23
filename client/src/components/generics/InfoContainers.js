@@ -6,7 +6,7 @@ const InfoContainers = ({ data, showLinks }) => {
             {data.map((data, index) => {
                 const Icon = Icons[data.icon];
                 return (
-                    <div className="column">
+                    <div key={index} className="column">
                         <div className="column-content">
                             <div className="icon-container">
                                 <div className="blob"></div>

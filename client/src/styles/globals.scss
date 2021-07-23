@@ -103,6 +103,7 @@ p {
     background-color: $lightgrey;
     color: white;
     transition: 0.2s ease;
+    z-index: 1;
 }
 
 .button:hover {
@@ -113,6 +114,7 @@ a {
     color: $darkgrey;
     text-decoration: none;
     transition: 0.5s ease;
+    z-index: 1;
 }
 
 a:hover {
@@ -130,6 +132,7 @@ a:hover {
         text-decoration: none;
         color: $darkgrey;
         transition: color 1ms linear;
+        z-index: 1;
     }
 
     &:after {

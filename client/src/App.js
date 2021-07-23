@@ -23,6 +23,7 @@ function App() {
         document.title = title;
     }, []);
 
+    /*
     useEffect(() => {
         const handleScrollY = () => {
             window.scroll(0, window.pageYOffset);
@@ -31,6 +32,7 @@ function App() {
 
         return () => window.removeEventListener('scroll', handleScrollY, false);
     });
+	*/
 
     useEffect(() => {
         const classes = document.body.classList;

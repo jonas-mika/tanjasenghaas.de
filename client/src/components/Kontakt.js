@@ -11,7 +11,7 @@ const Contact = () => {
             </div>
             <div className="component-content">
                 <ContactForm
-                    img={'/assets/images/portrait/tanja2.jpg'}
+                    img={'/assets/images/portrait/tanja.jpg'}
                     alt={'tanja_portrait'}
                     email={'tanja.senghaas@web.de'}
                     phone={'+49 151 22543476'}

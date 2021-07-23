@@ -13,38 +13,33 @@ const Projects = ({ projects }) => {
                 </div>
                 <div className="component-content">
                     <ScrollCarousel>
-                        {projects.map((project) =>
-                            project.images.map((img) => {
-                                return (
-                                    <div
-                                        key={img.name.slice(0, -4)}
-                                        className="box"
+                        {projects.map((project) => {
+                            return (
+                                <div
+                                    key={project.name.toLowerCase()}
+                                    className="box"
+                                >
+                                    <img
+                                        src={`/assets/images/${project.name
+                                            .toLowerCase()
+                                            .replace(' ', '-')}/${
+                                            project.images[0].name
+                                        }.webp`}
+                                        alt={project.images[0].name}
+                                        className="img"
+                                    />
+                                    <h4>{project.name.toUpperCase()}</h4>
+                                    <Link
+                                        to={`/projects/${project.name
+                                            .toLowerCase()
+                                            .replace(' ', '-')}`}
+                                        className="carousel-link"
                                     >
-                                        <img
-                                            src={`/assets/images/${img.name.slice(
-                                                0,
-                                                -5
-                                            )}/${img.name}`}
-                                            alt={img.name}
-                                            className="img"
-                                        />
-                                        <h4>
-                                            {img.name
-                                                .slice(0, -5)
-                                                .toUpperCase()}
-                                        </h4>
-                                        <Link
-                                            to={`/projects/${img.name
-                                                .slice(0, -5)
-                                                .toLowerCase()}`}
-                                            className="carousel-link"
-                                        >
-                                            Read More.
-                                        </Link>
-                                    </div>
-                                );
-                            })
-                        )}
+                                        Read More.
+                                    </Link>
+                                </div>
+                            );
+                        })}
                     </ScrollCarousel>
                 </div>
             </div>

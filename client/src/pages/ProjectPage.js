@@ -3,22 +3,16 @@ import ImageSlider from '../components/generics/ImageSlider';
 
 const ProjectPage = ({ project }) => {
     const project_imgs = project.images.map(
-        (image) => `/assets/images/${image.name.slice(0, -5)}/${image.name}`
+        (image) =>
+            `/assets/images/${project.name.toLowerCase().replace(' ', '-')}/${
+                image.name
+            }.webp`
     );
 
     return (
         <div className="ProjectPage">
             <div className="container">
-                <div
-                    className="image-slider"
-                    intial={{ y: '-200px' }}
-                    animate={{ y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        stiffness: 150,
-                        duration: '5s',
-                    }}
-                >
+                <div className="image-slider">
                     <ImageSlider images={project_imgs} />
                 </div>
                 <div className="content">

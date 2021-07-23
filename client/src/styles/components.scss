@@ -365,9 +365,9 @@
                 justify-content: center;
                 flex-shrink: 0;
                 /* need to hardcode box sizses, else images loading throw off calculations */
-                height: 60vh;
+                height: 80vh;
                 width: 800px;
-                margin: 20vh 0;
+                margin: 10vh 0;
 
                 @media screen and (min-width: 1000px) {
                     width: 80vw;
@@ -376,8 +376,8 @@
                 }
 
                 .img {
-                    width: 80%;
-                    height: 80%;
+                    width: 100%;
+                    height: 100%;
                     object-fit: scale-down;
                 }
 

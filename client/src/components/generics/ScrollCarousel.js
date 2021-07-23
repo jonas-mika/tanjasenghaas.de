@@ -57,10 +57,6 @@ const ScrollCarousel = ({ children }) => {
     };
 
     useEffect(() => {
-        console.log(withinContainer);
-    });
-
-    useEffect(() => {
         window.addEventListener('scroll', listenToScroll);
         return () => {
             window.removeEventListener('scroll', listenToScroll);

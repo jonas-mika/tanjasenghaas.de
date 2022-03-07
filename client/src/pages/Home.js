@@ -1,16 +1,12 @@
-import React, { useState } from "react"
-
-import Header from '../layouts/Header'
-import Footer from '../layouts/Footer'
+import React, { useState } from "react";
+import { Flex, Text, Heading } from "@chakra-ui/react";
 
 const Home = () => {
-  return(
-    <>
-      <Header />
-      <p>Main</p>
-      <Footer />
-    </>
-    )
-}
+  return (
+    <Flex mx="auto" px="2rem" w="100%" maxWidth={1200}>
+      <Heading>Home</Heading>
+    </Flex>
+  );
+};
 
-export default Home
+export default Home;

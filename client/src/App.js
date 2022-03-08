@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
+import { ChakraProvider, Container, Flex, useColorMode } from "@chakra-ui/react";
 import AnimatedCursor from "react-animated-cursor";
 import useMobileDetect from "use-mobile-detect-hook";
 
@@ -10,7 +10,7 @@ import Vita from "./pages/Vita";
 import Project from "./pages/Project";
 
 // global styling
-import Theme from "./styling/theme";
+import theme from "./styling/theme";
 import Font from "./styling/font";
 
 // global components
@@ -20,8 +20,10 @@ import Footer from "./layouts/Footer";
 const App = () => {
   const mobile = useMobileDetect();
 
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <ChakraProvider theme={Theme}>
+    <ChakraProvider theme={theme}>
       <Font />
       {mobile.isMobile && (
         <AnimatedCursor
@@ -29,7 +31,7 @@ const App = () => {
           outerSize={8}
           color="193, 11, 111"
           outerAlpha={0.2}
-          innerScale={0.7}
+          innerScale={0}
           outerScale={5}
         />
       )}

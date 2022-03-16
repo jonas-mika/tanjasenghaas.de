@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ChakraProvider, Container, Flex, useColorMode } from "@chakra-ui/react";
 import AnimatedCursor from "react-animated-cursor";
@@ -19,7 +19,6 @@ import Footer from "./layouts/Footer";
 
 const App = () => {
   const mobile = useMobileDetect();
-
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (

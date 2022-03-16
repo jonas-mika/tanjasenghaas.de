@@ -1,11 +1,9 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Project = () => {
-  return(
-    <div>
-      <p>Project</p>
-    </div>
-    )
-}
+  return <Heading>Project</Heading>;
+};
 
-export default Project
+export default Project;

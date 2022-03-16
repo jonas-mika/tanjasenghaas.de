@@ -55,5 +55,5 @@ const breakpoints = createBreakpoints({
 })
 
 
-const Theme = extendTheme({ styles, config, sizes, colors, fonts, breakpoints })
-export default Theme
+const theme = extendTheme({ styles, config, sizes, colors, fonts, breakpoints })
+export default theme

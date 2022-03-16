@@ -38,7 +38,7 @@ const MenuLink = ({ item, link, pr }) => {
 const Header = () => {
   return (
     <Flex
-      py="3rem"
+      pt="3rem"
       mx="auto"
       px="2rem"
       w="100%"

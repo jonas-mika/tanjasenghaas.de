@@ -63,10 +63,6 @@ const MenuLink = ({ item, link, pr }) => {
 const Header = ({ menuOpen, setMenuOpen }) => {
   const windowSize = useWindowSize();
 
-  useEffect(() => {
-    console.log(windowSize.width);
-  }, [windowSize]);
-
   return (
     <Flex
       pt="3rem"
@@ -100,7 +96,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           justify="center"
           onClick={() => setMenuOpen(!menuOpen)}
           zIndex={10}
-          whileHover={{ rotate : 45 }}
+          whileHover={{ rotate: 45, cursor: 'pointer' }}
           whileTab={{ scale : 0.9 }}
         >
           <AiOutlinePlus size="50px" />

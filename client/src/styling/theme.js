@@ -3,9 +3,6 @@ import { createBreakpoints, mode } from '@chakra-ui/theme-tools'
 
 const styles = {
   global: props => ({
-    html: {
-      cursor: 'none'
-    },
     body: {
       bg: mode('#ffffff', '#202023')(props)
     }

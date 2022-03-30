@@ -17,6 +17,7 @@ import useMobileDetect from "use-mobile-detect-hook";
 import Home from "./pages/Home";
 import Vita from "./pages/Vita";
 import Project from "./pages/Project";
+import NoMatch from "./pages/NoMatch";
 
 // global styling
 import theme from "./styling/theme";
@@ -63,11 +64,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="vita" element={<Vita />} />
-              <Route
-                path=":projectId"
-                element={<Project />}
-              />
-              {/* 404 Page */}
+    {/*<Route path=":projectId" element={<Project />} />*/}
+              <Route path="*" element={<NoMatch />} />
             </Routes>
 
             <Footer />

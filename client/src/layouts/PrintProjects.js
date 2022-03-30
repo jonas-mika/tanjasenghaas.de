@@ -26,7 +26,7 @@ const PrintProjects = ({ projects }) => {
     <Box w="100%">
       <Text
         ml="3rem"
-        mt="10rem"
+        mt="20rem"
         mb="1rem"
         fontWeight={500}
         fontSize={{
@@ -52,6 +52,7 @@ const PrintProjects = ({ projects }) => {
               w="100%"
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
+              transition={{ duration: 1 }} 
               onMouseEnter={() => {
                 setHovered(i);
               }}
@@ -89,13 +90,15 @@ const PrintProjects = ({ projects }) => {
                           align='center'
                           justify='center'
                           initial={{ background: 'rgba(0, 0, 0, 0)' }}
-                          animate={{ background: 'rgba(255, 255, 255, 0.5)' }}
+                          animate={{ background: 'rgba(0, 0, 0, 0.8)' }}
                           initial={{ background: 'rgba(0, 0, 0, 0)' }}
                           transition={{ duration: 0.5 }}
                         >
                           <MotionText
                             textAlign="center"
-                            fontSize={20}
+                            fontSize={['1.4rem', '1.6rem', '1.8rem', '2rem', '2.2rem']}
+                            fontWeight={300}
+                            color='white'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}

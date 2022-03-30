@@ -25,12 +25,12 @@ import Font from "./styling/font";
 // global components
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
+import OverlayMenu from "./layouts/OverlayMenu";
 
 const App = () => {
   const mobile = useMobileDetect();
   const { colorMode, toggleColorMode } = useColorMode();
-
-  console.log(theme);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <ChakraProvider theme={theme}>
@@ -47,25 +47,31 @@ const App = () => {
       )}
 
       <Router>
-        <Flex
-          direction="column"
-          align="flex-start"
-          height="100vh"
-          width="100vw"
-        >
-          <Header />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="vita" element={<Vita />} />
-            <Route
-              path=":projectId"
-              element={<Project />}
+          <OverlayMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+          <Flex
+            direction="column"
+            align="flex-start"
+            height="100vh"
+            width="100vw"
+            cursor="none"
+          >
+            <Header
+              menuOpen={menuOpen}
+              setMenuOpen={setMenuOpen}
             />
-          </Routes>
 
-          <Footer />
-        </Flex>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="vita" element={<Vita />} />
+              <Route
+                path=":projectId"
+                element={<Project />}
+              />
+              {/* 404 Page */}
+            </Routes>
+
+            <Footer />
+          </Flex>
       </Router>
     </ChakraProvider>
   );

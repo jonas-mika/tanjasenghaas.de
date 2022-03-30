@@ -8,8 +8,10 @@ import {
   GridItem,
   AspectRatio
 } from "@chakra-ui/react";
-
+import { motion } from 'framer-motion'
 import LazyImage from "../components/LazyImage";
+
+const MotionGridItem = motion(GridItem)
 
 const PrintProjects = () => {
   const projects = [
@@ -53,8 +55,11 @@ const PrintProjects = () => {
             Array(project.num_images).keys()
           ).map((j) => {
             return (
-              <GridItem 
+              <MotionGridItem 
                 w='100%'
+                initial={{ opacity: 0, x: -Math.random()*100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
               >
                 <AspectRatio ratio={1}>
                   <Image
@@ -66,7 +71,7 @@ const PrintProjects = () => {
                     objectFit="cover"
                   />
                 </AspectRatio>
-              </GridItem>
+              </MotionGridItem>
             );
           });
         })}

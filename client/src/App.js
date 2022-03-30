@@ -64,7 +64,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="vita" element={<Vita />} />
-    {/*<Route path=":projectId" element={<Project />} />*/}
+              <Route path=":projectId" element={<Project />} /> 
               <Route path="*" element={<NoMatch />} />
             </Routes>
 

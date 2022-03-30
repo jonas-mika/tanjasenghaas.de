@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 import {
   ChakraProvider,
   Container,
@@ -37,9 +38,9 @@ const App = () => {
   const customers = require("./customers.json");
 
   const data = {
-    "projects": projects,
-    "customers": customers
-  }
+    projects: projects,
+    customers: customers,
+  };
 
   return (
     <ChakraProvider theme={theme}>
@@ -61,12 +62,17 @@ const App = () => {
           />
 
           <Routes>
-            <Route path="/" element={<Home data={data}/>} />
+            <Route
+              path="/"
+              element={<Home data={data} />}
+            />
             <Route path="vita" element={<Vita />} />
             {projects.map((project, i) => {
               return (
                 <Route
-                  path={project.name.toLowerCase().replaceAll(" ", "-")}
+                  path={project.name
+                    .toLowerCase()
+                    .replaceAll(" ", "-")}
                   element={<Project project={project} />}
                 />
               );

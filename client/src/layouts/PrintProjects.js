@@ -52,7 +52,7 @@ const PrintProjects = ({ projects }) => {
               w="100%"
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
-              transition={{ duration: 1 }} 
+              transition={{ type: "spring", duration: 1 }} 
               onMouseEnter={() => {
                 setHovered(i);
               }}
@@ -92,7 +92,7 @@ const PrintProjects = ({ projects }) => {
                           initial={{ background: 'rgba(0, 0, 0, 0)' }}
                           animate={{ background: 'rgba(0, 0, 0, 0.8)' }}
                           initial={{ background: 'rgba(0, 0, 0, 0)' }}
-                          transition={{ duration: 0.5 }}
+                          transition={{ type:"easeInOut", duration: 0.2 }}
                         >
                           <MotionText
                             textAlign="center"
@@ -102,7 +102,7 @@ const PrintProjects = ({ projects }) => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ delay: 0.1, duration: 0.1 }}
                           >
                             {project.name.toUpperCase()}
                           </MotionText>

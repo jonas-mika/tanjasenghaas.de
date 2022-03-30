@@ -47,11 +47,12 @@ const colors = {
 }
 
 const breakpoints = createBreakpoints({
-  sm: '30em', // 480px 
-  md: '48em', // 768px
-  lg: '62em', // 992px
-  xl: '80em', // 1280px
-  '2xl': '96em', // 1536px
+  base: '0px', // 480px 
+  sm: '380px', // mobile
+  md: '720px', // half screen laptop
+  lg: '1440px', // full screen laptop
+  xl: '1920px', // desktop
+  '2xl': '2220px', // large desktop 
 })
 
 

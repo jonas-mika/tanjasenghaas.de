@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ChakraProvider, Container, Flex, useColorMode } from "@chakra-ui/react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import {
+  ChakraProvider,
+  Container,
+  Flex,
+  useColorMode,
+} from "@chakra-ui/react";
 import AnimatedCursor from "react-animated-cursor";
 import useMobileDetect from "use-mobile-detect-hook";
 
@@ -20,6 +29,8 @@ import Footer from "./layouts/Footer";
 const App = () => {
   const mobile = useMobileDetect();
   const { colorMode, toggleColorMode } = useColorMode();
+
+  console.log(theme);
 
   return (
     <ChakraProvider theme={theme}>
@@ -47,7 +58,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="vita" element={<Vita />} />
-            <Route path=":projectId" element={<Project />} />
+            <Route
+              path=":projectId"
+              element={<Project />}
+            />
           </Routes>
 
           <Footer />

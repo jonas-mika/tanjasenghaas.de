@@ -25,8 +25,8 @@ const MenuLink = ({ item, link, pr }) => {
     <Box ml="1rem">
       <Link to={`/${link}`}>
         <Text
-          fontWeight={300}
-          fontSize={{ sm: ".7rem", md: ".85rem", lg: "1rem" }}
+          fontWeight={400}
+          fontSize={{ sm: ".8rem", md: ".9rem", lg: "1rem" }}
         >
           {item}
         </Text>
@@ -40,8 +40,9 @@ const Header = () => {
     <Flex
       pt="3rem"
       mx="auto"
-      px="2rem"
+      px="3rem"
       w="100%"
+      h='5rem'
       maxWidth={1200}
       align="flex-end"
       justify="space-between"

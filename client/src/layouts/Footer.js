@@ -28,7 +28,7 @@ const Footer = () => {
       w="100%"
       py="3rem"
       mx="auto"
-      px="2rem"
+      px="3rem"
       maxWidth={1200}
       align="flex-start"
       justify="space-between"

@@ -48,8 +48,9 @@ const PrintProjects = ({ projects }) => {
         {projects.map((project, i) => {
           return (
             <MotionGridItem
+              key={i}
               w="100%"
-              initial={{ y: Math.random() * 50 }}
+              initial={{ y: 50 }}
               whileInView={{ y: 0 }}
               onMouseEnter={() => {
                 setHovered(i);

@@ -15,7 +15,6 @@ const Slide = ({ quote }) => {
       align="center"
       justify="center"
       direction="column"
-      flexShrik={0}
     >
       <Text
         textAlign="center"

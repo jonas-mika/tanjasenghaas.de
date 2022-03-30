@@ -4,7 +4,7 @@ import {
   RiArrowDropRightFill,
 } from "react-icons/ri";
 
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 
 const Slide = ({ quote }) => {
   return (
@@ -20,7 +20,6 @@ const Slide = ({ quote }) => {
         textAlign="center"
         fontSize={["1rem", "1.05rem", "1.1rem", "1.15rem"]}
         lineHeight="150%"
-        color="gray.700"
       >
         {quote.quote}</Text>
       <Text textAlign="center" fontWeight={600} mt="2rem" mb='.3rem'>
@@ -30,7 +29,6 @@ const Slide = ({ quote }) => {
         textAlign="center"
         fontSize={[".7rem", ".75rem", ".8rem", ".9rem"]}
         lineHeight="110%"
-        color="gray.700"
       >
         {quote.position}
       </Text>
@@ -38,7 +36,6 @@ const Slide = ({ quote }) => {
         textAlign="center"
         fontSize={[".7rem", ".75rem", ".8rem", ".9rem"]}
         lineHeight="110%"
-        color="gray.700"
       >
         {quote.company}
       </Text>
@@ -54,6 +51,7 @@ const QuoteSlider = ({
   autoScroll,
 }) => {
   const [current, setCurrent] = useState(0);
+
   useEffect(() => {
     const nextSlide = () => {
       setCurrent(
@@ -92,7 +90,7 @@ const QuoteSlider = ({
       // gray box
       ml="calc(50% - 50vw)"
       mr="calc(50% - 50vw)"
-      bg="gray.400"
+      bg='blackAlpha.500'
     >
       <Flex
         // big wrapper
@@ -140,13 +138,14 @@ const QuoteSlider = ({
                   borderRadius="100%"
                   h={2}
                   w={2}
+                  cursor='pointer'
                   transform={
                     i === current
                       ? "scale(1.2)"
                       : "scale(1)"
                   }
                   bgColor={
-                    i === current ? "black" : "gray.500"
+                    i === current ? 'white' : "whiteAlpha.500"
                   }
                   onClick={() => setCurrent(i)}
                 />

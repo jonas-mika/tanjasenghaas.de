@@ -4,7 +4,7 @@ import {
   Flex,
   Text,
   Heading,
-  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -48,6 +48,8 @@ const MenuLink = ({ name, link, setMenuOpen }) => {
 };
 
 const OverlayMenu = ({ menuOpen, setMenuOpen }) => {
+  const bg = useColorModeValue("white", "gray.800")
+
   const variants = {
     visible: {
       y: 0,
@@ -70,11 +72,11 @@ const OverlayMenu = ({ menuOpen, setMenuOpen }) => {
     <AnimatePresence>
       {menuOpen && (
         <MotionFlex
+          bgColor={bg}
           position="absolute"
           w="100vw"
           h="100vh"
           direction="column"
-          bgColor="white"
           align="center"
           justify="center"
           initial="hidden"

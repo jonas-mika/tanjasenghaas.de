@@ -9,9 +9,7 @@ import {
 // custom components
 import QuoteSlider from "../components/QuoteSlider";
 
-const Customers = () => {
-  const customers = require('../customers.json')
-
+const Customers = ({ customers }) => {
   return (
     <Box w="100%">
       <Text

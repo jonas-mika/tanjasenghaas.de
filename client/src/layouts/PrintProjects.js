@@ -9,27 +9,16 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import LazyImage from "../components/LazyImage";
 
 const MotionGridItem = motion(GridItem);
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
+const MotionText = motion(Text);
 
-const PrintProjects = () => {
+const PrintProjects = ({ projects }) => {
   const [hovered, setHovered] = useState(null);
-
-  const projects = [
-    { name: "gesund-leben", num_images: 1 },
-    { name: "holly", num_images: 5 },
-    { name: "hygge", num_images: 3 },
-    { name: "modern-living", num_images: 4 },
-    { name: "robb", num_images: 3 },
-    { name: "salzwasser-medien", num_images: 1 },
-    { name: "sport-fitness", num_images: 1 },
-    { name: "wohllebens-welt", num_images: 5 },
-    { name: "wolf", num_images: 6 },
-  ]
 
   const dummies = [{ name: "dummy", num_images: 5 }];
 
@@ -57,54 +46,70 @@ const PrintProjects = () => {
         gap={5}
       >
         {projects.map((project, i) => {
-            return (
-              <MotionGridItem
-                w="100%"
-                initial={{ y: Math.random() * 50 }}
-                whileInView={{ y: 0 }}
-                onMouseEnter={() => {
-                  setHovered(i);
-                }}
-                onMouseLeave={() => {
-                  setHovered(null);
-                }}
-                whileHover={{ opacity: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <AspectRatio ratio={1}>
-                  <>
-                    <Image
-                      key={i}
-                      src={`/images/dummy/dummy${i % 5}.jpeg`}
-                      alt={`${project.name}-cover`}
-                      height="100%"
-                      width="100%"
-                      objectFit="cover"
-                    />
-                    {i === hovered && (
-                      <AnimatePresence>
-                        <Link to={project.name} onClick={() => {
-                          window.scrollTo(0, 0)
-                        }}>
-                          <MotionFlex
-                            position="absolute"
-                            zIndex={10}
+          return (
+            <MotionGridItem
+              w="100%"
+              initial={{ y: Math.random() * 50 }}
+              whileInView={{ y: 0 }}
+              onMouseEnter={() => {
+                setHovered(i);
+              }}
+              onMouseLeave={() => {
+                setHovered(null);
+              }}
+              whileHover={{ background: 'rgba(56, 255, 255, 0.1)' }}
+              viewport={{ once: true }}
+            >
+              <AspectRatio ratio={1}>
+                <>
+                  <Image
+                    key={i}
+                    src={`/images/dummy/dummy${i % 5}.jpeg`}
+                    alt={`${project.name}-cover`}
+                    height="100%"
+                    width="100%"
+                    objectFit="cover"
+                  />
+                  {i === hovered && (
+                    <AnimatePresence>
+                      <Link
+                        to={project.name
+                          .toLowerCase()
+                          .replaceAll(" ", "-")}
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                        }}
+                      >
+                        <MotionFlex
+                          position="absolute"
+                          zIndex={10}
+                          w='100%'
+                          h='100%'
+                          align='center'
+                          justify='center'
+                          initial={{ background: 'rgba(0, 0, 0, 0)' }}
+                          animate={{ background: 'rgba(255, 255, 255, 0.5)' }}
+                          initial={{ background: 'rgba(0, 0, 0, 0)' }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <MotionText
+                            textAlign="center"
+                            fontSize={20}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
+                            transition={{ duration: 0.5 }}
                           >
-                            <Text color="black">
-                              {project.name.toUpperCase()}
-                            </Text>
-                          </MotionFlex>
-                        </Link>
-                      </AnimatePresence>
-                    )}
-                  </>
-                </AspectRatio>
-              </MotionGridItem>
-            );
+                            {project.name.toUpperCase()}
+                          </MotionText>
+                        </MotionFlex>
+                      </Link>
+                    </AnimatePresence>
+                  )}
+                </>
+              </AspectRatio>
+            </MotionGridItem>
+          );
         })}
       </Grid>
     </Box>

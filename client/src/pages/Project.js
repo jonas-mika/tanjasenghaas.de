@@ -12,6 +12,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
+const MotionFlex = motion(Flex);
 const MotionGridItem = motion(GridItem);
 
 const Project = ({ project }) => {
@@ -20,13 +21,16 @@ const Project = ({ project }) => {
   const dummies = [{ name: "dummy", num_images: 5 }];
 
   return (
-    <Flex
+    <MotionFlex
       direction="column"
       mx="auto"
       px="3rem"
       w="100%"
-      mt="5rem"
+      mt="6rem"
       maxWidth={1200}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <Box w="100%">
         <Text
@@ -44,11 +48,11 @@ const Project = ({ project }) => {
         </Text>
         <Text
           lineHeight={0}
-          mt=".5rem"
+          mt=".8rem"
           color="gray.700"
           fontWeight={300}
         >
-          {project.task}
+          {project.date}, {project.task}
         </Text>
         <Text mt="2rem" maxWidth="70%">
           {project.description}
@@ -69,7 +73,7 @@ const Project = ({ project }) => {
         </Text>
       </Box>
       <Grid
-        mt='5rem'
+        mt='6rem'
         templateColumns={{
           sm: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
@@ -82,14 +86,8 @@ const Project = ({ project }) => {
             Array(project.num_images).keys()
           ).map((j) => {
             return (
-              <MotionGridItem
+              <GridItem
                 w="100%"
-                initial={{
-                  opacity: 0,
-                  x: -Math.random() * 100,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
               >
                 <AspectRatio ratio={1}>
                   <Image
@@ -101,12 +99,12 @@ const Project = ({ project }) => {
                     objectFit="cover"
                   />
                 </AspectRatio>
-              </MotionGridItem>
+              </GridItem>
             );
           });
         })}
       </Grid>
-    </Flex>
+    </MotionFlex>
   );
 };
 

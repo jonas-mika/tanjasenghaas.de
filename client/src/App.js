@@ -10,7 +10,6 @@ import {
   Flex,
   useColorMode,
 } from "@chakra-ui/react";
-import AnimatedCursor from "react-animated-cursor";
 import useMobileDetect from "use-mobile-detect-hook";
 
 // pages
@@ -33,43 +32,50 @@ const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // load static data at root
+  const projects = require("./projects.json");
+  const customers = require("./customers.json");
+
+  const data = {
+    "projects": projects,
+    "customers": customers
+  }
+
   return (
     <ChakraProvider theme={theme}>
       <Font />
-      {mobile.isMobile && (
-        <AnimatedCursor
-          innerSize={8}
-          outerSize={8}
-          color="193, 11, 111"
-          outerAlpha={0.2}
-          innerScale={0}
-          outerScale={5}
-        />
-      )}
-
       <Router>
-          <OverlayMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-          <Flex
-            direction="column"
-            align="flex-start"
-            height="100vh"
-            width="100vw"
-            cursor="none"
-          >
-            <Header
-              menuOpen={menuOpen}
-              setMenuOpen={setMenuOpen}
-            />
+        <OverlayMenu
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
+        <Flex
+          direction="column"
+          align="flex-start"
+          height="100vh"
+          width="100vw"
+        >
+          <Header
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+          />
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="vita" element={<Vita />} />
-              <Route path=":projectId" element={<Project />} /> 
-              <Route path="*" element={<NoMatch />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Home data={data}/>} />
+            <Route path="vita" element={<Vita />} />
+            {projects.map((project, i) => {
+              return (
+                <Route
+                  path={project.name.toLowerCase().replaceAll(" ", "-")}
+                  element={<Project project={project} />}
+                />
+              );
+            })}
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
 
-            <Footer />
-          </Flex>
+          <Footer />
+        </Flex>
       </Router>
     </ChakraProvider>
   );

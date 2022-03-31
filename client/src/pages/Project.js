@@ -8,16 +8,21 @@ import {
   Heading,
   Grid,
   GridItem,
+  useColorModeValue
 } from "@chakra-ui/react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+
+import useWindowSize from "../components/useWindowSize";
 
 const MotionFlex = motion(Flex);
 const MotionGridItem = motion(GridItem);
 
 const Project = ({ project }) => {
   let { projectID } = useParams();
+  const windowSize = useWindowSize();
 
+  const gray = useColorModeValue("blackAlpha.700", "whiteAlpha.700")
   const dummies = [{ name: "dummy", num_images: 5 }];
 
   return (
@@ -49,12 +54,23 @@ const Project = ({ project }) => {
         <Text
           lineHeight={0}
           mt=".8rem"
-          color="gray.700"
-          fontWeight={300}
+          color={gray}
+          fontWeight={400}
         >
           {project.date}, {project.task}
         </Text>
-        <Text mt="2rem" maxWidth="70%">
+        <Text
+          mt="3rem"
+          fontSize={[
+            ".8rem",
+            ".9rem",
+            "1rem",
+            "1.1rem",
+            "1.2rem",
+          ]}
+          lineHeight={7}
+          maxWidth={windowSize.width > 600 ? "70%" : "100%"}
+        >
           {project.description}
         </Text>
         <Text
@@ -65,15 +81,15 @@ const Project = ({ project }) => {
             "1rem",
             "1.1rem",
           ]}
-          fontWeight="bold"
-          color="gray.700"
-          mt="1rem"
+          fontWeight={400}
+          color={gray}
+          mt="2rem"
         >
           {project.company}
         </Text>
       </Box>
       <Grid
-        mt='6rem'
+        mt="6rem"
         templateColumns={{
           sm: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
@@ -86,9 +102,7 @@ const Project = ({ project }) => {
             Array(project.num_images).keys()
           ).map((j) => {
             return (
-              <GridItem
-                w="100%"
-              >
+              <GridItem w="100%">
                 <AspectRatio ratio={1}>
                   <Image
                     key={i}

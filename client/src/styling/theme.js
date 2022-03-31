@@ -1,18 +1,21 @@
-import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints, mode } from '@chakra-ui/theme-tools'
+import { extendTheme } from "@chakra-ui/react";
+import {
+  createBreakpoints,
+  mode,
+} from "@chakra-ui/theme-tools";
 
 const styles = {
-  global: props => ({
+  global: (props) => ({
     body: {
-      bg: mode('#ffffff', '#202023')(props)
-    }
-  })
-}
+      bg: mode("#ffffff", "#202023")(props),
+    },
+  }),
+};
 
 const config = {
-  initialColorMode: 'light',
-  useSystemColorMode: false
-}
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
 
 /*
 const components = {
@@ -28,30 +31,36 @@ const components = {
 */
 
 const fonts = {
-  heading: "Roboto",
-  body: "Roboto"
-}
+  heading: "Montserrat",
+  body: "Montserrat",
+};
 
 const sizes = {
-  sm: '20px',
-  md: '40px',
-  lg: '60px',
-  xl: '80px',
-}
+  sm: "20px",
+  md: "40px",
+  lg: "60px",
+  xl: "80px",
+};
 
 const colors = {
-  grassTeal: '#88ccca'
-}
+  grassTeal: "#88ccca",
+};
 
 const breakpoints = createBreakpoints({
-  base: '0px', // 480px 
-  sm: '380px', // mobile
-  md: '720px', // half screen laptop
-  lg: '1440px', // full screen laptop
-  xl: '1920px', // desktop
-  '2xl': '2220px', // large desktop 
-})
+  base: "0px", // 480px
+  sm: "380px", // mobile
+  md: "720px", // half screen laptop
+  lg: "1440px", // full screen laptop
+  xl: "1920px", // desktop
+  "2xl": "2220px", // large desktop
+});
 
-
-const theme = extendTheme({ styles, config, sizes, colors, fonts, breakpoints })
-export default theme
+const theme = extendTheme({
+  styles,
+  config,
+  sizes,
+  colors,
+  fonts,
+  breakpoints,
+});
+export default theme;

@@ -4,7 +4,13 @@ import {
   RiArrowDropRightFill,
 } from "react-icons/ri";
 
-import { Box, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 const Slide = ({ quote }) => {
   return (
@@ -18,11 +24,18 @@ const Slide = ({ quote }) => {
     >
       <Text
         textAlign="center"
+        fontWeight={350}
         fontSize={["1rem", "1.05rem", "1.1rem", "1.15rem"]}
         lineHeight="150%"
       >
-        {quote.quote}</Text>
-      <Text textAlign="center" fontWeight={600} mt="2rem" mb='.3rem'>
+        {quote.quote}
+      </Text>
+      <Text
+        textAlign="center"
+        fontWeight={600}
+        mt="2rem"
+        mb=".3rem"
+      >
         {quote.author}
       </Text>
       <Text
@@ -90,14 +103,13 @@ const QuoteSlider = ({
       // gray box
       ml="calc(50% - 50vw)"
       mr="calc(50% - 50vw)"
-      bg='blackAlpha.500'
+      bg="blackAlpha.500"
     >
       <Flex
         // big wrapper
         maxWidth={1280}
         w="100%"
-        py="3rem"
-        px="3rem"
+        py="1rem"
         mx="auto"
         direction="column"
         align="center"
@@ -138,14 +150,16 @@ const QuoteSlider = ({
                   borderRadius="100%"
                   h={2}
                   w={2}
-                  cursor='pointer'
+                  cursor="pointer"
                   transform={
                     i === current
                       ? "scale(1.2)"
                       : "scale(1)"
                   }
                   bgColor={
-                    i === current ? 'white' : "whiteAlpha.500"
+                    i === current
+                      ? "white"
+                      : "whiteAlpha.500"
                   }
                   onClick={() => setCurrent(i)}
                 />

@@ -52,14 +52,16 @@ const PrintProjects = ({ projects }) => {
               w="100%"
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
-              transition={{ type: "spring", duration: 1 }} 
+              transition={{ type: "spring", duration: 1 }}
               onMouseEnter={() => {
                 setHovered(i);
               }}
               onMouseLeave={() => {
                 setHovered(null);
               }}
-              whileHover={{ background: 'rgba(56, 255, 255, 0.1)' }}
+              whileHover={{
+                background: "rgba(56, 255, 255, 0.1)",
+              }}
               viewport={{ once: true }}
             >
               <AspectRatio ratio={1}>
@@ -85,24 +87,43 @@ const PrintProjects = ({ projects }) => {
                         <MotionFlex
                           position="absolute"
                           zIndex={10}
-                          w='100%'
-                          h='100%'
-                          align='center'
-                          justify='center'
-                          initial={{ background: 'rgba(0, 0, 0, 0)' }}
-                          animate={{ background: 'rgba(0, 0, 0, 0.8)' }}
-                          initial={{ background: 'rgba(0, 0, 0, 0)' }}
-                          transition={{ type:"easeInOut", duration: 0.2 }}
+                          w="100%"
+                          h="100%"
+                          align="center"
+                          justify="center"
+                          initial={{
+                            background: "rgba(0, 0, 0, 0)",
+                          }}
+                          animate={{
+                            background:
+                              "rgba(0, 0, 0, 0.8)",
+                          }}
+                          initial={{
+                            background: "rgba(0, 0, 0, 0)",
+                          }}
+                          transition={{
+                            type: "easeInOut",
+                            duration: 0,
+                          }}
                         >
                           <MotionText
                             textAlign="center"
-                            fontSize={['1.4rem', '1.6rem', '1.8rem', '2rem', '2.2rem']}
+                            fontSize={[
+                              "1.4rem",
+                              "1.6rem",
+                              "1.8rem",
+                              "2rem",
+                              "2.2rem",
+                            ]}
                             fontWeight={300}
-                            color='white'
+                            color="white"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ delay: 0.1, duration: 0.1 }}
+                            transition={{
+                              delay: 0.1,
+                              duration: 0.1,
+                            }}
                           >
                             {project.name.toUpperCase()}
                           </MotionText>

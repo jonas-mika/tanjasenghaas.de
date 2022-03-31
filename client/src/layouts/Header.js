@@ -16,8 +16,9 @@ import { motion } from "framer-motion";
 
 // custom hook
 import useWindowSize from "../components/useWindowSize";
+import Switch from "../components/Switch";
 
-const MotionFlex = motion(Flex)
+const MotionFlex = motion(Flex);
 
 const Title = () => {
   return (
@@ -40,7 +41,6 @@ const Subtitle = () => {
   );
 };
 
-
 const MenuLink = ({ item, link, pr }) => {
   return (
     <Box ml="1rem">
@@ -62,6 +62,7 @@ const MenuLink = ({ item, link, pr }) => {
 
 const Header = ({ menuOpen, setMenuOpen }) => {
   const windowSize = useWindowSize();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Flex
@@ -80,13 +81,20 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           <Subtitle />
         </Flex>
       </Link>
-      {windowSize.width > 800 ? (
+      {windowSize.width > 900 ? (
         <Flex className="menu" align="center">
           <MenuLink item={"Designs"} link={"vita"} />
           <MenuLink item={"Angebot"} link={"vita"} />
           <MenuLink item={"Über mich"} link={"vita"} />
           <MenuLink item={"Kundenfeeback"} link={"vita"} />
           <MenuLink item={"Kontakt"} link={"vita"} />
+          <Switch
+            isOn={colorMode === "light"}
+            onClick={toggleColorMode}
+            bgOn="#A89C92"
+            bgOff="#1A202C"
+            ml='1rem'
+          />
         </Flex>
       ) : (
         <MotionFlex
@@ -96,8 +104,8 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           justify="center"
           onClick={() => setMenuOpen(!menuOpen)}
           zIndex={10}
-          whileHover={{ rotate: 45, cursor: 'pointer' }}
-          whileTab={{ scale : 0.9 }}
+          whileHover={{ rotate: 45, cursor: "pointer" }}
+          whileTab={{ scale: 0.9 }}
         >
           <AiOutlinePlus size="50px" />
         </MotionFlex>

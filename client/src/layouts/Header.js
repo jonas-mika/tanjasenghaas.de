@@ -83,11 +83,10 @@ const Header = ({ menuOpen, setMenuOpen }) => {
       </Link>
       {windowSize.width > 900 ? (
         <Flex className="menu" align="center">
-          <MenuLink item={"Designs"} link={"vita"} />
-          <MenuLink item={"Angebot"} link={"vita"} />
+          <MenuLink item={"Projekte"} link={"projekte"} />
+          <MenuLink item={"Angebot"} link={"angebot"} />
           <MenuLink item={"Über mich"} link={"vita"} />
-          <MenuLink item={"Kundenfeeback"} link={"vita"} />
-          <MenuLink item={"Kontakt"} link={"vita"} />
+          <MenuLink item={"Kontakt"} link={"kontakt"} />
           <Switch
             isOn={colorMode === "light"}
             onClick={toggleColorMode}

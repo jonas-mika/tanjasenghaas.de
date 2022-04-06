@@ -19,7 +19,6 @@ const MotionFlex = motion(Flex);
 const MotionGridItem = motion(GridItem);
 
 const Project = ({ project }) => {
-  let { projectID } = useParams();
   const windowSize = useWindowSize();
 
   const gray = useColorModeValue("blackAlpha.700", "whiteAlpha.700")
@@ -52,7 +51,6 @@ const Project = ({ project }) => {
           {project.name}
         </Text>
         <Text
-          lineHeight={0}
           mt=".8rem"
           color={gray}
           fontWeight={400}

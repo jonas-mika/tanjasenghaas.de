@@ -36,10 +36,12 @@ const App = () => {
   // load static data at root
   const projects = require("./projects.json");
   const customers = require("./customers.json");
+  const vita = require("./vita.json");
 
   const data = {
     projects: projects,
     customers: customers,
+    vita: vita,
   };
 
   return (
@@ -66,7 +68,10 @@ const App = () => {
               path="/"
               element={<Home data={data} />}
             />
-            <Route path="vita" element={<Vita />} />
+            {/*<Route path="projekte" element={<Projects />} />*/}
+    {/*<Route path="angebot" element={<Offerings />} />*/}
+            <Route path="vita" element={<Vita vita={vita}/>} />
+    {/*<Route path="kontakt" element={<Contact />} />*/}
             {projects.map((project, i) => {
               return (
                 <Route

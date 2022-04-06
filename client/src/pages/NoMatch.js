@@ -11,8 +11,9 @@ const NoMatch = () => {
   return (
     <Flex
       direction="column"
+      my="6rem"
       mx="auto"
-      px="3rem"
+      px={{"sm": "2rem", "md": "3rem"}}
       w="100%"
       maxWidth={1200}
     >
@@ -24,7 +25,6 @@ const NoMatch = () => {
           "1.6rem",
           "1.7rem",
         ]}
-        mt="5rem"
         mb="1rem"
       >
         404 :/

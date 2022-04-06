@@ -28,9 +28,9 @@ const Project = ({ project }) => {
     <MotionFlex
       direction="column"
       mx="auto"
-      px="3rem"
+      px={{"sm": "2rem", "md": "3rem"}}
       w="100%"
-      mt="6rem"
+      my="6rem"
       maxWidth={1200}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

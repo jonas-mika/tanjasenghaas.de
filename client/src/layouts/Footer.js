@@ -36,7 +36,7 @@ const Footer = () => {
       w="100%"
       py="3rem"
       mx="auto"
-      px="3rem"
+      px={{"sm": "2rem", "md": "3rem"}}
       maxWidth={1200}
       align="flex-start"
       justify="space-between"

@@ -20,7 +20,7 @@ const VitaItem = ({ data }) => {
   return (
     <Flex w="100%" my="1rem">
       <Text
-        w={{"sm": "5rem", "md": "6rem"}}
+        w={{ sm: "5rem", md: "6rem" }}
         fontSize={[
           ".6rem",
           ".7rem",
@@ -94,7 +94,7 @@ const Vita = ({ vita }) => {
     <MotionFlex
       direction="column"
       mx="auto"
-      px="3rem"
+      px={{"sm": "2rem", "md": "3rem"}}
       w="100%"
       my="9rem"
       maxWidth={1200}
@@ -103,7 +103,7 @@ const Vita = ({ vita }) => {
       transition={{ duration: 1 }}
     >
       <Flex w="100%">
-        <Box w={{"sm": "5rem", "md": "6rem"}} />
+        <Box w={{ sm: "5rem", md: "6rem" }} />
         <Text
           mb="1rem"
           flex={2}
@@ -124,7 +124,7 @@ const Vita = ({ vita }) => {
         return <VitaItem key={i} data={item} />;
       })}
       <Flex w="100%">
-        <Box w={{"sm": "0rem", "md": "6rem"}} />
+        <Box w={{ sm: "0rem", md: "6rem" }} />
         <Flex direction="column">
           <Text
             mt="5rem"

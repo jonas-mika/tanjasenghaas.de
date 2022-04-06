@@ -69,9 +69,12 @@ const App = () => {
               element={<Home data={data} />}
             />
             {/*<Route path="projekte" element={<Projects />} />*/}
-    {/*<Route path="angebot" element={<Offerings />} />*/}
-            <Route path="vita" element={<Vita vita={vita}/>} />
-    {/*<Route path="kontakt" element={<Contact />} />*/}
+            {/*<Route path="angebot" element={<Offerings />} />*/}
+            <Route
+              path="vita"
+              element={<Vita vita={vita} />}
+            />
+            {/*<Route path="kontakt" element={<Contact />} />*/}
             {projects.map((project, i) => {
               return (
                 <Route

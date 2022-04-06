@@ -9,37 +9,41 @@ import {
 
 // custom imports
 import Back from "../components/Back";
+import Header from "../layouts/Header";
 
-const NoMatch = () => {
+const NoMatch = ({ menuOpen, setMenuOpen }) => {
   return (
-    <Flex
-      direction="column"
-      my="6rem"
-      mx="auto"
-      px={{ sm: "2rem", md: "3rem" }}
-      w="100%"
-      maxWidth={1200}
-    >
-      <Back />
-      <Heading
-        fontSize={[
-          "1.3rem",
-          "1.4rem",
-          "1.5rem",
-          "1.6rem",
-          "1.7rem",
-        ]}
-        mb="1rem"
+    <>
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      <Flex
+        direction="column"
+        my="6rem"
+        mx="auto"
+        px={{ sm: "2rem", md: "3rem" }}
+        w="100%"
+        maxWidth={1200}
       >
-        404 :/
-      </Heading>
-      <Text>
-        Hey, leider scheint diese Seite nicht zu existieren.
-        Klick dich doch mal durch das Menü. Oder vielleicht
-        interessieren Dich ein paar meiner neuesten
-        Projekte.
-      </Text>
-    </Flex>
+        <Back />
+        <Heading
+          fontSize={[
+            "1.3rem",
+            "1.4rem",
+            "1.5rem",
+            "1.6rem",
+            "1.7rem",
+          ]}
+          mb="1rem"
+        >
+          404 :/
+        </Heading>
+        <Text>
+          Hey, leider scheint diese Seite nicht zu
+          existieren. Klick dich doch mal durch das Menü.
+          Oder vielleicht interessieren Dich ein paar meiner
+          neuesten Projekte.
+        </Text>
+      </Flex>
+    </>
   );
 };
 

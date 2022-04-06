@@ -87,8 +87,8 @@ const OverlayMenu = ({ menuOpen, setMenuOpen }) => {
           zIndex={10}
         >
           <MenuLink
-            name={"Designs"}
-            link={"designs"}
+            name={"Projekte"}
+            link={"projekte"}
             setMenuOpen={setMenuOpen}
           />
           <MenuLink

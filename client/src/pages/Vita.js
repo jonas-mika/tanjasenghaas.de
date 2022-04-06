@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 // custom imports
 import Back from "../components/Back";
+import Header from "../layouts/Header";
 
 const MotionFlex = motion(Flex);
 
@@ -78,7 +79,7 @@ const VitaItem = ({ data }) => {
   );
 };
 
-const Vita = ({ vita }) => {
+const Vita = ({ vita, menuOpen, setMenuOpen }) => {
   const customers = [
     "Gruner+Jahr, Hamburg",
     "Motor Presse, Stuttgart",
@@ -94,44 +95,27 @@ const Vita = ({ vita }) => {
   ];
 
   return (
-    <MotionFlex
-      direction="column"
-      mx="auto"
-      px={{ sm: "2rem", md: "3rem" }}
-      w="100%"
-      my="6rem"
-      maxWidth={1200}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <Back mb="3rem" />
-      <Flex w="100%">
-        <Box w={{ sm: "5rem", md: "6rem" }} />
-        <Text
-          mb="1rem"
-          flex={2}
-          fontSize={[
-            ".8rem",
-            ".9rem",
-            "1rem",
-            "1.1rem",
-            "1.2rem",
-          ]}
-          fontWeight="bold"
-          textTransform="uppercase"
-        >
-          Vita
-        </Text>
-      </Flex>
-      {vita.map((item, i) => {
-        return <VitaItem key={i} data={item} />;
-      })}
-      <Flex w="100%">
-        <Box w={{ md: "0rem", lg: "6rem" }} />
-        <Flex direction="column">
+    <>
+      <Header
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
+
+      <MotionFlex
+        direction="column"
+        mx="auto"
+        px={{ sm: "2rem", md: "3rem" }}
+        w="100%"
+        my="6rem"
+        maxWidth={1200}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <Back mb="3rem" />
+        <Flex w="100%">
+          <Box w={{ sm: "5rem", md: "6rem" }} />
           <Text
-            mt="3rem"
             mb="1rem"
             flex={2}
             fontSize={[
@@ -144,30 +128,54 @@ const Vita = ({ vita }) => {
             fontWeight="bold"
             textTransform="uppercase"
           >
-            Ausgewählte Kunden
+            Vita
           </Text>
-          {customers.map((customer, i) => {
-            return (
-              <Text
-                key={i}
-                flex={2}
-                fontSize={[
-                  ".7rem",
-                  ".8rem",
-                  ".9em",
-                  "1rem",
-                  "1.1rem",
-                ]}
-                fontWeight={400}
-                my=".05rem"
-              >
-                {customer}
-              </Text>
-            );
-          })}
         </Flex>
-      </Flex>
-    </MotionFlex>
+        {vita.map((item, i) => {
+          return <VitaItem key={i} data={item} />;
+        })}
+        <Flex w="100%">
+          <Box w={{ md: "0rem", lg: "6rem" }} />
+          <Flex direction="column">
+            <Text
+              mt="3rem"
+              mb="1rem"
+              flex={2}
+              fontSize={[
+                ".8rem",
+                ".9rem",
+                "1rem",
+                "1.1rem",
+                "1.2rem",
+              ]}
+              fontWeight="bold"
+              textTransform="uppercase"
+            >
+              Ausgewählte Kunden
+            </Text>
+            {customers.map((customer, i) => {
+              return (
+                <Text
+                  key={i}
+                  flex={2}
+                  fontSize={[
+                    ".7rem",
+                    ".8rem",
+                    ".9em",
+                    "1rem",
+                    "1.1rem",
+                  ]}
+                  fontWeight={400}
+                  my=".05rem"
+                >
+                  {customer}
+                </Text>
+              );
+            })}
+          </Flex>
+        </Flex>
+      </MotionFlex>
+    </>
   );
 };
 

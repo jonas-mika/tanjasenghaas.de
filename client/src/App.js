@@ -17,6 +17,7 @@ import useMobileDetect from "use-mobile-detect-hook";
 import Home from "./pages/Home";
 import Vita from "./pages/Vita";
 import Project from "./pages/Project";
+import Projects from "./pages/Projects";
 import NoMatch from "./pages/NoMatch";
 
 // global styling
@@ -32,6 +33,10 @@ const App = () => {
   const mobile = useMobileDetect();
   const { colorMode, toggleColorMode } = useColorMode();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(menuOpen);
+  }, [menuOpen]);
 
   // load static data at root
   const projects = require("./projects.json");
@@ -58,21 +63,37 @@ const App = () => {
           height="100vh"
           width="100vw"
         >
-          <Header
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-          />
-
           <Routes>
             <Route
               path="/"
-              element={<Home data={data} />}
+              element={
+                <Home
+                  data={data}
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+              }
             />
-            {/*<Route path="projekte" element={<Projects />} />*/}
+            <Route
+              path="projekte"
+              element={
+                <Projects
+                  data={data}
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+              }
+            />
             {/*<Route path="angebot" element={<Offerings />} />*/}
             <Route
               path="vita"
-              element={<Vita vita={vita} />}
+              element={
+                <Vita
+                  vita={vita}
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+              }
             />
             {/*<Route path="kontakt" element={<Contact />} />*/}
             {projects.map((project, i) => {
@@ -81,7 +102,13 @@ const App = () => {
                   path={project.name
                     .toLowerCase()
                     .replaceAll(" ", "-")}
-                  element={<Project project={project} />}
+                  element={
+                    <Project
+                      project={project}
+                      menuOpen={menuOpen}
+                      setMenuOpen={setMenuOpen}
+                    />
+                  }
                 />
               );
             })}

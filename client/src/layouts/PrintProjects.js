@@ -17,10 +17,69 @@ const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 const MotionText = motion(Text);
 
+const GridImage = ({ i, project, ...props }) => {
+  const text = {
+    rest: {
+    },
+    hover: {
+      scale: 1.1
+    }
+  }
+
+  return (
+    <Link
+      w="100%"
+      to={project.name.toLowerCase().replaceAll(" ", "-")}
+      onClick={() => {
+        window.scrollTo(0, 0);
+      }}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+    >
+      <AspectRatio ratio={1}>
+        <Image
+          src={`/images/dummy/dummy${i % 5}.jpeg`}
+          alt={`some-cover`}
+          height="100%"
+          width="100%"
+          objectFit="cover"
+        />
+      </AspectRatio>
+      <Flex>
+        <Text
+          variants={text}
+          fontSize={[
+            "0.6rem",
+            "0.7rem",
+            "0.8rem",
+            "0.9rem",
+            "1rem",
+          ]}
+          fontWeight={300}
+        >
+          {project.name},
+        </Text>
+        <Text
+          fontSize={[
+            "0.6rem",
+            "0.7rem",
+            "0.8rem",
+            "0.9rem",
+            "1rem",
+          ]}
+          fontWeight={300}
+          ml=".1rem"
+        >
+          {project.date}
+        </Text>
+      </Flex>
+    </Link>
+  );
+};
+
 const PrintProjects = ({ projects, ...props }) => {
   const [hovered, setHovered] = useState(null);
-
-  const dummies = [{ name: "dummy", num_images: 5 }];
 
   return (
     <Grid
@@ -29,98 +88,11 @@ const PrintProjects = ({ projects, ...props }) => {
         md: "repeat(2, 1fr)",
         lg: "repeat(3, 1fr)",
       }}
-      gap={5}
+      gap ="50px 10px"
       {...props}
     >
       {projects.map((project, i) => {
-        return (
-          <MotionGridItem
-            key={i}
-            w="100%"
-            initial={{ y: 50 }}
-            whileInView={{ y: 0 }}
-            transition={{ type: "spring", duration: 1 }}
-            onMouseEnter={() => {
-              setHovered(i);
-            }}
-            onMouseLeave={() => {
-              setHovered(null);
-            }}
-            whileHover={{
-              background: "rgba(56, 255, 255, 0.1)",
-            }}
-            viewport={{ once: true }}
-          >
-            <AspectRatio ratio={1}>
-              <>
-                <Image
-                  key={i}
-                  src={`/images/dummy/dummy${i % 5}.jpeg`}
-                  alt={`${project.name}-cover`}
-                  height="100%"
-                  width="100%"
-                  objectFit="cover"
-                />
-                {i === hovered && (
-                  <AnimatePresence>
-                    <Link
-                      to={project.name
-                        .toLowerCase()
-                        .replaceAll(" ", "-")}
-                      onClick={() => {
-                        window.scrollTo(0, 0);
-                      }}
-                    >
-                      <MotionFlex
-                        position="absolute"
-                        zIndex={10}
-                        w="100%"
-                        h="100%"
-                        align="center"
-                        justify="center"
-                        initial={{
-                          background: "rgba(0, 0, 0, 0)",
-                        }}
-                        animate={{
-                          background: "rgba(0, 0, 0, 0.8)",
-                        }}
-                        initial={{
-                          background: "rgba(0, 0, 0, 0)",
-                        }}
-                        transition={{
-                          type: "easeInOut",
-                          duration: 0,
-                        }}
-                      >
-                        <MotionText
-                          textAlign="center"
-                          fontSize={[
-                            "1.4rem",
-                            "1.6rem",
-                            "1.8rem",
-                            "2rem",
-                            "2.2rem",
-                          ]}
-                          fontWeight={300}
-                          color="white"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{
-                            delay: 0.1,
-                            duration: 0.1,
-                          }}
-                        >
-                          {project.name.toUpperCase()}
-                        </MotionText>
-                      </MotionFlex>
-                    </Link>
-                  </AnimatePresence>
-                )}
-              </>
-            </AspectRatio>
-          </MotionGridItem>
-        );
+        return <GridImage key={i} project={project} i={i}/>;
       })}
     </Grid>
   );

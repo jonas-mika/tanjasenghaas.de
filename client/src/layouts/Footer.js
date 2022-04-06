@@ -7,6 +7,7 @@ import {
   Link,
   Icon,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   TiSocialFacebookCircular,
@@ -30,64 +31,88 @@ const SocialLink = ({ text, url, icon = BiError }) => {
 };
 
 const Footer = () => {
+  const gray = useColorModeValue(
+    "blackAlpha.700",
+    "whiteAlpha.700"
+  );
+
   return (
     <Flex
       marginTop="auto"
       w="100%"
       py="3rem"
       mx="auto"
-      px={{"sm": "2rem", "md": "3rem"}}
+      px={{ sm: "2rem", md: "3rem" }}
       maxWidth={1200}
       align="flex-start"
       justify="space-between"
     >
       <Flex direction="column">
-        <Text fontWeight={700} mb=".2rem">
+        <Text
+          fontSize={[
+            ".6rem",
+            ".7rem",
+            ".8rem",
+            ".9em",
+            "1rem",
+          ]}
+          fontWeight={700}
+          mb=".2rem"
+        >
           Tanja Senghaas
         </Text>
         <Text
-          fontSize={{
-            sm: ".8rem",
-            md: ".9rem",
-            lg: "1rem",
-          }}
+          fontSize={[
+            ".6rem",
+            ".7rem",
+            ".8rem",
+            ".9rem",
+            "1rem",
+          ]}
           fontWeight={300}
-          lineHeight="20px"
+          lineHeight="16px"
         >
           {" "}
           Horandstieg 30
         </Text>
         <Text
-          fontSize={{
-            sm: ".8rem",
-            md: ".9rem",
-            lg: "1rem",
-          }}
+          fontSize={[
+            ".6rem",
+            ".7rem",
+            ".8rem",
+            ".8rem",
+            "1rem",
+          ]}
           fontWeight={300}
-          lineHeight="20px"
+          lineHeight="16px"
         >
           22559 Hamburg, Deutschland
         </Text>
         <Link href="mailto:tanja.senghaas@web.de">
           <Text
-            fontSize={{
-              sm: ".8rem",
-              md: ".9rem",
-              lg: "1rem",
-            }}
+            fontSize={[
+              ".6rem",
+              ".7rem",
+              ".8rem",
+              ".8rem",
+              "1rem",
+            ]}
             fontWeight={300}
-            lineHeight="20px"
+            lineHeight="16px"
           >
             tanja.senghaas@web.de
           </Text>
         </Link>
-        <Flex mt="1rem">
+        <Flex mt=".5rem">
           <Text
-            fontSize={{
-              sm: ".7rem",
-              md: ".8rem",
-              lg: ".9rem",
-            }}
+            color={gray}
+            fontSize={[
+              ".5rem",
+              ".6rem",
+              ".7rem",
+              ".8rem",
+              ".9rem",
+            ]}
             fontWeight={300}
             fontStyle="italic"
           >

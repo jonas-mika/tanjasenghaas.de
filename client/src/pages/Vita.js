@@ -124,10 +124,10 @@ const Vita = ({ vita }) => {
         return <VitaItem key={i} data={item} />;
       })}
       <Flex w="100%">
-        <Box w={{ sm: "0rem", md: "6rem" }} />
+        <Box w={{ md: "0rem", lg: "6rem" }} />
         <Flex direction="column">
           <Text
-            mt="5rem"
+            mt="3rem"
             mb="1rem"
             flex={2}
             fontSize={[

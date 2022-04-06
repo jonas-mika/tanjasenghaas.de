@@ -13,6 +13,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import Back from "../components/Back";
 import useWindowSize from "../components/useWindowSize";
 
 const MotionFlex = motion(Flex);
@@ -36,6 +37,7 @@ const Project = ({ project }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      <Back/>
       <Box w="100%">
         <Text
           fontSize={[

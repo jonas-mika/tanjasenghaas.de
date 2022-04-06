@@ -7,16 +7,20 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
+// custom imports
+import Back from "../components/Back";
+
 const NoMatch = () => {
   return (
     <Flex
       direction="column"
       my="6rem"
       mx="auto"
-      px={{"sm": "2rem", "md": "3rem"}}
+      px={{ sm: "2rem", md: "3rem" }}
       w="100%"
       maxWidth={1200}
     >
+      <Back />
       <Heading
         fontSize={[
           "1.3rem",

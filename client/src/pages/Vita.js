@@ -8,12 +8,15 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
+// custom imports
+import Back from "../components/Back";
+
 const MotionFlex = motion(Flex);
 
 const VitaItem = ({ data }) => {
   const gray = useColorModeValue(
-    "blackAlpha.700",
-    "whiteAlpha.700"
+    "blackAlpha.800",
+    "whiteAlpha.800"
   );
 
   // assumes item to be in wrapped in flex
@@ -22,11 +25,11 @@ const VitaItem = ({ data }) => {
       <Text
         w={{ sm: "5rem", md: "6rem" }}
         fontSize={[
-          ".6rem",
           ".7rem",
           ".8rem",
           ".9rem",
           "1rem",
+          "1.1rem",
         ]}
       >
         {data.date}
@@ -34,11 +37,11 @@ const VitaItem = ({ data }) => {
       <Flex flex={2} maxWidth={580} direction="column">
         <Text
           fontSize={[
-            ".6rem",
             ".7rem",
             ".8rem",
             ".9rem",
             "1rem",
+            "1.1rem",
           ]}
           fontWeight={500}
         >
@@ -48,11 +51,11 @@ const VitaItem = ({ data }) => {
           mb=".5rem"
           fontWeight={350}
           fontSize={[
-            ".6rem",
             ".7rem",
             ".8rem",
             ".9rem",
             "1rem",
+            "1.1rem",
           ]}
         >
           {data.description}
@@ -61,11 +64,11 @@ const VitaItem = ({ data }) => {
           color={gray}
           fontWeight={350}
           fontSize={[
-            ".6rem",
             ".7rem",
             ".8rem",
             ".9rem",
             "1rem",
+            "1.1rem",
           ]}
         >
           {data.company}
@@ -94,14 +97,15 @@ const Vita = ({ vita }) => {
     <MotionFlex
       direction="column"
       mx="auto"
-      px={{"sm": "2rem", "md": "3rem"}}
+      px={{ sm: "2rem", md: "3rem" }}
       w="100%"
-      my="9rem"
+      my="6rem"
       maxWidth={1200}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      <Back mb="3rem" />
       <Flex w="100%">
         <Box w={{ sm: "5rem", md: "6rem" }} />
         <Text
@@ -148,13 +152,14 @@ const Vita = ({ vita }) => {
                 key={i}
                 flex={2}
                 fontSize={[
-                  ".6rem",
                   ".7rem",
-                  ".8em",
-                  ".9rem",
+                  ".8rem",
+                  ".9em",
                   "1rem",
+                  "1.1rem",
                 ]}
-                fontWeight={350}
+                fontWeight={400}
+                my=".05rem"
               >
                 {customer}
               </Text>

@@ -70,7 +70,7 @@ const Footer = () => {
             "1rem",
           ]}
           fontWeight={300}
-          lineHeight="16px"
+          lineHeight="17px"
         >
           {" "}
           Horandstieg 30
@@ -80,11 +80,11 @@ const Footer = () => {
             ".6rem",
             ".7rem",
             ".8rem",
-            ".8rem",
+            ".9rem",
             "1rem",
           ]}
           fontWeight={300}
-          lineHeight="16px"
+          lineHeight="17px"
         >
           22559 Hamburg, Deutschland
         </Text>
@@ -94,11 +94,11 @@ const Footer = () => {
               ".6rem",
               ".7rem",
               ".8rem",
-              ".8rem",
+              ".9rem",
               "1rem",
             ]}
             fontWeight={300}
-            lineHeight="16px"
+            lineHeight="17px"
           >
             tanja.senghaas@web.de
           </Text>

@@ -30,15 +30,16 @@ const MenuLink = ({ name, link, setMenuOpen }) => {
       },
     },
   };
+
   return (
     <MotionText
-      fontWeight="bold"
+      fontWeight={400}
       fontSize={["1.5rem", "1.75rem", "2rem", "2.5rem"]}
       my=".5rem"
       initial="hidden"
       animate="visible"
       variant={variants}
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.01 }}
       whileTab={{ scale: 0.5 }}
       onClick={() => setMenuOpen(false)}
     >
@@ -48,7 +49,7 @@ const MenuLink = ({ name, link, setMenuOpen }) => {
 };
 
 const OverlayMenu = ({ menuOpen, setMenuOpen }) => {
-  const bg = useColorModeValue("white", "gray.800")
+  const bg = useColorModeValue("white", "gray.800");
 
   const variants = {
     visible: {
@@ -83,6 +84,7 @@ const OverlayMenu = ({ menuOpen, setMenuOpen }) => {
           animate="visible"
           exit="hidden"
           variants={variants}
+          zIndex={10}
         >
           <MenuLink
             name={"Designs"}

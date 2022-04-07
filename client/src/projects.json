@@ -1,14 +1,5 @@
 [
   {
-    "name": "Modern Living",
-    "date": "1999",
-    "type": "print",
-    "task": "Art Direktion | Neuentwicklung",
-    "company": "Motor Presse Stuttgart",
-    "description": "Das Magazin positioniert sich 1999 als erstes privates Lifestyle-Magazin für das junge Establishment. Möbel und Mode, Shopping und selber machen wechseln sich ab. Das Layout ist bunt und lebensfroh. Großzügige Bilder in einem ungewöhnlich großem Heftformat prägen das Magazin.",
-    "numImages": "5"
-  },
-  {
     "name": "Gesund Leben",
     "date": "2004",
     "type": "print",
@@ -97,5 +88,14 @@
     "company": "Hager Consulting / Narrative Impact",
     "description": "Wer sind die Entscheiderinnen und Entscheider des Jahres 2030? Um diese Frage zu beantworten, hat die Hager Unternehmensberatung mit einem der namhaftesten Zukunfts-Institute Deutschlands zusammengearbeitet: dem Thinktank 2bAHEAD mit Sitz in Leipzig. Sie beantragte die Agentur Narrative Impact mit dem Herausarbeiten des Inhalts. Daraus entstand ein interessantes und optisch anspruchsvolles Whitepaper.",
     "numImages": "0"
+  },
+  {
+    "name": "Pro Bono",
+    "date": "2022",
+    "type": "print",
+    "task": "Creative Direktion | Neuentwicklung",
+    "company": "Ehrenamtlich",
+    "description": "Auch soziale Projekte brauchen Konzeption und Gestaltung. Dafür spende ich 10% meiner Arbeitszeit. Sprechen Sie mich an!",
+    "numImages": "1"
   }
 ]

@@ -68,7 +68,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
     <Flex
       pt="3rem"
       mx="auto"
-      px={{"sm": "2rem", "md": "3rem"}}
+      px={["1.5rem", "3rem"]}
       w="100%"
       h="5rem"
       maxWidth={1200}

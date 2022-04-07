@@ -29,7 +29,7 @@ const Projects = ({ data, menuOpen, setMenuOpen }) => {
       <MotionFlex
         direction="column"
         mx="auto"
-        px={{ sm: "2rem", md: "3rem" }}
+        px={["1.5rem", "3rem"]}
         w="100%"
         maxWidth={1200}
         my="6rem"

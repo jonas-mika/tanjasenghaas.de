@@ -47,7 +47,7 @@ const Hero = ({ menuOpen, setMenuOpen }) => {
         h="90vh"
         justify="center"
         align="center"
-        px={{ sm: "2rem", md: "3rem" }}
+        px={["1.5rem", "3rem"]}
         maxWidth={1200}
       >
         <Heading

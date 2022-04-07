@@ -16,6 +16,7 @@ import useMobileDetect from "use-mobile-detect-hook";
 // pages
 import Home from "./pages/Home";
 import Vita from "./pages/Vita";
+import Contact from "./pages/Contact";
 import Project from "./pages/Project";
 import Projects from "./pages/Projects";
 import NoMatch from "./pages/NoMatch";
@@ -95,7 +96,7 @@ const App = () => {
                 />
               }
             />
-            {/*<Route path="kontakt" element={<Contact />} />*/}
+            <Route path="kontakt" element={<Contact />} />
             {projects.map((project, i) => {
               return (
                 <Route

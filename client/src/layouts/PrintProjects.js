@@ -19,17 +19,18 @@ const MotionText = motion(Text);
 
 const GridImage = ({ i, project, ...props }) => {
   const text = {
-    rest: {
-    },
+    rest: {},
     hover: {
-      scale: 1.1
-    }
-  }
+      scale: 1.1,
+    },
+  };
 
   return (
     <Link
       w="100%"
-      to={project.name.toLowerCase().replaceAll(" ", "-")}
+      to={`/${project.name
+        .toLowerCase()
+        .replaceAll(" ", "-")}`}
       onClick={() => {
         window.scrollTo(0, 0);
       }}
@@ -88,11 +89,13 @@ const PrintProjects = ({ projects, ...props }) => {
         md: "repeat(2, 1fr)",
         lg: "repeat(3, 1fr)",
       }}
-      gap ="50px 10px"
+      gap="50px 10px"
       {...props}
     >
       {projects.map((project, i) => {
-        return <GridImage key={i} project={project} i={i}/>;
+        return (
+          <GridImage key={i} project={project} i={i} />
+        );
       })}
     </Grid>
   );

@@ -34,7 +34,7 @@ const Title = () => {
       fontSize={[".9rem", "1rem", "1.1rem", "1.2rem"]}
       variants={hover}
     >
-      Tanja Senghaas Designs
+      Tanja Senghaas Designs.
     </MotionHeading>
   );
 };

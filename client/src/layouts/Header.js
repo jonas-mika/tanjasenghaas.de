@@ -19,14 +19,23 @@ import useWindowSize from "../components/useWindowSize";
 import Switch from "../components/Switch";
 
 const MotionFlex = motion(Flex);
+const MotionHeading = motion(Heading);
+
+const hover = {
+  hover: {
+    color: "#00793F",
+    transition: { duration: 0.2 },
+  },
+};
 
 const Title = () => {
   return (
-    <Heading
+    <MotionHeading
       fontSize={[".9rem", "1rem", "1.1rem", "1.2rem"]}
+      variants={hover}
     >
       Tanja Senghaas Designs
-    </Heading>
+    </MotionHeading>
   );
 };
 
@@ -76,10 +85,14 @@ const Header = ({ menuOpen, setMenuOpen }) => {
       justify="space-between"
     >
       <Link to="/">
-        <Flex direction="column">
+        <MotionFlex
+          cursor="pointer"
+          direction="column"
+          whileHover="hover"
+        >
           <Title />
           <Subtitle />
-        </Flex>
+        </MotionFlex>
       </Link>
       {windowSize.width > 900 ? (
         <Flex className="menu" align="center">
@@ -92,7 +105,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             onClick={toggleColorMode}
             bgOn="#A89C92"
             bgOff="#1A202C"
-            ml='1rem'
+            ml="1rem"
           />
         </Flex>
       ) : (

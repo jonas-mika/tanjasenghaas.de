@@ -42,7 +42,11 @@ const GridImage = ({ i, project, ...props }) => {
     >
       <AspectRatio ratio={1}>
         <Image
-          src={`/images/dummy/dummy${i % 5}.jpeg`}
+          src={`/images/projekte/${project.name
+            .toLowerCase()
+            .replaceAll(" ", "-")}/${project.name
+            .toLowerCase()
+            .replaceAll(" ", "-")}0.jpg`}
           alt={`some-cover`}
           height="100%"
           width="100%"
@@ -50,10 +54,7 @@ const GridImage = ({ i, project, ...props }) => {
         />
       </AspectRatio>
       <Box overflow="hidden">
-        <MotionFlex
-          align="center"
-          variants={textAnimation}
-        >
+        <MotionFlex align="center" variants={textAnimation}>
           <MotionText fontWeight={300}>___</MotionText>
           <MotionText
             fontSize={[

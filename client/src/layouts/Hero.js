@@ -32,9 +32,9 @@ const Hero = ({ menuOpen, setMenuOpen }) => {
         <Image
           h="100%"
           w="100%"
-          opacity={0.6}
+          opacity={.9}
           objectFit="cover"
-          src="/images/wolf/hero/hero3.jpeg"
+          src="/images/portrait/portrait0.jpg"
         />
       </MotionBox>
       <Header
@@ -43,21 +43,23 @@ const Hero = ({ menuOpen, setMenuOpen }) => {
       />
       <Flex
         flex={1}
-        w="100%"
         h="90vh"
-        justify="center"
-        align="center"
+        align={["flex-start", "flex-start", "center"]}
+        justify="flex-start"
         px={["1.5rem", "3rem"]}
         maxWidth={1200}
       >
         <Heading
-          fontSize={{
-            sm: "1.4rem",
-            md: "1.6rem",
-            lg: "1.8rem",
-            xl: "2.2rem",
-          }}
+          mt={["5rem", "7rem", "0rem"]}
+          fontSize={[
+            ".8rem",
+            "1rem",
+            "1.2rem",
+            "1.6rem",
+            "2rem",
+          ]}
           fontWeight={400}
+          w="40%"
         >
           Gutes Design lebt immer von einer Haltung. Es
           macht sich unsichtbar, es lässt Dinge weg. Und

@@ -6,6 +6,9 @@ import {
 
 const styles = {
   global: (props) => ({
+    html: {
+      overflowX: "hidden"
+    },
     body: {
       bg: mode("#ffffff", "#202023")(props),
     },

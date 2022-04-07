@@ -172,7 +172,7 @@ const Offerings = ({ menuOpen, setMenuOpen }) => {
             maxWidth="80%"
             titleColor="red"
             title="Pro Bono"
-            description="Auch sozial Projkete brauchen Konzeption und Gestaltung. Dafr spende ich 10% meiner Arbeitszeit. Sprechen Sie mich an!"
+            description="Auch soziale Projekte brauchen Konzeption und Gestaltung. Dafür spende ich 10% meiner Arbeitszeit. Sprechen Sie mich an!"
           />
         </Grid>
       </MotionFlex>

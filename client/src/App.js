@@ -17,6 +17,7 @@ import useMobileDetect from "use-mobile-detect-hook";
 import Home from "./pages/Home";
 import Vita from "./pages/Vita";
 import Contact from "./pages/Contact";
+import Offerings from "./pages/Offerings";
 import Project from "./pages/Project";
 import Projects from "./pages/Projects";
 import NoMatch from "./pages/NoMatch";
@@ -85,7 +86,15 @@ const App = () => {
                 />
               }
             />
-            {/*<Route path="angebot" element={<Offerings />} />*/}
+            <Route
+              path="angebot"
+              element={
+                <Offerings
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+              }
+            />
             <Route
               path="vita"
               element={
@@ -96,7 +105,15 @@ const App = () => {
                 />
               }
             />
-            <Route path="kontakt" element={<Contact />} />
+            <Route
+              path="kontakt"
+              element={
+                <Contact
+                  menuOpen={menuOpen}
+                  setMenuOpen={setMenuOpen}
+                />
+              }
+            />
             {projects.map((project, i) => {
               return (
                 <Route

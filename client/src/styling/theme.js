@@ -50,7 +50,7 @@ const breakpoints = createBreakpoints({
   base: "0px", // 480px
   sm: "380px", // mobile
   md: "720px", // half screen laptop
-  lg: "1440px", // full screen laptop
+  lg: "1300px", // full screen laptop
   xl: "1920px", // desktop
   "2xl": "2220px", // large desktop
 });

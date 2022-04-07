@@ -17,11 +17,32 @@ const MotionFlex = motion(Flex);
 const ContactItem = ({ name, detail, link, ...props }) => {
   return (
     <Flex align="center">
-      <Text w={100} fontWeight={500}>
+      <Text
+        fontSize={[
+          ".8rem",
+          ".9rem",
+          "1rem",
+          "1.1rem",
+          "1.2rem",
+        ]}
+        w={100}
+        fontWeight={500}
+      >
         {name}
       </Text>
       <Link href={link}>
-        <Text textAlign="left">{detail}</Text>
+        <Text
+          fontSize={[
+            ".8rem",
+            ".9rem",
+            "1rem",
+            "1.1rem",
+            "1.2rem",
+          ]}
+          textAlign="left"
+        >
+          {detail}
+        </Text>
       </Link>
     </Flex>
   );
@@ -38,7 +59,7 @@ const Contact = ({ menuOpen, setMenuOpen }) => {
       <MotionFlex
         direction="column"
         mx="auto"
-        px={{ sm: "2rem", md: "3rem" }}
+        px={["1.5rem", "3rem"]}
         w="100%"
         my="6rem"
         maxWidth={1200}
@@ -50,7 +71,6 @@ const Contact = ({ menuOpen, setMenuOpen }) => {
         <Flex w="100%">
           <Text
             mb="1rem"
-            flex={2}
             fontSize={[
               ".8rem",
               ".9rem",
@@ -65,7 +85,6 @@ const Contact = ({ menuOpen, setMenuOpen }) => {
           </Text>
         </Flex>
         <Text
-          flex={2}
           fontSize={[
             ".8rem",
             ".9rem",
@@ -88,7 +107,7 @@ const Contact = ({ menuOpen, setMenuOpen }) => {
         <ContactItem
           name="Mail"
           detail="tanja.senghaas@web.de"
-          link="mail:tanja.senghaas@web.de"
+          link="mailto:tanja.senghaas@web.de"
         />
         <ContactItem
           name="Instagram"

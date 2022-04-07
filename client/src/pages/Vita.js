@@ -22,15 +22,16 @@ const VitaItem = ({ data }) => {
 
   // assumes item to be in wrapped in flex
   return (
-    <Flex w="100%" my="1rem">
+    <Flex w="100%" my="1rem" direction={["column", "row"]}>
       <Text
-        w={{ sm: "5rem", md: "6rem" }}
+        w={["100%", "5rem", "7rem"]}
+        mb={[".5rem", "0"]}
         fontSize={[
+          ".6rem",
           ".7rem",
           ".8rem",
+          ".8rem",
           ".9rem",
-          "1rem",
-          "1.1rem",
         ]}
       >
         {data.date}
@@ -41,8 +42,8 @@ const VitaItem = ({ data }) => {
             ".7rem",
             ".8rem",
             ".9rem",
+            ".9rem",
             "1rem",
-            "1.1rem",
           ]}
           fontWeight={500}
         >
@@ -55,8 +56,8 @@ const VitaItem = ({ data }) => {
             ".7rem",
             ".8rem",
             ".9rem",
+            ".9rem",
             "1rem",
-            "1.1rem",
           ]}
         >
           {data.description}
@@ -68,8 +69,8 @@ const VitaItem = ({ data }) => {
             ".7rem",
             ".8rem",
             ".9rem",
+            ".9rem",
             "1rem",
-            "1.1rem",
           ]}
         >
           {data.company}
@@ -104,7 +105,7 @@ const Vita = ({ vita, menuOpen, setMenuOpen }) => {
       <MotionFlex
         direction="column"
         mx="auto"
-        px={{ sm: "2rem", md: "3rem" }}
+        px={["1.5rem", "3rem"]}
         w="100%"
         my="6rem"
         maxWidth={1200}
@@ -114,16 +115,16 @@ const Vita = ({ vita, menuOpen, setMenuOpen }) => {
       >
         <Back mb="3rem" />
         <Flex w="100%">
-          <Box w={{ sm: "5rem", md: "6rem" }} />
+          <Box w={["0rem", "5rem", "7rem"]} />
           <Text
             mb="1rem"
             flex={2}
             fontSize={[
               ".8rem",
               ".9rem",
+              ".9rem",
               "1rem",
               "1.1rem",
-              "1.2rem",
             ]}
             fontWeight="bold"
             textTransform="uppercase"
@@ -135,7 +136,7 @@ const Vita = ({ vita, menuOpen, setMenuOpen }) => {
           return <VitaItem key={i} data={item} />;
         })}
         <Flex w="100%">
-          <Box w={{ md: "0rem", lg: "6rem" }} />
+          <Box w={["0", "0", "7rem"]} />
           <Flex direction="column">
             <Text
               mt="3rem"
@@ -144,9 +145,9 @@ const Vita = ({ vita, menuOpen, setMenuOpen }) => {
               fontSize={[
                 ".8rem",
                 ".9rem",
+                ".9rem",
                 "1rem",
                 "1.1rem",
-                "1.2rem",
               ]}
               fontWeight="bold"
               textTransform="uppercase"
@@ -162,10 +163,10 @@ const Vita = ({ vita, menuOpen, setMenuOpen }) => {
                     ".7rem",
                     ".8rem",
                     ".9em",
+                    ".9rem",
                     "1rem",
-                    "1.1rem",
                   ]}
-                  fontWeight={400}
+                  fontWeight={350}
                   my=".05rem"
                 >
                   {customer}

@@ -66,21 +66,8 @@ const GridImage = ({ i, project, ...props }) => {
             ]}
             fontWeight={300}
           >
-            {project.name},
+            {project.name}
           </MotionText>
-          <Text
-            fontSize={[
-              "0.6rem",
-              "0.7rem",
-              "0.8rem",
-              "0.9rem",
-              "1rem",
-            ]}
-            fontWeight={300}
-            ml=".1rem"
-          >
-            {project.date}
-          </Text>
         </MotionFlex>
       </Box>
     </MotionLink>

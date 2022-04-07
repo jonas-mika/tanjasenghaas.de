@@ -18,7 +18,18 @@ import useWindowSize from "../components/useWindowSize";
 import Header from "../layouts/Header";
 
 const MotionFlex = motion(Flex);
+const MotionImage = motion(Image);
 const MotionGridItem = motion(GridItem);
+
+const imageFlyIn = {
+  initial: {
+    left: "100%",
+  },
+  animate: {
+    left: "60%",
+    transition: { delay: 1, duration: 0.5 },
+  },
+};
 
 const Project = ({ project, menuOpen, setMenuOpen }) => {
   const windowSize = useWindowSize();
@@ -27,7 +38,6 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
     "blackAlpha.700",
     "whiteAlpha.700"
   );
-  const dummies = [{ name: "dummy", num_images: 5 }];
 
   return (
     <>
@@ -47,7 +57,10 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
         transition={{ duration: 1 }}
       >
         <Back />
-        <Box w="100%">
+        <Flex
+          direction="column"
+          w={{sm: "100%", md: "70%", lg: "60%"}}
+        >
           <Text
             fontSize={[
               ".9rem",
@@ -74,9 +87,6 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
               "1.2rem",
             ]}
             lineHeight={7}
-            maxWidth={
-              windowSize.width > 600 ? "70%" : "100%"
-            }
           >
             {project.description}
           </Text>
@@ -94,7 +104,7 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
           >
             {project.company}
           </Text>
-        </Box>
+        </Flex>
         <Grid
           mt="6rem"
           templateColumns={{
@@ -104,25 +114,27 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
           }}
           gap={5}
         >
-          {dummies.map((project, i) => {
-            return Array.from(
-              Array(project.num_images).keys()
-            ).map((j) => {
-              return (
-                <GridItem w="100%">
-                  <AspectRatio ratio={1}>
-                    <Image
-                      key={i}
-                      src={`/images/${project.name}/${project.name}${j}.jpeg`}
-                      alt={`${project.name}${j}`}
-                      height="100%"
-                      width="100%"
-                      objectFit="cover"
-                    />
-                  </AspectRatio>
-                </GridItem>
-              );
-            });
+          {Array.from(
+            Array(parseInt(project.numImages)).keys()
+          ).map((i) => {
+            return (
+              <AspectRatio ratio={1}>
+                <Image
+                  key={i}
+                  src={`/images/projekte/${project.name
+                    .toLowerCase()
+                    .replaceAll(" ", "-")}/${project.name
+                    .toLowerCase()
+                    .replaceAll(" ", "-")}${i}.jpg`}
+                  alt={`${project.name
+                    .toLowerCase()
+                    .replaceAll(" ", "-")}${i}`}
+                  height="100%"
+                  width="100%"
+                  objectFit="cover"
+                />
+              </AspectRatio>
+            );
           })}
         </Grid>
       </MotionFlex>

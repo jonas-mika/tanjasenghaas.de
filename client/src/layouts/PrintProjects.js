@@ -16,17 +16,20 @@ const MotionGridItem = motion(GridItem);
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 const MotionText = motion(Text);
+const MotionLink = motion(Link);
 
 const GridImage = ({ i, project, ...props }) => {
-  const text = {
-    rest: {},
+  const textAnimation = {
+    rest: {
+      transform: "translate(-24px)",
+    },
     hover: {
-      scale: 1.1,
+      transform: "translate(0px)",
     },
   };
 
   return (
-    <Link
+    <MotionLink
       w="100%"
       to={`/${project.name
         .toLowerCase()
@@ -36,7 +39,6 @@ const GridImage = ({ i, project, ...props }) => {
       }}
       initial="rest"
       whileHover="hover"
-      animate="rest"
     >
       <AspectRatio ratio={1}>
         <Image
@@ -47,35 +49,40 @@ const GridImage = ({ i, project, ...props }) => {
           objectFit="cover"
         />
       </AspectRatio>
-      <Flex>
-        <Text
-          variants={text}
-          fontSize={[
-            "0.6rem",
-            "0.7rem",
-            "0.8rem",
-            "0.9rem",
-            "1rem",
-          ]}
-          fontWeight={300}
+      <Box overflow="hidden">
+        <MotionFlex
+          align="center"
+          variants={textAnimation}
         >
-          {project.name},
-        </Text>
-        <Text
-          fontSize={[
-            "0.6rem",
-            "0.7rem",
-            "0.8rem",
-            "0.9rem",
-            "1rem",
-          ]}
-          fontWeight={300}
-          ml=".1rem"
-        >
-          {project.date}
-        </Text>
-      </Flex>
-    </Link>
+          <MotionText fontWeight={300}>___</MotionText>
+          <MotionText
+            fontSize={[
+              "0.6rem",
+              "0.7rem",
+              "0.8rem",
+              "0.9rem",
+              "1rem",
+            ]}
+            fontWeight={300}
+          >
+            {project.name},
+          </MotionText>
+          <Text
+            fontSize={[
+              "0.6rem",
+              "0.7rem",
+              "0.8rem",
+              "0.9rem",
+              "1rem",
+            ]}
+            fontWeight={300}
+            ml=".1rem"
+          >
+            {project.date}
+          </Text>
+        </MotionFlex>
+      </Box>
+    </MotionLink>
   );
 };
 

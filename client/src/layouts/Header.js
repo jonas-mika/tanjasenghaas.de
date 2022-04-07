@@ -19,6 +19,7 @@ import useWindowSize from "../components/useWindowSize";
 import Switch from "../components/Switch";
 
 const MotionFlex = motion(Flex);
+const MotionText = motion(Text);
 const MotionHeading = motion(Heading);
 
 const hover = {
@@ -52,9 +53,10 @@ const Subtitle = () => {
 
 const MenuLink = ({ item, link, pr }) => {
   return (
-    <Box ml="1rem">
+    <Box ml="1rem" >
       <Link to={`/${link}`}>
-        <Text
+        <MotionText
+          whileHover={hover.hover}
           fontWeight={400}
           fontSize={{
             sm: ".8rem",
@@ -63,7 +65,7 @@ const MenuLink = ({ item, link, pr }) => {
           }}
         >
           {item}
-        </Text>
+        </MotionText>
       </Link>
     </Box>
   );

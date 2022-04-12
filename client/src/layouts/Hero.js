@@ -52,13 +52,14 @@ const Hero = ({ menuOpen, setMenuOpen }) => {
         <Heading
           mt={["5rem", "7rem", "0rem"]}
           fontSize={[
-            ".8rem",
+            ".9rem",
             "1rem",
             "1.2rem",
             "1.6rem",
             "2rem",
           ]}
-          fontWeight={400}
+          fontWeight={300}
+          lineHeight={[5, 5, 7, 9]}
           w="40%"
         >
           Gutes Design lebt immer von einer Haltung. Es

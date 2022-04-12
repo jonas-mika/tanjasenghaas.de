@@ -17,7 +17,7 @@ const Slide = ({ quote }) => {
     <Flex
       w="100%"
       h="100%"
-      p="2rem"
+      p="2rem 4rem"
       align="center"
       justify="center"
       direction="column"
@@ -25,14 +25,15 @@ const Slide = ({ quote }) => {
       <Text
         textAlign="center"
         fontWeight={350}
-        fontSize={["1rem", "1.05rem", "1.1rem", "1.15rem"]}
+        fontSize={[".9rem", ".95rem", "1rem", "1.05rem"]}
         lineHeight="150%"
       >
         {quote.quote}
       </Text>
       <Text
         textAlign="center"
-        fontWeight={600}
+        fontWeight={500}
+        fontSize={[".7rem", ".8rem", ".9rem", "1rem"]}
         mt="2rem"
         mb=".3rem"
       >
@@ -40,15 +41,15 @@ const Slide = ({ quote }) => {
       </Text>
       <Text
         textAlign="center"
-        fontSize={[".7rem", ".75rem", ".8rem", ".9rem"]}
-        lineHeight="110%"
+        fontSize={[".5rem", ".6rem", ".7rem", ".8rem"]}
+        lineHeight="120%"
       >
         {quote.position}
       </Text>
       <Text
         textAlign="center"
-        fontSize={[".7rem", ".75rem", ".8rem", ".9rem"]}
-        lineHeight="110%"
+        fontSize={[".5rem", ".6rem", ".7rem", ".8rem"]}
+        lineHeight="120%"
       >
         {quote.company}
       </Text>
@@ -103,7 +104,7 @@ const QuoteSlider = ({
       // gray box
       ml="calc(50% - 50vw)"
       mr="calc(50% - 50vw)"
-      bg="blackAlpha.500"
+      bg="blackAlpha.300"
     >
       <Flex
         // big wrapper
@@ -138,7 +139,7 @@ const QuoteSlider = ({
           </Flex>
         </Box>
         <Flex
-          w={15 * quotes.length}
+          w={11 * quotes.length}
           align="center"
           justify="space-between"
         >
@@ -148,8 +149,8 @@ const QuoteSlider = ({
                 <Box
                   key={i}
                   borderRadius="100%"
-                  h={2}
-                  w={2}
+                  h={1.5}
+                  w={1.5}
                   cursor="pointer"
                   transform={
                     i === current

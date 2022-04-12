@@ -18,7 +18,7 @@ const MotionFlex = motion(Flex);
 const MotionText = motion(Text);
 const MotionLink = motion(Link);
 
-const GridImage = ({ i, project, ...props }) => {
+const GridImage = ({ i, project, border, ...props }) => {
   const textAnimation = {
     rest: {
       transform: "translate(-24px)",
@@ -40,7 +40,7 @@ const GridImage = ({ i, project, ...props }) => {
       initial="rest"
       whileHover="hover"
     >
-      <AspectRatio ratio={1}>
+      <AspectRatio ratio={1} border={border ? ".5px solid black" : null}>
         <Image
           src={`/images/projekte/${project.name
             .toLowerCase()
@@ -74,27 +74,23 @@ const GridImage = ({ i, project, ...props }) => {
   );
 };
 
-const PrintProjects = ({ projects, ...props }) => {
+const ProjectGallery = ({ projects, templateColumns, border, ...props }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
     <Grid
-      templateColumns={{
-        sm: "repeat(1, 1fr)",
-        md: "repeat(2, 1fr)",
-        lg: "repeat(3, 1fr)",
-      }}
+      templateColumns={templateColumns}
       gap="50px 10px"
       {...props}
     >
       {projects.map((project, i) => {
         return (
-          <GridImage key={i} project={project} i={i} />
+          <GridImage key={i} project={project} border={border} i={i} />
         );
       })}
     </Grid>
   );
 };
 
-export default PrintProjects;
+export default ProjectGallery;
 // https://picsum.photos/1000/1000?random=${i}

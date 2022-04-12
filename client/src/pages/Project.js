@@ -50,7 +50,7 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
         mx="auto"
         px={["1.5rem", "3rem"]}
         w="100%"
-        my="6rem"
+        my="8rem"
         maxWidth={1200}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -59,7 +59,7 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
         <Back />
         <Flex
           direction="column"
-          w={{sm: "100%", md: "70%", lg: "60%"}}
+          w={{sm: "100%", md: "80%", lg: "70%"}}
         >
           <Text
             fontSize={[
@@ -74,19 +74,28 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
           >
             {project.name}
           </Text>
-          <Text mt=".8rem" color={gray} fontWeight={400}>
-            {project.date}, {project.task}
-          </Text>
-          <Text
-            mt="3rem"
+          <Text color={gray} 
             fontSize={[
+              ".8rem",
               ".8rem",
               ".9rem",
               "1rem",
               "1.1rem",
-              "1.2rem",
             ]}
-            lineHeight={7}
+    fontWeight={400}>
+            {project.date}, {project.task}
+          </Text>
+          <Text
+            mt="1rem"
+            fontSize={[
+              ".7rem",
+              ".8rem",
+              ".9rem",
+              "1rem",
+              "1.1rem",
+            ]}
+            fontWeight={500}
+            lineHeight='160%'
           >
             {project.description}
           </Text>
@@ -100,13 +109,13 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
             ]}
             fontWeight={400}
             color={gray}
-            mt="2rem"
+            mt="1rem"
           >
             {project.company}
           </Text>
         </Flex>
         <Grid
-          mt="6rem"
+          mt="2rem"
           templateColumns={{
             sm: "repeat(1, 1fr)",
             md: "repeat(2, 1fr)",

@@ -97,5 +97,59 @@
     "company": "Ehrenamtlich",
     "description": "Auch soziale Projekte brauchen Konzeption und Gestaltung. Dafür spende ich 10% meiner Arbeitszeit. Sprechen Sie mich an!",
     "numImages": "1"
+  },
+  {
+    "name": "Jayjays",
+    "date": "2021",
+    "type": "typo",
+    "task": "Logoentwicklung",
+    "company": "JayJay's | Bowls, Juices and more",
+    "description": "TBA",
+    "numImages": "1"
+  },
+  {
+    "name": "Hygge Wortbildmarke",
+    "date": "2019",
+    "type": "typo",
+    "task": "Logoentwicklung",
+    "company": "Verlag Gruner+Jahr",
+    "description": "TBA",
+    "numImages": "1"
+  },
+  {
+    "name": "Mineralum",
+    "date": "2022",
+    "type": "typo",
+    "task": "Logoweiterentwicklung",
+    "company": "Mineralum",
+    "description": "TBA",
+    "numImages": "1"
+  },
+  {
+    "name": "Kristin Nowak Logo",
+    "date": "2018",
+    "type": "typo",
+    "task": "Logoentwicklung",
+    "company": "Neurologische Arztpraxis Kristin Nowak",
+    "description": "TBA",
+    "numImages": "1"
+  },
+  {
+    "name": "G+J Gin",
+    "date": "2019",
+    "type": "typo",
+    "task": "Labelgestaltung",
+    "company": "Verlag Gruner+Jahr",
+    "description": "TBA",
+    "numImages": "1"
+  },
+  {
+    "name": "Landlust Zuhaus Logo",
+    "date": "2021",
+    "type": "typo",
+    "task": "Logoentwicklung",
+    "company": "Verlag Gruner+Jahr",
+    "description": "TBA",
+    "numImages": "1"
   }
 ]

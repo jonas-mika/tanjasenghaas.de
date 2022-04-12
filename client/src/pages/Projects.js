@@ -11,8 +11,7 @@ import {
 import { motion } from "framer-motion";
 
 // custom imports
-import PrintProjects from "../layouts/PrintProjects";
-import TypographyProjects from "../layouts/TypographyProjects";
+import ProjectGallery from "../layouts/ProjectGallery";
 import Header from "../layouts/Header";
 import Back from "../components/Back";
 
@@ -38,8 +37,15 @@ const Projects = ({ data, menuOpen, setMenuOpen }) => {
         transition={{ duration: 1 }}
       >
         <Back />
-        <PrintProjects projects={data.projects} mb="5rem" />
-        <TypographyProjects projects={data.projects} />
+        <ProjectGallery
+          projects={data.projects}
+          border={false}
+          templateColumns={{
+            sm: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+        />
       </MotionFlex>
     </>
   );

@@ -22,7 +22,7 @@ const MotionFlex = motion(Flex);
 const MotionText = motion(Text);
 const MotionHeading = motion(Heading);
 
-const hover = {
+const titleHover = {
   hover: {
     color: "#00793F",
     transition: { duration: 0.2 },
@@ -33,7 +33,7 @@ const Title = () => {
   return (
     <MotionHeading
       fontSize={[".9rem", "1rem", "1.1rem", "1.2rem"]}
-      variants={hover}
+      variants={titleHover}
     >
       Tanja Senghaas Designs.
     </MotionHeading>
@@ -43,7 +43,7 @@ const Title = () => {
 const Subtitle = () => {
   return (
     <Text
-      fontWeight={300}
+      fontWeight={400}
       fontSize={[".7rem", ".8rem", ".9rem", "1rem"]}
     >
       Creative Direction | Magazinentwicklung
@@ -56,7 +56,7 @@ const MenuLink = ({ item, link, pr }) => {
     <Box ml="1rem" >
       <Link to={`/${link}`}>
         <MotionText
-          whileHover={hover.hover}
+          _hover={{ color: '#bdbdbd' }}
           fontWeight={400}
           fontSize={{
             sm: ".8rem",

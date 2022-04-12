@@ -22,9 +22,9 @@ const SocialLink = ({ text, url, icon = BiError }) => {
     <Link href={url} _hover={{ textDecoration: "none" }}>
       <Icon
         as={icon}
-        _focus={{ outline: 0 }}
-        h="1.8rem"
-        w="1.8rem"
+        _hover={{ color: "#00793F" }}
+        h={["1.5rem", "1.5rem", "1.5rem","1.6rem"]}
+        w={["1.5rem", "1.5rem", "1.5rem","1.6rem"]}
       />
     </Link>
   );
@@ -67,21 +67,25 @@ const Footer = () => {
       <Flex direction="column">
         <FooterText
           text="Tanja Senghaas"
+          fontSize={['.6rem', '.7rem', '.8rem', '.9rem']}
           fontWeight={700}
           mb=".2rem"
         />
         <FooterText
           text="Horandstieg 30"
-          fontWeight={300}
+          fontSize={['.5rem', '.6rem', '.7rem', '.8rem']}
+          fontWeight={400}
         />
         <FooterText
           text="22559 Hamburg, Deutschland"
-          fontWeight={300}
+          fontSize={['.5rem', '.6rem', '.7rem', '.8rem']}
+          fontWeight={400}
         />
         <Link href="mailto:tanja.senghaas@web.de">
           <FooterText
             text="tanja.senghaas@web.de"
-            fontWeight={300}
+            fontSize={['.5rem', '.6rem', '.7rem', '.8rem']}
+            fontWeight={400}
           />
         </Link>
         <Flex mt=".5rem">

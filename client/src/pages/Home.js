@@ -11,8 +11,7 @@ import {
 import { motion } from "framer-motion";
 
 import Hero from "../layouts/Hero";
-import PrintProjects from "../layouts/PrintProjects";
-import TypographyProjects from "../layouts/TypographyProjects";
+import ProjectGallery from "../layouts/ProjectGallery";
 import Customers from "../layouts/Customers";
 import QuoteSlider from "../components/QuoteSlider";
 
@@ -21,6 +20,13 @@ const MotionBox = motion(Box);
 
 const Home = ({ data, menuOpen, setMenuOpen }) => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const printProjects = data.projects.filter(
+    (p) => p.type === "print"
+  );
+  const typoProjects = data.projects.filter(
+    (p) => p.type === "typo"
+  );
 
   return (
     <MotionFlex
@@ -34,11 +40,33 @@ const Home = ({ data, menuOpen, setMenuOpen }) => {
       transition={{ duration: 1 }}
     >
       <Hero menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Text m="5rem 0rem 1rem 2rem">Print Projekte</Text>
-      <PrintProjects projects={data.projects} />
-      <Text m="5rem 0rem 1rem 2rem">Typografie Projekte</Text>
-      <TypographyProjects projects={data.projects} />
-      <Text m="5rem 0rem 1rem 2rem">Kunden</Text>
+      <Text m="5rem 0rem 1rem 2rem" fontWeight={600}>
+        Print Projekte
+      </Text>
+      <ProjectGallery
+        projects={printProjects}
+        border={false}
+        templateColumns={{
+          sm: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
+      />
+      <Text m="5rem 0rem 1rem 2rem" fontWeight={600}>
+        Typografie Projekte
+      </Text>
+      <ProjectGallery
+        projects={typoProjects}
+        border={true}
+        templateColumns={{
+          sm: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
+          lg: "repeat(4, 1fr)",
+        }}
+      />
+      <Text m="5rem 0rem 1rem 2rem" fontWeight={600}>
+        Kunden
+      </Text>
       <QuoteSlider
         quotes={data.customers}
         showNavigation={false}

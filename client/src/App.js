@@ -27,7 +27,6 @@ import theme from "./styling/theme";
 import Font from "./styling/font";
 
 // global components
-import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import OverlayMenu from "./layouts/OverlayMenu";
 
@@ -35,10 +34,6 @@ const App = () => {
   const mobile = useMobileDetect();
   const { colorMode, toggleColorMode } = useColorMode();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(menuOpen);
-  }, [menuOpen]);
 
   // load static data at root
   const projects = require("./projects.json");

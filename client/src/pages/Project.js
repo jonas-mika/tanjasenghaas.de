@@ -115,7 +115,7 @@ const Project = ({ project, menuOpen, setMenuOpen }) => {
           </Text>
         </Flex>
         <Grid
-          mt="2rem"
+          mt="10rem"
           templateColumns={{
             sm: "repeat(1, 1fr)",
             md: "repeat(2, 1fr)",

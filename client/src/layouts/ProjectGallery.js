@@ -47,7 +47,7 @@ const GridImage = ({ i, project, border, ...props }) => {
             .replaceAll(" ", "-")}/${project.name
             .toLowerCase()
             .replaceAll(" ", "-")}0.jpg`}
-          alt={`some-cover`}
+          alt={`{project.name.toLowerCase().replaceAll(" ", "-")}-cover`}
           height="100%"
           width="100%"
           objectFit="cover"
